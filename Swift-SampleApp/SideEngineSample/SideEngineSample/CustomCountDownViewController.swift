@@ -1,0 +1,135 @@
+//
+//  TestSideEngineViewController.swift
+//  SideEngineSample
+//
+//  Created by Phoenix on 20/04/2022.
+//
+
+import UIKit
+import AVFoundation
+import AudioToolbox
+import BBSideEngine
+
+
+class CustomCountDownViewController: UIViewController {
+  
+    @IBOutlet var mainTitleLabel : UILabel!
+    @IBOutlet var secondsLabel : UILabel!
+    @IBOutlet var countDownLabel : UILabel!
+    
+    //Handle countdown timer
+    var counter = BBSideEngineManager.shared.countDownDuration
+    var counterTimer : Timer!
+ 
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view.
+        self.configureTimer()
+     }
+    
+    @IBAction func closeTapped() {
+        self.stopTimer(finished: false)
+         BBSideEngineManager.shared.resumeSideEngine() //You need to resume side engine when go to back screen
+        if isModal == true {
+            self.dismiss(animated: true)
+        }else {
+            self.navigationController?.popViewController(animated: true)
+        }
+        
+    }
+    
+    func cancelAutoIncident()  {
+        if self.counterTimer != nil{
+            self.counterTimer.invalidate()
+            self.counterTimer = nil
+         }
+        BBSideEngineManager.shared.resumeSideEngine() //You need to resume side engine when go to back screen
+        
+        if isModal == true {
+            self.dismiss(animated: true)
+        }else {
+            self.navigationController?.popViewController(animated: true)
+        }
+    }
+    
+ 
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.setNavigationBarHidden(true, animated: false)
+        
+    }
+ 
+}
+
+
+//--------------------------------------------------------//
+//MARK: **************UI**************
+//--------------------------------------------------------//
+extension CustomCountDownViewController {
+    //TODO: Configure Timer
+    func configureTimer () {
+         countDownLabel.text = "\(counter)"
+         self.counterTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.runTimer), userInfo: nil, repeats: true)
+      }
+    
+    
+    //TODO: Support screen
+    func openSupportScreen() {
+        
+        let state = UIApplication.shared.applicationState
+        if state != .active || isModal == true {
+            self.closeTapped() //Auto dismiss and resume side engine
+        } else {
+            DispatchQueue.main.async {
+                let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+                let testViewModeController = storyBoard.instantiateViewController(withIdentifier: "TestSideEngineSupportViewController") as! TestSideEngineSupportViewController
+                self.navigationController?.pushViewController(testViewModeController, animated: true)
+            }
+        }
+        
+    }
+ 
+}
+
+//--------------------------------------------------------//
+//MARK: **************Start count down timer**************
+//--------------------------------------------------------//
+extension CustomCountDownViewController{
+    @objc func runTimer() {
+        counter = counter - 1
+        countDownLabel.text = "\(counter)"
+        if counter >= 0 {
+            AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
+        }
+        
+        if (counter <= 0) {
+            self.stopTimer(finished: true)
+        }
+    }
+    
+    func stopTimer(finished : Bool) {
+        countDownLabel.text = "\(0)"
+        self.counter = 0
+        if self.counterTimer != nil{
+            self.counterTimer.invalidate()
+            self.counterTimer = nil
+         }
+        
+        if finished == true {
+            BBSideEngineManager.shared.notifyPartner()
+            self.openSupportScreen()
+        }
+     }
+}
+
+
+extension UIViewController {
+
+    var isModal: Bool {
+
+        let presentingIsModal = presentingViewController != nil
+        let presentingIsNavigation = navigationController?.presentingViewController?.presentedViewController == navigationController
+        let presentingIsTabBar = tabBarController?.presentingViewController is UITabBarController
+
+        return presentingIsModal || presentingIsNavigation || presentingIsTabBar
+    }
+}

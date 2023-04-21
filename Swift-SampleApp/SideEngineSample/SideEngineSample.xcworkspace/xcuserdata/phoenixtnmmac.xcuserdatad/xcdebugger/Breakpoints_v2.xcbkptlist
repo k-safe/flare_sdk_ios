@@ -1,0 +1,760 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "2244592A-39D2-41AC-95D4-30624A4BE367"
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F058F4B2-4BA4-4ADB-8ACB-83C43E4158FF"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../Framework/BBSideEngine/Main/BBSideEngineManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "2064"
+            endingLineNumber = "2064"
+            landmarkName = "partnerNotificationsSOS()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "FC7F22DF-78F7-4976-B91A-B7C0B56A60DF"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../Framework/BBSideEngine/Main/BBSideEngineManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "2184"
+            endingLineNumber = "2184"
+            landmarkName = "partnerNotifications()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "FC7F22DF-78F7-4976-B91A-B7C0B56A60DF - ba49d08e7f368fb"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BBSideEngine.BBSideEngineManager.partnerNotifications() -&gt; ()"
+                  moduleName = "BBSideEngine"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/phoenixtnmmac/Music/sdksos/busbysdk_ios/Framework/BBSideEngine/Main/BBSideEngineManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "2184"
+                  endingLineNumber = "2184"
+                  offsetFromSymbolStart = "2624">
+               </Location>
+               <Location
+                  uuid = "FC7F22DF-78F7-4976-B91A-B7C0B56A60DF - ba49d08e7f368fb"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BBSideEngine.BBSideEngineManager.partnerNotifications() -&gt; ()"
+                  moduleName = "BBSideEngine"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/phoenixtnmmac/Music/sdksos/busbysdk_ios/Framework/BBSideEngine/Main/BBSideEngineManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "2184"
+                  endingLineNumber = "2184"
+                  offsetFromSymbolStart = "2812">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7036B3BA-F6DA-461F-A6BD-AB05DDB194F0"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../Framework/BBSideEngine/Main/BBSideEngineManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "2062"
+            endingLineNumber = "2062"
+            landmarkName = "partnerNotificationsSOS()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "131CD5D2-7589-46A3-AF35-F1862D388DA0"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../Framework/BBSideEngine/Main/BBSideEngineManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "2094"
+            endingLineNumber = "2094"
+            landmarkName = "partnerNotificationsSOS()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "98D853CA-613E-4D59-95E6-3A342BBCF1C2"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../Framework/BBSideEngine/Main/BBSideEngineManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "2066"
+            endingLineNumber = "2066"
+            landmarkName = "partnerNotificationsSOS()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9C32E566-3A06-43C3-9049-37C57C2D013D"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../Framework/BBSideEngine/Main/BBSideEngineManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "2105"
+            endingLineNumber = "2105"
+            landmarkName = "partnerNotificationsSOS()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8F04BF73-C81A-45D1-897D-5BE01E9EB09F"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../Framework/BBSideEngine/Main/BBSideEngineManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "2116"
+            endingLineNumber = "2116"
+            landmarkName = "partnerNotificationsSOS()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A5F3E963-3FEE-4BB3-B284-81CD8C43F913"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../Framework/BBSideEngine/Main/BBSideEngineManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "2129"
+            endingLineNumber = "2129"
+            landmarkName = "partnerNotificationsSOS()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C7A53DDA-A5D0-49BD-BBE9-842A3663447A"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../Framework/BBSideEngine/Main/BBSideEngineManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "2384"
+            endingLineNumber = "2384"
+            landmarkName = "slackAPI(url:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "66C42778-154C-409A-9AD3-79A92F66912B"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../Framework/BBSideEngine/Main/BBSideEngineManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "2263"
+            endingLineNumber = "2263"
+            landmarkName = "webhookAPI(url:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "152FA009-C296-45D0-9562-578D89B42484"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../Framework/BBSideEngine/Main/BBSideEngineManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "2163"
+            endingLineNumber = "2163"
+            landmarkName = "partnerNotifications()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "152FA009-C296-45D0-9562-578D89B42484 - ba49d08e7f397ae"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BBSideEngine.BBSideEngineManager.partnerNotifications() -&gt; ()"
+                  moduleName = "BBSideEngine"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/phoenixtnmmac/Music/sdksos/busbysdk_ios/Framework/BBSideEngine/Main/BBSideEngineManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "2163"
+                  endingLineNumber = "2163"
+                  offsetFromSymbolStart = "436">
+               </Location>
+               <Location
+                  uuid = "152FA009-C296-45D0-9562-578D89B42484 - ba49d08e7f397ae"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BBSideEngine.BBSideEngineManager.partnerNotifications() -&gt; ()"
+                  moduleName = "BBSideEngine"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/phoenixtnmmac/Music/sdksos/busbysdk_ios/Framework/BBSideEngine/Main/BBSideEngineManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "2163"
+                  endingLineNumber = "2163"
+                  offsetFromSymbolStart = "464">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F77C75CF-DA33-4D15-9DDC-7C5E9C5A3573"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../Framework/BBSideEngine/Main/BBSideEngineManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "2175"
+            endingLineNumber = "2175"
+            landmarkName = "partnerNotifications()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "05899E30-5057-4B3B-9B40-65A09A4D029E"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../Framework/BBSideEngine/Main/BBSideEngineManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "2172"
+            endingLineNumber = "2172"
+            landmarkName = "partnerNotifications()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4FD15E88-45B3-496F-9317-C519B89124E0"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../Framework/BBSideEngine/Main/BBSideEngineManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "2169"
+            endingLineNumber = "2169"
+            landmarkName = "partnerNotifications()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1B2E2C7E-95A1-4FBA-BAEF-FF85892FFCD7"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../Framework/BBSideEngine/Main/BBSideEngineManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "1974"
+            endingLineNumber = "1974"
+            landmarkName = "sendEmail(toEmail:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B9CD7A10-3C7B-4A3A-9256-A1D2D46200AC"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../Framework/BBSideEngine/Main/BBSideEngineManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "1977"
+            endingLineNumber = "1977"
+            landmarkName = "sendEmail(toEmail:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B9D11C6F-B45E-4709-985B-4242180F341D"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../Framework/BBSideEngine/Main/BBSideEngineManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "1980"
+            endingLineNumber = "1980"
+            landmarkName = "sendEmail(toEmail:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "EF240195-ADCB-47AC-892E-35D4204BBCCA"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../Framework/BBSideEngine/Main/BBSideEngineManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "2061"
+            endingLineNumber = "2061"
+            landmarkName = "partnerNotificationsSOS()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "EF240195-ADCB-47AC-892E-35D4204BBCCA - dacf7eb160780d7b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BBSideEngine.BBSideEngineManager.partnerNotificationsSOS() -&gt; ()"
+                  moduleName = "BBSideEngine"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/phoenixtnmmac/Music/sdksos/busbysdk_ios/Framework/BBSideEngine/Main/BBSideEngineManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "2061"
+                  endingLineNumber = "2061"
+                  offsetFromSymbolStart = "1276">
+               </Location>
+               <Location
+                  uuid = "EF240195-ADCB-47AC-892E-35D4204BBCCA - dacf7eb160780d7b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BBSideEngine.BBSideEngineManager.partnerNotificationsSOS() -&gt; ()"
+                  moduleName = "BBSideEngine"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/phoenixtnmmac/Music/sdksos/busbysdk_ios/Framework/BBSideEngine/Main/BBSideEngineManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "2061"
+                  endingLineNumber = "2061"
+                  offsetFromSymbolStart = "1492">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A9E360D6-3691-4D25-A0BB-5469BD5FB412"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../Framework/BBSideEngine/Main/BBSideEngineManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "2395"
+            endingLineNumber = "2395"
+            landmarkName = "slackAPI(url:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "26937EAF-5D02-487E-81BB-A21C6768B9E0"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../Framework/BBSideEngine/Main/BBSideEngineManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "2399"
+            endingLineNumber = "2399"
+            landmarkName = "slackAPI(url:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1D7789B5-90E0-4056-9A38-8CED79ACC3D9"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../Framework/BBSideEngine/Main/BBSideEngineManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "2401"
+            endingLineNumber = "2401"
+            landmarkName = "slackAPI(url:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "477FFBC6-6A9B-4B61-A0F5-7DEBFD6D0222"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../Framework/BBSideEngine/Main/BBSideEngineManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "2404"
+            endingLineNumber = "2404"
+            landmarkName = "slackAPI(url:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2359EB9B-AA0B-4CCB-85FB-D3302EF96F27"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../Framework/BBSideEngine/Main/BBSideEngineManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "2280"
+            endingLineNumber = "2280"
+            landmarkName = "webhookAPI(url:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "ABBFF1A4-6C59-4442-A51A-945F99A0CA65"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../Framework/BBSideEngine/Main/BBSideEngineManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "2276"
+            endingLineNumber = "2276"
+            landmarkName = "webhookAPI(url:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5808D0CA-98EF-4981-8782-0CAF866A72D4"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../Framework/BBSideEngine/Main/BBSideEngineManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "2272"
+            endingLineNumber = "2272"
+            landmarkName = "webhookAPI(url:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "DF8D6868-3FF1-4656-994D-9242F6ACA38B"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../Framework/BBSideEngine/Main/BBSideEngineManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "2285"
+            endingLineNumber = "2285"
+            landmarkName = "webhookAPI(url:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9FB93F3D-440E-4E2E-9537-5FAC03283B46"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../Framework/BBSideEngine/Main/BBSideEngineManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "2304"
+            endingLineNumber = "2304"
+            landmarkName = "webhookAPI(url:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "19CD1158-0652-4C56-8032-5483478406AD"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../Framework/BBSideEngine/Main/BBSideEngineManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "1986"
+            endingLineNumber = "1986"
+            landmarkName = "sendEmail(toEmail:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "CD01398E-81ED-4046-BEFF-997F1B0917E9"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../Framework/BBSideEngine/Main/BBSideEngineManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "1999"
+            endingLineNumber = "1999"
+            landmarkName = "sendEmail(toEmail:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "CD01398E-81ED-4046-BEFF-997F1B0917E9 - ce049eb26684f3d9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in BBSideEngine.BBSideEngineManager.sendEmail(toEmail: Swift.String) -&gt; ()"
+                  moduleName = "BBSideEngine"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/phoenixtnmmac/Music/sdksos/busbysdk_ios/Framework/BBSideEngine/Main/BBSideEngineManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "1999"
+                  endingLineNumber = "1999"
+                  offsetFromSymbolStart = "116">
+               </Location>
+               <Location
+                  uuid = "CD01398E-81ED-4046-BEFF-997F1B0917E9 - ce049eb26684f3d9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in BBSideEngine.BBSideEngineManager.sendEmail(toEmail: Swift.String) -&gt; ()"
+                  moduleName = "BBSideEngine"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/phoenixtnmmac/Music/sdksos/busbysdk_ios/Framework/BBSideEngine/Main/BBSideEngineManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "1999"
+                  endingLineNumber = "1999"
+                  offsetFromSymbolStart = "164">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "035D9F77-F48D-4344-BB0C-75DB13762FF2"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../Framework/BBSideEngine/Main/BBSideEngineManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "2009"
+            endingLineNumber = "2009"
+            landmarkName = "sendEmail(toEmail:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9831929A-6A42-442A-831E-CB4CD9C2EB88"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../Framework/BBSideEngine/Main/BBSideEngineManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "2003"
+            endingLineNumber = "2003"
+            landmarkName = "sendEmail(toEmail:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "576EC2B3-C986-4EF0-9B6C-888574E46CCC"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../Framework/BBSideEngine/Main/BBSideEngineManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "2011"
+            endingLineNumber = "2011"
+            landmarkName = "sendEmail(toEmail:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "82D9DF2D-25FB-4C4B-96DF-D32AADDDB9A3"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../Framework/BBSideEngine/Main/BBSideEngineManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "2015"
+            endingLineNumber = "2015"
+            landmarkName = "sendEmail(toEmail:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E84EFBAC-A9A9-44E9-BE86-AA7991C6E0A3"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../Framework/BBSideEngine/Main/BBSideEngineManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "2020"
+            endingLineNumber = "2020"
+            landmarkName = "sendEmail(toEmail:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "CA41885B-63B8-4483-9923-C92D71824C85"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../Framework/BBSideEngine/Main/BBSideEngineManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "2028"
+            endingLineNumber = "2028"
+            landmarkName = "sendEmail(toEmail:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D3C2DBB0-3B11-4838-81BB-34A21786350C"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../Framework/BBSideEngine/Main/BBSideEngineManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "2139"
+            endingLineNumber = "2139"
+            landmarkName = "partnerNotificationsSOS()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6C4BE614-EF29-4AA0-B7EC-E969D59813F4"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../Framework/BBSideEngine/Main/BBSideEngineManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "2059"
+            endingLineNumber = "2059"
+            landmarkName = "partnerNotificationsSOS()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "6C4BE614-EF29-4AA0-B7EC-E969D59813F4 - dacf7eb160780d39"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BBSideEngine.BBSideEngineManager.partnerNotificationsSOS() -&gt; ()"
+                  moduleName = "BBSideEngine"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/phoenixtnmmac/Music/sdksos/busbysdk_ios/Framework/BBSideEngine/Main/BBSideEngineManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "2059"
+                  endingLineNumber = "2059"
+                  offsetFromSymbolStart = "932">
+               </Location>
+               <Location
+                  uuid = "6C4BE614-EF29-4AA0-B7EC-E969D59813F4 - dacf7eb160780d39"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BBSideEngine.BBSideEngineManager.partnerNotificationsSOS() -&gt; ()"
+                  moduleName = "BBSideEngine"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/phoenixtnmmac/Music/sdksos/busbysdk_ios/Framework/BBSideEngine/Main/BBSideEngineManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "2059"
+                  endingLineNumber = "2059"
+                  offsetFromSymbolStart = "1148">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
