@@ -1,0 +1,6 @@
+framework module Pods_SideEngineSample {
+  umbrella header "Pods-SideEngineSample-umbrella.h"
+
+  export *
+  module * { export * }
+}
