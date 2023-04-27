@@ -15,4 +15,4 @@ Incident Avoidance: Our global, low-latency network facilitates anonymous exchan
 With the Flare SDK, you can leverage cutting-edge technology to reduce the risks associated with mobility services and provide a safer experience for your customers.
 
 
-[**Looking for documents**] (http://prod-developer.flaresafety.com.s3-website-eu-west-1.amazonaws.com/)
+Looking for SDK Documentation? [Click here](https://github.com/k-safe/flare_sdk_ios/blob/main/Swift-SampleApp/SideEngineSample/SideEngineSample/CustomThemeViewController.swift "Click here")
