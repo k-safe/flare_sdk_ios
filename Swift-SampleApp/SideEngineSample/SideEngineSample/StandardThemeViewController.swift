@@ -18,14 +18,14 @@ class StandardThemeViewController: UIViewController {
     @IBOutlet weak var riderEmail: UITextField!
     @IBOutlet var startButton : UIButton!
     @IBOutlet weak var confidenceLabel: UILabel!
- 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-         self.confidenceLabel.text = ""
+        self.confidenceLabel.text = ""
         self.startButton.tag = 1
         //SIDE Engine
-//        sideEngineShared.applicationTheme = .standard //You can update your theme here,this will override your configure method theme
+        //        sideEngineShared.applicationTheme = .standard //You can update your theme here,this will override your configure method theme
         
         //Configure SIDE engine and register listner
         self.sideEngineConfigure()
@@ -45,9 +45,9 @@ class StandardThemeViewController: UIViewController {
         //Production mode used when you release app to the app store (You can use any of the one theme e.g. .standard OR .custom)
         //Sandbox mode used only for while developing your App (You can use any of the one theme e.g. .standard OR .custom)
         
-//        let accessKey = isProductionMode ? "Your production license key here" : "Your sandbox license key here"
+        //        let accessKey = isProductionMode ? "Your production license key here" : "Your sandbox license key here"
         let mode: BBMode = isProductionMode ? .production : .sandbox
-        let accessKey = isProductionMode ? "a6628abe-aa88-47fc-b3a8-6bbb702c44c5" : "c8d1aa40-ecdc-4d39-82bb-7e06aed534d1"
+        let accessKey = isProductionMode ? "Your production license key here" : "Your sandbox license key here"
         shared.configure(accessKey: accessKey, mode: mode, theme: .standard)
         
         //------------Register SIDE engine listener here------------
@@ -82,18 +82,18 @@ class StandardThemeViewController: UIViewController {
             
             
             //You can update below parameters if require
-    //        sideEngineShared.backgroundColor = UIColor //Only for standard theme
-    //        sideEngineShared.contentTextColor = UIColor //Only for standard theme
-    //        sideEngineShared.swipeToCancelTextColor = UIColor //Only for standard theme
-    //        sideEngineShared.swipeToCancelBackgroundColor = UIColor //Only for standard theme
-    //        sideEngineShared.impactBody = "Detected a potential fall or impact involving" //This message show in the SMS, email, webook and slack body with the rider name passed in the section:7 (shared.riderName) parameter
+            //        sideEngineShared.backgroundColor = UIColor //Only for standard theme
+            //        sideEngineShared.contentTextColor = UIColor //Only for standard theme
+            //        sideEngineShared.swipeToCancelTextColor = UIColor //Only for standard theme
+            //        sideEngineShared.swipeToCancelBackgroundColor = UIColor //Only for standard theme
+            //        sideEngineShared.impactBody = "Detected a potential fall or impact involving" //This message show in the SMS, email, webook and slack body with the rider name passed in the section:7 (shared.riderName) parameter
             
             
             //Start SIDE engine
             sideEngineShared.startSideEngine()
             
-//            //Register SIDE engine listener here
-//            self.registerSideEngineListener()
+            //            //Register SIDE engine listener here
+            //            self.registerSideEngineListener()
         } else {
             //stopSideEngine will stop all the services inside SIDE engine and release all the varibales
             self.sideEngineShared.stopSideEngine()
@@ -104,72 +104,80 @@ class StandardThemeViewController: UIViewController {
     //TODO: Register SIDE engine listener to receive call back from side engine
     func registerSideEngineListener() {
         sideEngineShared.sideEventsListener { (response) in
-              //This call back basiclly where you call the configure method
+            //This call back basiclly where you call the configure method
             if response.type == .configure && response.success == true {
-                //Now you can ready to start SIDE engine process, if you dont have user input button to start activity then you can start SIDE engine here: sideEngineShared.startSideEngine(mode: .live)
+                //You are now able to initiate the SIDE engine process at any time. In the event that there is no user input button available to commence the activity, you may commence the SIDE engine by executing the following command:
                 print("CONFIGURE with status: \(String(describing: response.success))")
             }
-              else if response.type == .start {
-                  //Update your UI here (e.g. update START button color or text here when SIDE engine started)
-                  print("START live mode with status: \(String(describing: response.success))")
-                  
-                  if response.success == true {
-                      self.startButton.tag = 2
-                      self.startButton.setTitle("STOP", for: .normal)
-                      self.startButton.backgroundColor = .red
-                  } else {
-                        //Handle error message here
-                      print("Error message: \(String(describing: response.payload))")
-                  }
-              }
-              else if response.type == .stop && response.success == true {
-                  //Update your UI here (e.g. update STOP button color or text here when SIDE engine stopped)
-                  print("STOP live mode with status: \(String(describing: response.success))")
-                  self.startButton.tag = 1
-                  self.startButton.setTitle("START", for: .normal)
-                  self.startButton.backgroundColor = .systemGreen
-                  
-              }
-              else if response.type == .incidentDetected {
-                  print("INCIDENT DETECTED with status: \(String(describing: response.success))")
-                  //Threshold reached and you will redirect to countdown page
-                  //Return incident status and confidence level, you can fetch confidance using the below code:
-                  if self.isProductionMode == true {
-                      if let confidence = response.payload?["confidence"] {
-                          print("SIDE engine confidence is: \(confidence)")
-                          self.confidenceLabel.text = "SIDE confidence is: \(confidence)"
-                      }
-                  } else {
-                      //Test mode not return confidence
-                      self.confidenceLabel.text = ""
-                  }
-                  
-                  //Send SMS or Email code here to notify your emergency contact (Github example for sample code)
-//                  self.sendSMS()
-//                  if self.riderEmail.text?.isEmpty == false {
-//                      self.sideEngineShared.sendEmail(toEmail: self.riderEmail.text!)
-//                  }
-              }
-              else if response.type == .incidentCancel {
-                   //User canceled countdown countdown to get event here, this called only if you configured standard theme.
-              }
-              else if response.type == .timerStarted {
-                   //Countdown timer started after breach delay, this called only if you configured standard theme.
-              }
-              else if response.type == .timerFinished {
-                   //Countdown timer finished and jump to the incident summary page, this called only if you configured standard theme.
-              }
-              else if response.type == .incidentAlertSent {
-                   //Return the alert sent (returns alert details (i.e. time, location, recipient, success/failure))
-              }
-              else if response.type == .sms {
-                   //Returns SMS delivery status and response payload
-              }else if response.type == .email {
-                   //Returns email delivery status and response payload
-              }else if response.type == .location {
-                  //Returns CLLocation object
-             }
-          }
+            else if response.type == .start {
+                //Update your UI here (e.g. update START button color or text here when SIDE engine started)
+                print("START live mode with status: \(String(describing: response.success))")
+                
+                if response.success == true {
+                    self.startButton.tag = 2
+                    self.startButton.setTitle("STOP", for: .normal)
+                    self.startButton.backgroundColor = .red
+                } else {
+                    //Handle error message here
+                    print("Error message: \(String(describing: response.payload))")
+                }
+            }
+            else if response.type == .stop && response.success == true {
+                //Update your UI here (e.g. update STOP button color or text here when SIDE engine stopped)
+                print("STOP live mode with status: \(String(describing: response.success))")
+                self.startButton.tag = 1
+                self.startButton.setTitle("START", for: .normal)
+                self.startButton.backgroundColor = .systemGreen
+                
+            }
+            else if response.type == .incidentDetected {
+                
+                //The user has identified an incident, and if necessary, it may be appropriate to log the incident in either the analytics system or an external database. Please refrain from invoking any side engine methods at this juncture.
+                
+                if self.isProductionMode == true {
+                    if let confidence = response.payload?["confidence"] {
+                        print("SIDE engine confidence is: \(confidence)")
+                        self.confidenceLabel.text = "SIDE confidence is: \(confidence)"
+                    }
+                } else {
+                    //Test mode not return confidence
+                    self.confidenceLabel.text = ""
+                }
+                
+                //Send SMS or Email code here to notify your emergency contact (Github example for sample code)
+                //self.sendSMS()
+                //                if self.riderEmail.text?.isEmpty == false {
+                //                    self.sideEngineShared.sendEmail(toEmail: self.riderEmail.text!)
+                //                }
+            }
+            else if response.type == .incidentCancel {
+                //The incident has been automatically cancelled. If necessary, you may log the incident in the analytics system. Please refrain from invoking any side engine methods at this juncture.
+            }
+            else if response.type == .timerStarted {
+                //Countdown timer started after breach delay, this called only if you configured standard theme.
+            }
+            else if response.type == .timerFinished {
+                //Countdown timer finished and jump to the incident summary page, this called only if you configured standard theme.
+            }
+            else if response.type == .incidentAlertSent {
+                //Return the alert sent (returns alert details (i.e. time, location, recipient, success/failure))
+            }
+            else if response.type == .sms {
+                //Returns SMS delivery status and response payload
+            }else if response.type == .email {
+                //Returns email delivery status and response payload
+            }else if response.type == .location {
+                //You will receive the user's location update status in this location. The payload contains a CLLocation object, which allows you to read any parameters if necessary.
+            }else if response.type == .openVideoSurvey {
+                //In the event that your partner has set up a video survey of the user following an incident detection, you will be notified of an "open video survey" event when the user accesses the survey page. It is unnecessary to invoke any SIDE engine functions in this context.
+            }else if response.type == .closeVideoSurvey {
+                //The user has submitted a video survey regarding the types of incidents that occur. you may log the survey event in the analytics system
+            }else if response.type == .incidentVerifiedByUser {
+                //The user has confirmed that the incident is accurate, therefore you may transmit the corresponding events to analytics, if needed. There is no requirement to invoke any functions from either party in this context, as the engine on the side will handle the task automatically.
+            }else if response.type == .resumeSideEngine {
+                //The user has confirmed that the incident is accurate, therefore you may transmit the corresponding events to analytics, if needed. There is no requirement to invoke any functions from either party in this context, as the engine on the side will handle the task automatically.
+            }
+        }
     }
     
     func sendSMS() {
@@ -189,7 +197,7 @@ class StandardThemeViewController: UIViewController {
     func uniqueId() -> String {
         return UIDevice.current.identifierForVendor!.uuidString
     }
-   
+    
     
 }
 

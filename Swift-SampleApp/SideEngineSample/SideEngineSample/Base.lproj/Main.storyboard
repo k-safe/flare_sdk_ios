@@ -178,23 +178,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AWB-lg-WWJ">
-                                <rect key="frame" x="325" y="34.666666666666664" width="69" height="34.999999999999993"/>
-                                <color key="backgroundColor" systemColor="systemRedColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="69" id="NAy-AJ-MH4"/>
-                                    <constraint firstAttribute="height" constant="35" id="eVe-qh-5UQ"/>
-                                </constraints>
-                                <color key="tintColor" systemColor="systemRedColor"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Crash">
-                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <color key="baseBackgroundColor" systemColor="systemRedColor"/>
-                                </buttonConfiguration>
-                                <connections>
-                                    <action selector="testCrash" destination="O1t-L8-hz1" eventType="touchUpInside" id="D74-gX-JeI"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="FxL-YF-toP"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -203,14 +186,12 @@
                             <constraint firstItem="FxL-YF-toP" firstAttribute="trailing" secondItem="pfl-O3-u5j" secondAttribute="trailing" constant="20" id="BAu-Vx-EBN"/>
                             <constraint firstItem="FxL-YF-toP" firstAttribute="bottom" secondItem="mKU-Zd-xVD" secondAttribute="bottom" constant="70" id="BNb-ac-uFk"/>
                             <constraint firstItem="AUt-iz-QYR" firstAttribute="centerX" secondItem="FxL-YF-toP" secondAttribute="centerX" id="K6r-gL-Kgd"/>
-                            <constraint firstItem="FxL-YF-toP" firstAttribute="trailing" secondItem="AWB-lg-WWJ" secondAttribute="trailing" constant="20" id="ZTk-dv-Kt4"/>
                             <constraint firstItem="FxL-YF-toP" firstAttribute="trailing" secondItem="ieG-Ad-MnB" secondAttribute="trailing" constant="30" id="eRA-Tt-s6m"/>
                             <constraint firstItem="ieG-Ad-MnB" firstAttribute="leading" secondItem="FxL-YF-toP" secondAttribute="leading" constant="30" id="eoT-EX-FN7"/>
                             <constraint firstItem="mKU-Zd-xVD" firstAttribute="top" secondItem="AUt-iz-QYR" secondAttribute="bottom" constant="30" id="g2m-WS-mhd"/>
                             <constraint firstItem="Oit-ti-iQe" firstAttribute="top" secondItem="FxL-YF-toP" secondAttribute="top" constant="40" id="g9p-k6-MWG"/>
                             <constraint firstItem="ieG-Ad-MnB" firstAttribute="top" secondItem="Oit-ti-iQe" secondAttribute="bottom" constant="40" id="htg-x3-HM6"/>
                             <constraint firstItem="AUt-iz-QYR" firstAttribute="top" secondItem="pfl-O3-u5j" secondAttribute="bottom" constant="15" id="jdR-mX-pSq"/>
-                            <constraint firstItem="AWB-lg-WWJ" firstAttribute="centerY" secondItem="Oit-ti-iQe" secondAttribute="centerY" id="kRZ-te-D9l"/>
                             <constraint firstItem="pfl-O3-u5j" firstAttribute="leading" secondItem="FxL-YF-toP" secondAttribute="leading" constant="20" id="qLq-1H-Ndi"/>
                             <constraint firstItem="Oit-ti-iQe" firstAttribute="centerX" secondItem="FxL-YF-toP" secondAttribute="centerX" id="u2P-Mm-OiK"/>
                         </constraints>
@@ -761,9 +742,6 @@
         </systemColor>
         <systemColor name="systemPurpleColor">
             <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemRedColor">
-            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

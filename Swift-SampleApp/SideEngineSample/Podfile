@@ -4,6 +4,6 @@
 target 'SideEngineSample' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
-  pod 'SideEngine-iOS', :git => 'https://Github username here@github.com/k-safe/busbysdk_ios.git'
+  pod 'SideEngine-iOS'
   pod 'IQKeyboardManager', '~> 6.5'
 end
