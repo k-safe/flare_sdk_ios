@@ -18,22 +18,10 @@
 		D018BCDC269C4FDE00F21A20 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D018BCDA269C4FDE00F21A20 /* LaunchScreen.storyboard */; };
 		D05B6964280FDFE700356644 /* CustomCountDownViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05B6963280FDFE600356644 /* CustomCountDownViewController.swift */; };
 		D05B6967280FE89600356644 /* TestSideEngineSupportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05B6966280FE89600356644 /* TestSideEngineSupportViewController.swift */; };
-		D0AA8CC529372F8F0086B1CC /* BBSideEngine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0AA8CC429372F2B0086B1CC /* BBSideEngine.framework */; };
-		D0AA8CC629372F8F0086B1CC /* BBSideEngine.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D0AA8CC429372F2B0086B1CC /* BBSideEngine.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D0AA8CDB29376B190086B1CC /* VideoAskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AA8CDA29376B190086B1CC /* VideoAskViewController.swift */; };
 		D0DF6E9A27FB197500D1CEB7 /* TestViewModeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0DF6E9827FB197500D1CEB7 /* TestViewModeController.swift */; };
 		D4315A4229DFDF21003CB087 /* EmergencySOSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4315A4129DFDF21003CB087 /* EmergencySOSViewController.swift */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		D0AA8CC329372F2B0086B1CC /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D0AA8CBF29372F2B0086B1CC /* BBSideEngine.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = D05F9690265CBC9800FC0AE0;
-			remoteInfo = BBSideEngine;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		D0A68C2B26A6B9F70069D872 /* Embed Frameworks */ = {
@@ -42,7 +30,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				D0AA8CC629372F8F0086B1CC /* BBSideEngine.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -65,7 +52,6 @@
 		D018BCDD269C4FDE00F21A20 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D05B6963280FDFE600356644 /* CustomCountDownViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCountDownViewController.swift; sourceTree = "<group>"; };
 		D05B6966280FE89600356644 /* TestSideEngineSupportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestSideEngineSupportViewController.swift; sourceTree = "<group>"; };
-		D0AA8CBF29372F2B0086B1CC /* BBSideEngine.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = BBSideEngine.xcodeproj; path = ../../../Framework/BBSideEngine.xcodeproj; sourceTree = "<group>"; };
 		D0AA8CDA29376B190086B1CC /* VideoAskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoAskViewController.swift; sourceTree = "<group>"; };
 		D0DF6E9827FB197500D1CEB7 /* TestViewModeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestViewModeController.swift; sourceTree = "<group>"; };
 		D4315A4129DFDF21003CB087 /* EmergencySOSViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmergencySOSViewController.swift; sourceTree = "<group>"; };
@@ -77,7 +63,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				90899B364309EEA7BC78298A /* Pods_SideEngineSample.framework in Frameworks */,
-				D0AA8CC529372F8F0086B1CC /* BBSideEngine.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -105,7 +90,6 @@
 		D018BCCE269C4FDB00F21A20 /* SideEngineSample */ = {
 			isa = PBXGroup;
 			children = (
-				D0AA8CBF29372F2B0086B1CC /* BBSideEngine.xcodeproj */,
 				D018BCCF269C4FDB00F21A20 /* AppDelegate.swift */,
 				D018BCD1269C4FDB00F21A20 /* SceneDelegate.swift */,
 				D018BCD3269C4FDB00F21A20 /* ViewController.swift */,
@@ -130,14 +114,6 @@
 				43355CD9386661AEBB5952B6 /* Pods_SideEngineSample.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		D0AA8CC029372F2B0086B1CC /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				D0AA8CC429372F2B0086B1CC /* BBSideEngine.framework */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		FF1F652BAA6E453F1A246123 /* Pods */ = {
@@ -197,28 +173,12 @@
 			mainGroup = D018BCC3269C4FDB00F21A20;
 			productRefGroup = D018BCCD269C4FDB00F21A20 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = D0AA8CC029372F2B0086B1CC /* Products */;
-					ProjectRef = D0AA8CBF29372F2B0086B1CC /* BBSideEngine.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				D018BCCB269C4FDB00F21A20 /* SideEngineSample */,
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		D0AA8CC429372F2B0086B1CC /* BBSideEngine.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = BBSideEngine.framework;
-			remoteRef = D0AA8CC329372F2B0086B1CC /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		D018BCCA269C4FDB00F21A20 /* Resources */ = {
