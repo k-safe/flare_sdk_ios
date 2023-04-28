@@ -310,6 +310,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) BBSideEngine
 @property (nonatomic, copy) NSString * _Nonnull impactBodySOS;
 @property (nonatomic) BOOL showLog;
 @property (nonatomic, copy) NSString * _Nonnull appType;
+@property (nonatomic, copy) NSString * _Nonnull activity;
 @property (nonatomic) BOOL enableVRUUpdates;
 @property (nonatomic) NSInteger low_frequency_intervals_seconds;
 @property (nonatomic) NSInteger high_frequency_intervals_seconds;
