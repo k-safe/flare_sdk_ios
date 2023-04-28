@@ -102,6 +102,7 @@ import _StringProcessing
   @objc public var impactBodySOS: Swift.String
   @objc public var showLog: Swift.Bool
   @objc public var appType: Swift.String
+  @objc public var activity: Swift.String
   @objc public var enableVRUUpdates: Swift.Bool
   @objc public var low_frequency_intervals_seconds: Swift.Int
   @objc public var high_frequency_intervals_seconds: Swift.Int
