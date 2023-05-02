@@ -1,0 +1,6 @@
+framework module Pods_FlareSDKSample {
+  umbrella header "Pods-FlareSDKSample-umbrella.h"
+
+  export *
+  module * { export * }
+}

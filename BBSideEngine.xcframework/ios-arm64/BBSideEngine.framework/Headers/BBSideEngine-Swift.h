@@ -311,7 +311,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) BBSideEngine
 @property (nonatomic) BOOL showLog;
 @property (nonatomic, copy) NSString * _Nonnull appType;
 @property (nonatomic, copy) NSString * _Nonnull activity;
-@property (nonatomic) BOOL enableVRUUpdates;
+@property (nonatomic) BOOL enable_flare_aware_network;
 @property (nonatomic) NSInteger low_frequency_intervals_seconds;
 @property (nonatomic) NSInteger high_frequency_intervals_seconds;
 @property (nonatomic) BOOL high_frequency_mode_enabled;
@@ -335,13 +335,15 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) BBSideEngine
 
 
 
+
 @interface BBSideEngineManager (SWIFT_EXTENSION(BBSideEngine))
 - (void)startSideEngine;
 - (void)stopSideEngine;
 - (void)activeSOS;
+- (void)startFlareAware;
+- (void)stopFlareAware;
 - (void)deActiveSOS;
 @end
-
 
 
 @class NSArray;
@@ -381,6 +383,8 @@ typedef SWIFT_ENUM(NSInteger, BBSideOperation, open) {
   BBSideOperationResumeSideEngine = 16,
   BBSideOperationSosActive = 17,
   BBSideOperationSosDeActive = 18,
+  BBSideOperationStartFlareAware = 19,
+  BBSideOperationStopFlareAware = 20,
 };
 
 typedef SWIFT_ENUM(NSInteger, BBTheme, open) {

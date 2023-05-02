@@ -69,6 +69,8 @@ import _StringProcessing
   case resumeSideEngine
   case sosActive
   case sosDeActive
+  case startFlareAware
+  case stopFlareAware
   public init?(rawValue: Swift.Int)
   public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
@@ -103,7 +105,7 @@ import _StringProcessing
   @objc public var showLog: Swift.Bool
   @objc public var appType: Swift.String
   @objc public var activity: Swift.String
-  @objc public var enableVRUUpdates: Swift.Bool
+  @objc public var enable_flare_aware_network: Swift.Bool
   @objc public var low_frequency_intervals_seconds: Swift.Int
   @objc public var high_frequency_intervals_seconds: Swift.Int
   @objc public var high_frequency_mode_enabled: Swift.Bool {
@@ -119,6 +121,8 @@ extension BBSideEngine.BBSideEngineManager {
   @objc dynamic public func startSideEngine()
   @objc dynamic public func stopSideEngine()
   @objc dynamic public func activeSOS()
+  @objc dynamic public func startFlareAware()
+  @objc dynamic public func stopFlareAware()
   @objc dynamic public func deActiveSOS()
 }
 extension BBSideEngine.BBSideEngineManager {

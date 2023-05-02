@@ -1600,6 +1600,88 @@
             "fixedbinaryorder": 18
           },
           {
+            "kind": "Var",
+            "name": "startFlareAware",
+            "printedName": "startFlareAware",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(BBSideEngine.BBSideOperation.Type) -> BBSideEngine.BBSideOperation",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "BBSideOperation",
+                    "printedName": "BBSideEngine.BBSideOperation",
+                    "usr": "c:@M@BBSideEngine@E@BBSideOperation"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "BBSideEngine.BBSideOperation.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "BBSideOperation",
+                        "printedName": "BBSideEngine.BBSideOperation",
+                        "usr": "c:@M@BBSideEngine@E@BBSideOperation"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "c:@M@BBSideEngine@E@BBSideOperation@BBSideOperationStartFlareAware",
+            "mangledName": "$s12BBSideEngine0A9OperationO15startFlareAwareyA2CmF",
+            "moduleName": "BBSideEngine",
+            "declAttributes": [
+              "ObjC"
+            ],
+            "fixedbinaryorder": 19
+          },
+          {
+            "kind": "Var",
+            "name": "stopFlareAware",
+            "printedName": "stopFlareAware",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(BBSideEngine.BBSideOperation.Type) -> BBSideEngine.BBSideOperation",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "BBSideOperation",
+                    "printedName": "BBSideEngine.BBSideOperation",
+                    "usr": "c:@M@BBSideEngine@E@BBSideOperation"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "BBSideEngine.BBSideOperation.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "BBSideOperation",
+                        "printedName": "BBSideEngine.BBSideOperation",
+                        "usr": "c:@M@BBSideEngine@E@BBSideOperation"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "c:@M@BBSideEngine@E@BBSideOperation@BBSideOperationStopFlareAware",
+            "mangledName": "$s12BBSideEngine0A9OperationO14stopFlareAwareyA2CmF",
+            "moduleName": "BBSideEngine",
+            "declAttributes": [
+              "ObjC"
+            ],
+            "fixedbinaryorder": 20
+          },
+          {
             "kind": "Constructor",
             "name": "init",
             "printedName": "init(rawValue:)",
@@ -4135,8 +4217,8 @@
           },
           {
             "kind": "Var",
-            "name": "enableVRUUpdates",
-            "printedName": "enableVRUUpdates",
+            "name": "enable_flare_aware_network",
+            "printedName": "enable_flare_aware_network",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -4146,8 +4228,8 @@
               }
             ],
             "declKind": "Var",
-            "usr": "c:@M@BBSideEngine@objc(cs)BBSideEngineManager(py)enableVRUUpdates",
-            "mangledName": "$s12BBSideEngine0aB7ManagerC16enableVRUUpdatesSbvp",
+            "usr": "c:@M@BBSideEngine@objc(cs)BBSideEngineManager(py)enable_flare_aware_network",
+            "mangledName": "$s12BBSideEngine0aB7ManagerC26enable_flare_aware_networkSbvp",
             "moduleName": "BBSideEngine",
             "declAttributes": [
               "HasInitialValue",
@@ -4170,8 +4252,8 @@
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "c:@M@BBSideEngine@objc(cs)BBSideEngineManager(im)enableVRUUpdates",
-                "mangledName": "$s12BBSideEngine0aB7ManagerC16enableVRUUpdatesSbvg",
+                "usr": "c:@M@BBSideEngine@objc(cs)BBSideEngineManager(im)enable_flare_aware_network",
+                "mangledName": "$s12BBSideEngine0aB7ManagerC26enable_flare_aware_networkSbvg",
                 "moduleName": "BBSideEngine",
                 "implicit": true,
                 "declAttributes": [
@@ -4197,8 +4279,8 @@
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "c:@M@BBSideEngine@objc(cs)BBSideEngineManager(im)setEnableVRUUpdates:",
-                "mangledName": "$s12BBSideEngine0aB7ManagerC16enableVRUUpdatesSbvs",
+                "usr": "c:@M@BBSideEngine@objc(cs)BBSideEngineManager(im)setEnable_flare_aware_network:",
+                "mangledName": "$s12BBSideEngine0aB7ManagerC26enable_flare_aware_networkSbvs",
                 "moduleName": "BBSideEngine",
                 "implicit": true,
                 "declAttributes": [
@@ -4218,8 +4300,8 @@
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "s:12BBSideEngine0aB7ManagerC16enableVRUUpdatesSbvM",
-                "mangledName": "$s12BBSideEngine0aB7ManagerC16enableVRUUpdatesSbvM",
+                "usr": "s:12BBSideEngine0aB7ManagerC26enable_flare_aware_networkSbvM",
+                "mangledName": "$s12BBSideEngine0aB7ManagerC26enable_flare_aware_networkSbvM",
                 "moduleName": "BBSideEngine",
                 "implicit": true,
                 "accessorKind": "_modify"
@@ -4734,6 +4816,53 @@
               "AccessControl",
               "ObjC",
               "RawDocComment"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "startFlareAware",
+            "printedName": "startFlareAware()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@CM@BBSideEngine@objc(cs)BBSideEngineManager(im)startFlareAware",
+            "mangledName": "$s12BBSideEngine0aB7ManagerC15startFlareAwareyyF",
+            "moduleName": "BBSideEngine",
+            "declAttributes": [
+              "Dynamic",
+              "AccessControl",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "stopFlareAware",
+            "printedName": "stopFlareAware()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@CM@BBSideEngine@objc(cs)BBSideEngineManager(im)stopFlareAware",
+            "mangledName": "$s12BBSideEngine0aB7ManagerC14stopFlareAwareyyF",
+            "moduleName": "BBSideEngine",
+            "declAttributes": [
+              "Dynamic",
+              "AccessControl",
+              "ObjC"
             ],
             "isFromExtension": true,
             "funcSelfKind": "NonMutating"
@@ -5619,6 +5748,20 @@
     {
       "filePath": "\/Users\/phoenix\/Documents\/K-Safe\/iOS-SDK\/Develop\/busbysdk_ios\/Framework\/BBSideEngine\/Helpers\/BBHelpers.swift",
       "kind": "IntegerLiteral",
+      "offset": 1158,
+      "length": 15,
+      "value": "19"
+    },
+    {
+      "filePath": "\/Users\/phoenix\/Documents\/K-Safe\/iOS-SDK\/Develop\/busbysdk_ios\/Framework\/BBSideEngine\/Helpers\/BBHelpers.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1183,
+      "length": 14,
+      "value": "20"
+    },
+    {
+      "filePath": "\/Users\/phoenix\/Documents\/K-Safe\/iOS-SDK\/Develop\/busbysdk_ios\/Framework\/BBSideEngine\/Helpers\/BBHelpers.swift",
+      "kind": "IntegerLiteral",
       "offset": 765,
       "length": 9,
       "value": "1"
@@ -5745,42 +5888,56 @@
     {
       "filePath": "\/Users\/phoenix\/Documents\/K-Safe\/iOS-SDK\/Develop\/busbysdk_ios\/Framework\/BBSideEngine\/Helpers\/BBHelpers.swift",
       "kind": "IntegerLiteral",
-      "offset": 1237,
+      "offset": 1158,
+      "length": 15,
+      "value": "19"
+    },
+    {
+      "filePath": "\/Users\/phoenix\/Documents\/K-Safe\/iOS-SDK\/Develop\/busbysdk_ios\/Framework\/BBSideEngine\/Helpers\/BBHelpers.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1183,
+      "length": 14,
+      "value": "20"
+    },
+    {
+      "filePath": "\/Users\/phoenix\/Documents\/K-Safe\/iOS-SDK\/Develop\/busbysdk_ios\/Framework\/BBSideEngine\/Helpers\/BBHelpers.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1286,
       "length": 9,
       "value": "1"
     },
     {
       "filePath": "\/Users\/phoenix\/Documents\/K-Safe\/iOS-SDK\/Develop\/busbysdk_ios\/Framework\/BBSideEngine\/Helpers\/BBHelpers.swift",
       "kind": "IntegerLiteral",
-      "offset": 1256,
+      "offset": 1305,
       "length": 11,
       "value": "2"
     },
     {
       "filePath": "\/Users\/phoenix\/Documents\/K-Safe\/iOS-SDK\/Develop\/busbysdk_ios\/Framework\/BBSideEngine\/Helpers\/BBHelpers.swift",
       "kind": "IntegerLiteral",
-      "offset": 1237,
+      "offset": 1286,
       "length": 9,
       "value": "1"
     },
     {
       "filePath": "\/Users\/phoenix\/Documents\/K-Safe\/iOS-SDK\/Develop\/busbysdk_ios\/Framework\/BBSideEngine\/Helpers\/BBHelpers.swift",
       "kind": "IntegerLiteral",
-      "offset": 1256,
+      "offset": 1305,
       "length": 11,
       "value": "2"
     },
     {
       "filePath": "\/Users\/phoenix\/Documents\/K-Safe\/iOS-SDK\/Develop\/busbysdk_ios\/Framework\/BBSideEngine\/Helpers\/BBHelpers.swift",
       "kind": "BooleanLiteral",
-      "offset": 1381,
+      "offset": 1430,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/phoenix\/Documents\/K-Safe\/iOS-SDK\/Develop\/busbysdk_ios\/Framework\/BBSideEngine\/Helpers\/BBHelpers.swift",
       "kind": "StringLiteral",
-      "offset": 1321,
+      "offset": 1370,
       "length": 10,
       "value": "\"BBSideEngine.BBResponse\""
     },
@@ -6070,6 +6227,20 @@
       "offset": 4973,
       "length": 76,
       "value": "\"Your partner has enabled video survey, which is currently being processed.\""
+    },
+    {
+      "filePath": "\/Users\/phoenix\/Documents\/K-Safe\/iOS-SDK\/Develop\/busbysdk_ios\/Framework\/BBSideEngine\/Utils\/BBConstants.swift",
+      "kind": "StringLiteral",
+      "offset": 5078,
+      "length": 98,
+      "value": "\"Commence the dissemination of Vulnerable Road User (VRU) location data to proximate fleet users.\""
+    },
+    {
+      "filePath": "\/Users\/phoenix\/Documents\/K-Safe\/iOS-SDK\/Develop\/busbysdk_ios\/Framework\/BBSideEngine\/Utils\/BBConstants.swift",
+      "kind": "StringLiteral",
+      "offset": 5205,
+      "length": 86,
+      "value": "\"Cease the dissemination of Vulnerable Road User location data to nearby fleet users.\""
     },
     {
       "filePath": "\/Users\/phoenix\/Documents\/K-Safe\/iOS-SDK\/Develop\/busbysdk_ios\/Framework\/BBSideEngine\/Main\/BBSideEngineManager.swift",
@@ -6557,77 +6728,77 @@
     {
       "filePath": "\/Users\/phoenix\/Documents\/K-Safe\/iOS-SDK\/Develop\/busbysdk_ios\/Framework\/BBSideEngine\/Main\/BBSideEngineManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 7400,
+      "offset": 7410,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/phoenix\/Documents\/K-Safe\/iOS-SDK\/Develop\/busbysdk_ios\/Framework\/BBSideEngine\/Main\/BBSideEngineManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 7449,
+      "offset": 7458,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/phoenix\/Documents\/K-Safe\/iOS-SDK\/Develop\/busbysdk_ios\/Framework\/BBSideEngine\/Main\/BBSideEngineManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 7575,
+      "offset": 7584,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/phoenix\/Documents\/K-Safe\/iOS-SDK\/Develop\/busbysdk_ios\/Framework\/BBSideEngine\/Main\/BBSideEngineManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 7662,
+      "offset": 7671,
       "length": 2,
       "value": "15"
     },
     {
       "filePath": "\/Users\/phoenix\/Documents\/K-Safe\/iOS-SDK\/Develop\/busbysdk_ios\/Framework\/BBSideEngine\/Main\/BBSideEngineManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 7838,
+      "offset": 7847,
       "length": 1,
       "value": "3"
     },
     {
       "filePath": "\/Users\/phoenix\/Documents\/K-Safe\/iOS-SDK\/Develop\/busbysdk_ios\/Framework\/BBSideEngine\/Main\/BBSideEngineManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 7959,
+      "offset": 7968,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/phoenix\/Documents\/K-Safe\/iOS-SDK\/Develop\/busbysdk_ios\/Framework\/BBSideEngine\/Main\/BBSideEngineManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 8092,
+      "offset": 8101,
       "length": 2,
       "value": "20"
     },
     {
       "filePath": "\/Users\/phoenix\/Documents\/K-Safe\/iOS-SDK\/Develop\/busbysdk_ios\/Framework\/BBSideEngine\/Main\/BBSideEngineManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 8205,
+      "offset": 8214,
       "length": 2,
       "value": "15"
     },
     {
       "filePath": "\/Users\/phoenix\/Documents\/K-Safe\/iOS-SDK\/Develop\/busbysdk_ios\/Framework\/BBSideEngine\/Main\/BBSideEngineManager.swift",
       "kind": "StringLiteral",
-      "offset": 8310,
+      "offset": 8319,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/phoenix\/Documents\/K-Safe\/iOS-SDK\/Develop\/busbysdk_ios\/Framework\/BBSideEngine\/Main\/BBSideEngineManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 28144,
+      "offset": 29387,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/phoenix\/Documents\/K-Safe\/iOS-SDK\/Develop\/busbysdk_ios\/Framework\/BBSideEngine\/Main\/BBSideEngineManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 133821,
+      "offset": 135064,
       "length": 5,
       "value": "false"
     },
