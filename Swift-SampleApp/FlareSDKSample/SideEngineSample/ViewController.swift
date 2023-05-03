@@ -10,12 +10,15 @@ import BBSideEngine
 
 class ViewController: UIViewController {
     
-    var isProductionMode: Bool = true //This will used to configure SDK production or sandbox mode
+    var isProductionMode: Bool = false //This will used to configure SDK production or sandbox mode
     @IBOutlet weak var modeLabel: UILabel!
     
     @IBOutlet weak var productionButton: UIButton!
     @IBOutlet weak var sandboxButton: UIButton!
     @IBOutlet weak var sosButton: UIButton!
+    @IBOutlet weak var flareAwareButton: UIButton!
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,18 +32,28 @@ class ViewController: UIViewController {
         self.productionButton.setImage(UIImage(named: "checked"), for: .selected)
         self.productionButton.setImage(UIImage(named: "un_checked"), for: .normal)
         
+        self.initConfigure()
+    }
+    func initConfigure() {
+        self.isProductionMode = false
         self.sandboxButton.isSelected = true
         self.productionButton.isSelected = false
+        self.sosButton.isHidden = true
+        self.flareAwareButton.isHidden = true
     }
     @IBAction func updateModeTapped(button: UIButton) {
         if button.tag == 1 {
             self.sandboxButton.isSelected = true
             self.productionButton.isSelected = false
             self.isProductionMode = false
+            self.sosButton.isHidden = true
+            self.flareAwareButton.isHidden = true
         }else if button.tag == 2 {
             self.sandboxButton.isSelected = false
             self.productionButton.isSelected = true
             self.isProductionMode = true
+            self.sosButton.isHidden = false
+            self.flareAwareButton.isHidden = false
         }
     }
     
