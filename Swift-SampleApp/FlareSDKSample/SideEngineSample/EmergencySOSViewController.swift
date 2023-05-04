@@ -11,7 +11,6 @@ import BBSideEngine
 class EmergencySOSViewController: UIViewController {
     
     let sideEngineShared = BBSideEngineManager.shared
-    var isProductionMode: Bool = true //This will used to configure SDK production or sandbox mode
     @IBOutlet weak var btnShare: UIButton!
     @IBOutlet weak var btnActivate: UIButton!
     @IBOutlet weak var countryCode: UITextField!

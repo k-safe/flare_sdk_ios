@@ -139,10 +139,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="nta-MW-Jeo"/>
                     <connections>
-                        <outlet property="flareAwareButton" destination="Z27-sL-WOE" id="bN1-By-c4p"/>
                         <outlet property="productionButton" destination="esJ-HB-5eM" id="8yj-TZ-Xks"/>
                         <outlet property="sandboxButton" destination="bU0-vh-taw" id="9nZ-Tl-Mhr"/>
-                        <outlet property="sosButton" destination="lDe-hS-K2o" id="Ipf-f5-9N5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
