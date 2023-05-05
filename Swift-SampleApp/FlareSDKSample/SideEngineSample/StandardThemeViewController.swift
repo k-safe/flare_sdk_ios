@@ -45,8 +45,8 @@ class StandardThemeViewController: UIViewController {
         //Production mode used when you release app to the app store (You can use any of the one theme e.g. .standard OR .custom)
         //Sandbox mode used only for while developing your App (You can use any of the one theme e.g. .standard OR .custom)
         
-        let accessKey = isProductionMode ? "Your production license key here" : "Your sandbox license key here"
         let mode: BBMode = isProductionMode ? .production : .sandbox
+        let accessKey = isProductionMode ? "Your production license key here" : "Your sandbox license key here"
         shared.configure(accessKey: accessKey, mode: mode, theme: .standard)
         
         //------------Register SIDE engine listener here------------
@@ -142,12 +142,6 @@ class StandardThemeViewController: UIViewController {
                     //Test mode not return confidence
                     self.confidenceLabel.text = ""
                 }
-                
-                //Send SMS or Email code here to notify your emergency contact (Github example for sample code)
-                //self.sendSMS()
-                //                if self.riderEmail.text?.isEmpty == false {
-                //                    self.sideEngineShared.sendEmail(toEmail: self.riderEmail.text!)
-                //                }
             }
             else if response.type == .incidentCancel {
                 //The incident has been automatically cancelled. If necessary, you may log the incident in the analytics system. Please refrain from invoking any side engine methods at this juncture.
@@ -157,6 +151,8 @@ class StandardThemeViewController: UIViewController {
             }
             else if response.type == .timerFinished {
                 //Countdown timer finished and jump to the incident summary page, this called only if you configured standard theme.
+                self.sendSMS()
+                self.sendEmail()
             }
             else if response.type == .incidentAlertSent {
                 //Return the alert sent (returns alert details (i.e. time, location, recipient, success/failure))
@@ -190,6 +186,12 @@ class StandardThemeViewController: UIViewController {
             BBSideEngineManager.shared.sendSMS(contact: contact)
         }
         
+    }
+    
+    func sendEmail() {
+        if self.riderEmail.text?.isEmpty == false {
+            BBSideEngineManager.shared.sendEmail(toEmail: self.riderEmail.text!)
+        }
     }
     
     //Generate random uniqueID

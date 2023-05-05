@@ -49,6 +49,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func standardButtonTapped() {
+//        fatalError("Crash was triggered")
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         let controller = storyBoard.instantiateViewController(withIdentifier: "StandardThemeViewController") as! StandardThemeViewController
         controller.isProductionMode = self.isProductionMode

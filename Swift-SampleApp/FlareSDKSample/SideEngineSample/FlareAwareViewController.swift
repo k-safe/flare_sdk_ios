@@ -13,6 +13,7 @@ class FlareAwareViewController: UIViewController {
 
     let sideEngineShared = BBSideEngineManager.shared
     @IBOutlet weak var startButton: UIButton!
+    var isProductionMode: Bool = true //This will used to configure SDK production or sandbox mode
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,7 +55,7 @@ class FlareAwareViewController: UIViewController {
         //Production mode used when you release app to the app store (You can use any of the one theme e.g. .standard OR .custom)
         //Sandbox mode used only for while developing your App (You can use any of the one theme e.g. .standard OR .custom)
         
-        //        let accessKey = isProductionMode ? "Your production license key here" : "Your sandbox license key here"
+        //let accessKey = "Your production license key here"
         let mode: BBMode = .production
         let accessKey = "Your production license key here"
         shared.configure(accessKey: accessKey, mode: mode, theme: .standard)

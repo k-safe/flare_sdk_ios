@@ -10,9 +10,13 @@ import AVFoundation
 import AudioToolbox
 import BBSideEngine
 
-
+protocol CustomTimerDelegate {
+    func didFinishTimer()
+}
 class CustomCountDownViewController: UIViewController {
   
+    var delegate: CustomTimerDelegate?
+    
     @IBOutlet var mainTitleLabel : UILabel!
     @IBOutlet var secondsLabel : UILabel!
     @IBOutlet var countDownLabel : UILabel!
@@ -79,6 +83,11 @@ extension CustomCountDownViewController {
         if state != .active || isModal == true {
             self.closeTapped() //Auto dismiss and resume side engine
         } else {
+            
+            //Delegate used to send sms or email in user emergency contacts
+            if self.delegate != nil {
+                self.delegate?.didFinishTimer()
+            }
             DispatchQueue.main.async {
                 let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
                 let testViewModeController = storyBoard.instantiateViewController(withIdentifier: "TestSideEngineSupportViewController") as! TestSideEngineSupportViewController
@@ -116,7 +125,9 @@ extension CustomCountDownViewController{
         
         if finished == true {
             BBSideEngineManager.shared.notifyPartner()
-            self.openSupportScreen()
+            DispatchQueue.main.async {
+                self.openSupportScreen()
+            }
         }
      }
 }
