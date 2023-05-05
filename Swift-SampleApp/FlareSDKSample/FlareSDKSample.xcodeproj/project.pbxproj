@@ -21,7 +21,6 @@
 		D05B6967280FE89600356644 /* TestSideEngineSupportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05B6966280FE89600356644 /* TestSideEngineSupportViewController.swift */; };
 		D0AA8CDB29376B190086B1CC /* VideoAskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AA8CDA29376B190086B1CC /* VideoAskViewController.swift */; };
 		D0DF6E9A27FB197500D1CEB7 /* TestViewModeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0DF6E9827FB197500D1CEB7 /* TestViewModeController.swift */; };
-		D0F305442A052AA300F31FA9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D0F305422A052AA300F31FA9 /* GoogleService-Info.plist */; };
 		D4315A4229DFDF21003CB087 /* EmergencySOSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4315A4129DFDF21003CB087 /* EmergencySOSViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -57,7 +56,6 @@
 		D05B6966280FE89600356644 /* TestSideEngineSupportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestSideEngineSupportViewController.swift; sourceTree = "<group>"; };
 		D0AA8CDA29376B190086B1CC /* VideoAskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoAskViewController.swift; sourceTree = "<group>"; };
 		D0DF6E9827FB197500D1CEB7 /* TestViewModeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestViewModeController.swift; sourceTree = "<group>"; };
-		D0F305422A052AA300F31FA9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D4315A4129DFDF21003CB087 /* EmergencySOSViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmergencySOSViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -84,7 +82,6 @@
 		D018BCC3269C4FDB00F21A20 = {
 			isa = PBXGroup;
 			children = (
-				D0F305422A052AA300F31FA9 /* GoogleService-Info.plist */,
 				D018BCCE269C4FDB00F21A20 /* SideEngineSample */,
 				D018BCCD269C4FDB00F21A20 /* Products */,
 				FF1F652BAA6E453F1A246123 /* Pods */,
@@ -144,7 +141,6 @@
 				D018BCCA269C4FDB00F21A20 /* Resources */,
 				F53A451BE0E49577C638A313 /* [CP] Embed Pods Frameworks */,
 				D0332AF329FFAD5100D24816 /* Embed Frameworks */,
-				D0F305452A052BDC00F31FA9 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -193,7 +189,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				D018BCDC269C4FDE00F21A20 /* LaunchScreen.storyboard in Resources */,
-				D0F305442A052AA300F31FA9 /* GoogleService-Info.plist in Resources */,
 				D018BCD9269C4FDE00F21A20 /* Assets.xcassets in Resources */,
 				D018BCD7269C4FDB00F21A20 /* Main.storyboard in Resources */,
 			);
@@ -223,25 +218,6 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
-		};
-		D0F305452A052BDC00F31FA9 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Resources/DWARF/${TARGET_NAME}",
-				"$(SRCROOT)/$(BUILT_PRODUCTS_DIR)/$(INFOPLIST_PATH)",
-			);
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"${PODS_ROOT}/FirebaseCrashlytics/run\"\n";
 		};
 		F53A451BE0E49577C638A313 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;

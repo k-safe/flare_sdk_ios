@@ -38,9 +38,8 @@ class CustomThemeViewController: UIViewController {
         //Production mode used when you release app to the app store (You can use any of the one theme e.g. .standard OR .custom)
         //Sandbox mode used only for while developing your App (You can use any of the one theme e.g. .standard OR .custom)
         
-        //        let accessKey = isProductionMode ? "Your production license key here" : "Your sandbox license key here"
         let mode: BBMode = isProductionMode ? .production : .sandbox
-        let accessKey = isProductionMode ? "a6628abe-aa88-47fc-b3a8-6bbb702c44c5" : "c8d1aa40-ecdc-4d39-82bb-7e06aed534d1"
+        let accessKey = isProductionMode ? "Your production license key here" : "Your sandbox license key here"
         shared.configure(accessKey: accessKey, mode: mode, theme: .custom)
         
         //------------Register SIDE engine listener here------------
