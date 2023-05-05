@@ -15,9 +15,6 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var productionButton: UIButton!
     @IBOutlet weak var sandboxButton: UIButton!
-    @IBOutlet weak var sosButton: UIButton!
-    @IBOutlet weak var flareAwareButton: UIButton!
-    
     
     
     override func viewDidLoad() {
@@ -38,26 +35,21 @@ class ViewController: UIViewController {
         self.isProductionMode = false
         self.sandboxButton.isSelected = true
         self.productionButton.isSelected = false
-        self.sosButton.isHidden = true
-        self.flareAwareButton.isHidden = true
     }
     @IBAction func updateModeTapped(button: UIButton) {
         if button.tag == 1 {
             self.sandboxButton.isSelected = true
             self.productionButton.isSelected = false
             self.isProductionMode = false
-            self.sosButton.isHidden = true
-            self.flareAwareButton.isHidden = true
         }else if button.tag == 2 {
             self.sandboxButton.isSelected = false
             self.productionButton.isSelected = true
             self.isProductionMode = true
-            self.sosButton.isHidden = false
-            self.flareAwareButton.isHidden = false
         }
     }
     
     @IBAction func standardButtonTapped() {
+//        fatalError("Crash was triggered")
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         let controller = storyBoard.instantiateViewController(withIdentifier: "StandardThemeViewController") as! StandardThemeViewController
         controller.isProductionMode = self.isProductionMode
@@ -74,14 +66,12 @@ class ViewController: UIViewController {
     @IBAction func sosButtonTapped() {
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         let controller = storyBoard.instantiateViewController(withIdentifier: "EmergencySOSViewController") as! EmergencySOSViewController
-        controller.isProductionMode = self.isProductionMode
         self.navigationController?.pushViewController(controller, animated: true)
     }
     
     @IBAction func flareAwareTapped() {
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         let controller = storyBoard.instantiateViewController(withIdentifier: "FlareAwareViewController") as! FlareAwareViewController
-        controller.isProductionMode = self.isProductionMode
         self.navigationController?.pushViewController(controller, animated: true)
     }
 }

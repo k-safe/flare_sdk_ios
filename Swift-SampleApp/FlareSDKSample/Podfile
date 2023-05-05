@@ -6,4 +6,6 @@ target 'FlareSDKSample' do
   use_frameworks!
   pod 'SideEngine-iOS'
   pod 'IQKeyboardManager', '~> 6.5'
+  pod 'FirebaseCrashlytics'
+  pod 'FirebaseAnalytics'
 end

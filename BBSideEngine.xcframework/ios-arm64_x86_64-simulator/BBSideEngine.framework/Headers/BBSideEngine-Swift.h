@@ -321,6 +321,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) BBSideEngine
 @end
 
 
+
 @interface BBSideEngineManager (SWIFT_EXTENSION(BBSideEngine))
 - (void)sideEventsListenerWithHandler:(void (^ _Nonnull)(BBResponse * _Nonnull))handler;
 @end
@@ -332,7 +333,6 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) BBSideEngine
 - (void)resumeSideEngine;
 - (void)presentVideoSurveys;
 @end
-
 
 
 
@@ -725,6 +725,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) BBSideEngine
 @end
 
 
+
 @interface BBSideEngineManager (SWIFT_EXTENSION(BBSideEngine))
 - (void)sideEventsListenerWithHandler:(void (^ _Nonnull)(BBResponse * _Nonnull))handler;
 @end
@@ -736,7 +737,6 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) BBSideEngine
 - (void)resumeSideEngine;
 - (void)presentVideoSurveys;
 @end
-
 
 
 

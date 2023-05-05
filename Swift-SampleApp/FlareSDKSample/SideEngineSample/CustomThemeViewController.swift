@@ -38,8 +38,9 @@ class CustomThemeViewController: UIViewController {
         //Production mode used when you release app to the app store (You can use any of the one theme e.g. .standard OR .custom)
         //Sandbox mode used only for while developing your App (You can use any of the one theme e.g. .standard OR .custom)
         
-        let accessKey = isProductionMode ? "Your production license key here" : "Your sandbox license key here"
+        //        let accessKey = isProductionMode ? "Your production license key here" : "Your sandbox license key here"
         let mode: BBMode = isProductionMode ? .production : .sandbox
+        let accessKey = isProductionMode ? "a6628abe-aa88-47fc-b3a8-6bbb702c44c5" : "c8d1aa40-ecdc-4d39-82bb-7e06aed534d1"
         shared.configure(accessKey: accessKey, mode: mode, theme: .custom)
         
         //------------Register SIDE engine listener here------------
@@ -115,8 +116,6 @@ class CustomThemeViewController: UIViewController {
                 //You can initiate your bespoke countdown page from this interface, which must have a minimum timer interval of 30 seconds.
                 //Upon completion of your custom countdown, it is imperative to invoke the 'notify partner' method to record the event on the dashboard and dispatch notifications via webhook, Slack, email and SMS.
                 //If it is necessary to dispatch an SMS or Email for personal emergency purposes, please do so.
-                //self.sendSMS()
-                //BBSideEngineManager.shared.sendEmail(toEmail: "example@gmail.com")
                 
                 if let confidence = response.payload?["confidence"] {
                     print("SIDE engine confidence is: \(confidence)")
@@ -126,6 +125,7 @@ class CustomThemeViewController: UIViewController {
                 if self.sideEngineShared.applicationTheme == .custom {
                     let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
                     let customUIController = storyBoard.instantiateViewController(withIdentifier: "CustomCountDownViewController") as! CustomCountDownViewController
+                    customUIController.delegate = self //This will used to send sms or email when countdown finished
                     DispatchQueue.main.async {
                         let state = UIApplication.shared.applicationState
                         if state != .active {
@@ -171,6 +171,12 @@ class CustomThemeViewController: UIViewController {
             BBSideEngineManager.shared.sendSMS(contact: contact)
         }
     }
+    
+    func sendEmail() {
+        if self.riderEmail.text?.isEmpty == false {
+            BBSideEngineManager.shared.sendEmail(toEmail: self.riderEmail.text!)
+        }
+    }
     //Generate random uniqueID
     func uniqueId() -> String {
         return UIDevice.current.identifierForVendor!.uuidString
@@ -179,3 +185,11 @@ class CustomThemeViewController: UIViewController {
     
 }
 
+
+
+extension CustomThemeViewController: CustomTimerDelegate {
+    func didFinishTimer() {
+        self.sendEmail()
+        self.sendSMS()
+    }
+}
