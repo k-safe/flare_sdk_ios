@@ -24,8 +24,6 @@ class CustomThemeViewController: UIViewController {
         super.viewDidLoad()
         self.confidenceLabel.text = ""
         self.startButton.tag = 1
-        //SIDE Engine
-        //        sideEngineShared.applicationTheme = .custom //You can update your theme here,this will override your configure method theme
         
         //Configure SIDE engine and register listner
         self.sideEngineConfigure()
@@ -88,9 +86,9 @@ class CustomThemeViewController: UIViewController {
     func registerSideEngineListener() {
         sideEngineShared.sideEventsListener { (response) in
             if response.type == .configure && response.success == true {
-                //                      You are now able to initiate the SIDE engine process at any time. In the event that there is no user input button available to commence the activity, you may commence the SIDE engine by executing the following command:
+                //You are now able to initiate the SIDE engine process at any time. In the event that there is no user input button available to commence the activity, you may commence the SIDE engine by executing the following command:
                 
-                //                      sideEngineShared.startSideEngine().
+                //sideEngineShared.startSideEngine()
             }
             else if response.type == .start && response.success == true {
                 //Update your UI here (e.g. update START button color or text here when SIDE engine started)
@@ -137,7 +135,7 @@ class CustomThemeViewController: UIViewController {
                 
             }
             else if response.type == .incidentAutoCancel {
-                // Please disregard your customized countdown page in this instance and refrain from invoking any functions from external engines. The external engine will autonomously handle any necessary actions.
+                // Please disregard your customised countdown page in this instance and refrain from invoking any functions from external engines. The external engine will autonomously handle any necessary actions.
                 for controller in self.navigationController!.viewControllers as Array {
                     if let customController = controller as? CustomCountDownViewController {
                         customController.cancelAutoIncident()
@@ -152,7 +150,10 @@ class CustomThemeViewController: UIViewController {
                 //This message is intended solely to provide notification regarding the transmission status of Email. It is unnecessary to invoke any SIDE engine functions in this context.
             }else if response.type == .email {
                 //This message is intended solely to provide notification regarding the transmission status of Email. It is unnecessary to invoke any SIDE engine functions in this context.
-            }else if response.type == .location {
+            }else if response.type == .resumeSideEngine {
+                //The lateral engine has been restarted, and we are currently monitoring the device's sensors and location in order to analyse another potential incident.
+            }
+            else if response.type == .location {
                 //You will receive the user's location update status in this location. The payload contains a CLLocation object, which allows you to read any parameters if necessary.
             } 
         }
@@ -180,8 +181,6 @@ class CustomThemeViewController: UIViewController {
     func uniqueId() -> String {
         return UIDevice.current.identifierForVendor!.uuidString
     }
-    
-    
 }
 
 

@@ -13,10 +13,8 @@ class EmergencySOSViewController: UIViewController {
     let sideEngineShared = BBSideEngineManager.shared
     @IBOutlet weak var btnShare: UIButton!
     @IBOutlet weak var btnActivate: UIButton!
-    @IBOutlet weak var countryCode: UITextField!
-    @IBOutlet weak var phoneNumber: UITextField!
     @IBOutlet weak var riderName: UITextField!
-    @IBOutlet weak var riderEmail: UITextField!
+   
     var shareLink = ""
     
     override func viewDidLoad() {
@@ -46,12 +44,10 @@ class EmergencySOSViewController: UIViewController {
     @IBAction func btnSOSAction(_ sender: Any) {
         
         if self.btnActivate.tag == 1 {
+            sideEngineShared.riderEmail = ""
             sideEngineShared.riderName = riderName.text! //Rider Name (optional)
-            sideEngineShared.riderEmail = riderEmail.text! // Rider Email (optional)
             sideEngineShared.riderId = self.uniqueId() // Unique rider ID (optional)
-            sideEngineShared.countDownDuration = 30 // for live mode
-            sideEngineShared.showLog = true //Default true //false when release app to the store
-            
+            sideEngineShared.showLog = false //Default true //false when release app to the store
             
             //It is possible to activate the distance filter in order to transmit location data in the live tracking URL. This will ensure that location updates are transmitted every 20 meters, once the timer interval has been reached.
             sideEngineShared.distance_filter_meters = 20
@@ -63,8 +59,7 @@ class EmergencySOSViewController: UIViewController {
             sideEngineShared.high_frequency_intervals_seconds = 3
             
             //It is recommended to activate the high frequency mode when the SOS function is engaged in order to enhance the quality of the live tracking experience.
-            sideEngineShared.high_frequency_mode_enabled = true
-            
+            sideEngineShared.high_frequency_mode_enabled = true 
             
             sideEngineShared.activeSOS()
         }else {
@@ -125,20 +120,7 @@ class EmergencySOSViewController: UIViewController {
         self.present(activityViewController, animated: true, completion: nil)
         
     }
-    
-    func sendSMS() {
-        if countryCode.text?.isEmpty == false && self.phoneNumber.text?.isEmpty == false {
-            let contact = [
-                "countryCode": String(countryCode.text!),
-                "phoneNumber": String(phoneNumber.text!),
-                "username": String(riderName.text!)
-            ]
-            
-            BBSideEngineManager.shared.sendSMS(contact: contact)
-        }
-        
-    }
-    
+   
     //Generate random uniqueID
     func uniqueId() -> String {
         return UIDevice.current.identifierForVendor!.uuidString

@@ -11,8 +11,6 @@ import BBSideEngine
 class ViewController: UIViewController {
     
     var isProductionMode: Bool = false //This will used to configure SDK production or sandbox mode
-    @IBOutlet weak var modeLabel: UILabel!
-    
     @IBOutlet weak var productionButton: UIButton!
     @IBOutlet weak var sandboxButton: UIButton!
     

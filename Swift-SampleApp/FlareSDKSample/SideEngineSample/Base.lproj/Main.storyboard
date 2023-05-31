@@ -246,84 +246,6 @@
             </objects>
             <point key="canvasLocation" x="900" y="87"/>
         </scene>
-        <!--Test View Mode Controller-->
-        <scene sceneID="zhJ-N7-Mj7">
-            <objects>
-                <viewController storyboardIdentifier="TestViewModeController" id="57M-vU-fdC" customClass="TestViewModeController" customModule="FlareSDKSample" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="cZc-fb-p9q">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bug-wc-80e">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shake your phone repeatedly to simulate an incident" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JOP-ci-t6u">
-                                        <rect key="frame" x="12" y="361" width="390" height="60"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_shake_mobile" translatesAutoresizingMaskIntoConstraints="NO" id="zUG-hg-IkJ">
-                                        <rect key="frame" x="153.66666666666666" y="271" width="106.99999999999997" height="80"/>
-                                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="80" id="2FN-XA-Svx"/>
-                                            <constraint firstAttribute="width" constant="107" id="lNm-iF-h13"/>
-                                        </constraints>
-                                    </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is in test mode, don't worry it will not activate if you shake your phone in real life" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="47Y-eB-MBE">
-                                        <rect key="frame" x="15" y="424" width="384" height="58"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="58" id="wbd-N4-8Nx"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" red="0.066666666669999999" green="0.1333333333" blue="0.20887511249999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstItem="47Y-eB-MBE" firstAttribute="leading" secondItem="bug-wc-80e" secondAttribute="leading" constant="15" id="6PK-Vx-cj5"/>
-                                    <constraint firstItem="JOP-ci-t6u" firstAttribute="top" secondItem="zUG-hg-IkJ" secondAttribute="bottom" constant="10" id="ABW-0s-i6J"/>
-                                    <constraint firstItem="JOP-ci-t6u" firstAttribute="leading" secondItem="bug-wc-80e" secondAttribute="leading" constant="12" id="BxV-q0-qOf"/>
-                                    <constraint firstItem="zUG-hg-IkJ" firstAttribute="centerY" secondItem="bug-wc-80e" secondAttribute="centerY" constant="-57" id="KEX-28-obR"/>
-                                    <constraint firstItem="47Y-eB-MBE" firstAttribute="top" secondItem="JOP-ci-t6u" secondAttribute="bottom" constant="3" id="KHy-Cy-a7W"/>
-                                    <constraint firstItem="JOP-ci-t6u" firstAttribute="centerX" secondItem="zUG-hg-IkJ" secondAttribute="centerX" id="Sj4-KK-bf1"/>
-                                    <constraint firstItem="JOP-ci-t6u" firstAttribute="centerX" secondItem="47Y-eB-MBE" secondAttribute="centerX" id="iwc-Vf-9Jk"/>
-                                    <constraint firstAttribute="trailing" secondItem="47Y-eB-MBE" secondAttribute="trailing" constant="15" id="ozl-hQ-rFJ"/>
-                                    <constraint firstItem="zUG-hg-IkJ" firstAttribute="centerX" secondItem="bug-wc-80e" secondAttribute="centerX" id="tf8-T3-i44"/>
-                                    <constraint firstAttribute="trailing" secondItem="JOP-ci-t6u" secondAttribute="trailing" constant="12" id="tfH-vN-Nxs"/>
-                                </constraints>
-                            </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VS2-hO-q8Y">
-                                <rect key="frame" x="354" y="20" width="60" height="60"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="60" id="FxZ-qJ-gbg"/>
-                                    <constraint firstAttribute="height" constant="60" id="sFY-QX-IRV"/>
-                                </constraints>
-                                <state key="normal" image="closeButton.png"/>
-                                <connections>
-                                    <action selector="closeTapped" destination="57M-vU-fdC" eventType="touchUpInside" id="Piz-6D-dPA"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="Fug-UL-niR"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="Fug-UL-niR" firstAttribute="trailing" secondItem="VS2-hO-q8Y" secondAttribute="trailing" id="4ui-JA-ape"/>
-                            <constraint firstItem="bug-wc-80e" firstAttribute="leading" secondItem="Fug-UL-niR" secondAttribute="leading" id="HtN-5g-L9H"/>
-                            <constraint firstItem="VS2-hO-q8Y" firstAttribute="top" secondItem="Fug-UL-niR" secondAttribute="top" constant="20" id="KOG-dK-7Fh"/>
-                            <constraint firstItem="bug-wc-80e" firstAttribute="trailing" secondItem="Fug-UL-niR" secondAttribute="trailing" id="fxm-Ig-6Bx"/>
-                            <constraint firstItem="bug-wc-80e" firstAttribute="top" secondItem="cZc-fb-p9q" secondAttribute="top" id="gcE-Po-Rfk"/>
-                            <constraint firstAttribute="bottom" secondItem="bug-wc-80e" secondAttribute="bottom" id="iaA-Ht-SUO"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" id="MZZ-UU-QDv"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="JaX-L8-njw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1590" y="87"/>
-        </scene>
         <!--Navigation Controller-->
         <scene sceneID="TN4-tf-xRy">
             <objects>
@@ -691,31 +613,16 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="LYZ-JQ-izB">
-                                <rect key="frame" x="30" y="236" width="354" height="170"/>
+                                <rect key="frame" x="30" y="356" width="354" height="50"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Country Calling Code" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dya-fJ-XHU">
-                                        <rect key="frame" x="0.0" y="0.0" width="354" height="38"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocorrectionType="no"/>
-                                    </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Emergency Contact Number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ryz-hS-z3M">
-                                        <rect key="frame" x="0.0" y="48" width="354" height="34"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocorrectionType="no"/>
-                                    </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Rider Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oWq-aU-ujF">
-                                        <rect key="frame" x="0.0" y="92" width="354" height="34"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocorrectionType="no"/>
-                                    </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Emergency Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="G6H-ZE-kHe">
-                                        <rect key="frame" x="0.0" y="136" width="354" height="34"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="354" height="50"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                                     </textField>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="170" id="PVY-en-mcq"/>
+                                    <constraint firstAttribute="height" constant="50" id="PVY-en-mcq"/>
                                 </constraints>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Emergency SOS Demo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UCc-5n-Ymr">
@@ -756,9 +663,6 @@
                     <connections>
                         <outlet property="btnActivate" destination="R9K-Cj-YRk" id="WQh-sS-OFR"/>
                         <outlet property="btnShare" destination="PmH-uF-UeW" id="Gz9-Zh-KBi"/>
-                        <outlet property="countryCode" destination="dya-fJ-XHU" id="wh7-jP-ehP"/>
-                        <outlet property="phoneNumber" destination="Ryz-hS-z3M" id="nXA-2t-oSj"/>
-                        <outlet property="riderEmail" destination="G6H-ZE-kHe" id="bLr-dA-S8i"/>
                         <outlet property="riderName" destination="oWq-aU-ujF" id="53Q-kt-4wt"/>
                     </connections>
                 </viewController>
@@ -816,7 +720,6 @@
         <image name="FlareLogo" width="512" height="512"/>
         <image name="checked" width="40" height="40"/>
         <image name="closeButton.png" width="123" height="123"/>
-        <image name="ic_shake_mobile" width="204" height="220"/>
         <image name="un_checked" width="40" height="40"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

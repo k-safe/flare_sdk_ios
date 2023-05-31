@@ -20,7 +20,6 @@
 		D05B6964280FDFE700356644 /* CustomCountDownViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05B6963280FDFE600356644 /* CustomCountDownViewController.swift */; };
 		D05B6967280FE89600356644 /* TestSideEngineSupportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05B6966280FE89600356644 /* TestSideEngineSupportViewController.swift */; };
 		D0AA8CDB29376B190086B1CC /* VideoAskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AA8CDA29376B190086B1CC /* VideoAskViewController.swift */; };
-		D0DF6E9A27FB197500D1CEB7 /* TestViewModeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0DF6E9827FB197500D1CEB7 /* TestViewModeController.swift */; };
 		D4315A4229DFDF21003CB087 /* EmergencySOSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4315A4129DFDF21003CB087 /* EmergencySOSViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -55,7 +54,6 @@
 		D05B6963280FDFE600356644 /* CustomCountDownViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCountDownViewController.swift; sourceTree = "<group>"; };
 		D05B6966280FE89600356644 /* TestSideEngineSupportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestSideEngineSupportViewController.swift; sourceTree = "<group>"; };
 		D0AA8CDA29376B190086B1CC /* VideoAskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoAskViewController.swift; sourceTree = "<group>"; };
-		D0DF6E9827FB197500D1CEB7 /* TestViewModeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestViewModeController.swift; sourceTree = "<group>"; };
 		D4315A4129DFDF21003CB087 /* EmergencySOSViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmergencySOSViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -108,7 +106,6 @@
 				D05B6963280FDFE600356644 /* CustomCountDownViewController.swift */,
 				D0AA8CDA29376B190086B1CC /* VideoAskViewController.swift */,
 				D05B6966280FE89600356644 /* TestSideEngineSupportViewController.swift */,
-				D0DF6E9827FB197500D1CEB7 /* TestViewModeController.swift */,
 				D4315A4129DFDF21003CB087 /* EmergencySOSViewController.swift */,
 				D0332AF429FFCD6200D24816 /* FlareAwareViewController.swift */,
 				D018BCD5269C4FDB00F21A20 /* Main.storyboard */,
@@ -250,7 +247,6 @@
 				D05B6964280FDFE700356644 /* CustomCountDownViewController.swift in Sources */,
 				D018BCD2269C4FDB00F21A20 /* SceneDelegate.swift in Sources */,
 				D0332AF529FFCD6200D24816 /* FlareAwareViewController.swift in Sources */,
-				D0DF6E9A27FB197500D1CEB7 /* TestViewModeController.swift in Sources */,
 				D05B6967280FE89600356644 /* TestSideEngineSupportViewController.swift in Sources */,
 				D4315A4229DFDF21003CB087 /* EmergencySOSViewController.swift in Sources */,
 				D000A8CF28FFDB480077C9B2 /* CustomThemeViewController.swift in Sources */,

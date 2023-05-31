@@ -114,8 +114,8 @@ import _StringProcessing
   }
   @objc public var distance_filter_meters: Swift.Double
   @objc override dynamic public init()
-  @objc public func configure(accessKey: Swift.String, mode: BBSideEngine.BBMode, theme: BBSideEngine.BBTheme)
   @objc deinit
+  @objc public func configure(accessKey: Swift.String, mode: BBSideEngine.BBMode, theme: BBSideEngine.BBTheme)
 }
 extension BBSideEngine.BBSideEngineManager {
   @objc dynamic public func startSideEngine()
