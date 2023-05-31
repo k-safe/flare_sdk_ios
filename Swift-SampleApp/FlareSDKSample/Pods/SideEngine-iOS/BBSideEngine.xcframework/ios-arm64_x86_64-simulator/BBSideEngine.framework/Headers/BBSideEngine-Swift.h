@@ -321,6 +321,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) BBSideEngine
 @end
 
 
+
 @interface BBSideEngineManager (SWIFT_EXTENSION(BBSideEngine))
 - (void)sideEventsListenerWithHandler:(void (^ _Nonnull)(BBResponse * _Nonnull))handler;
 @end
@@ -334,8 +335,6 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) BBSideEngine
 @end
 
 
-
-
 @interface BBSideEngineManager (SWIFT_EXTENSION(BBSideEngine))
 - (void)startSideEngine;
 - (void)stopSideEngine;
@@ -344,6 +343,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) BBSideEngine
 - (void)stopFlareAware;
 - (void)deActiveSOS;
 @end
+
 
 
 @class NSArray;
@@ -725,6 +725,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) BBSideEngine
 @end
 
 
+
 @interface BBSideEngineManager (SWIFT_EXTENSION(BBSideEngine))
 - (void)sideEventsListenerWithHandler:(void (^ _Nonnull)(BBResponse * _Nonnull))handler;
 @end
@@ -738,8 +739,6 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) BBSideEngine
 @end
 
 
-
-
 @interface BBSideEngineManager (SWIFT_EXTENSION(BBSideEngine))
 - (void)startSideEngine;
 - (void)stopSideEngine;
@@ -748,6 +747,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) BBSideEngine
 - (void)stopFlareAware;
 - (void)deActiveSOS;
 @end
+
 
 
 @class NSArray;

@@ -24,8 +24,6 @@ class StandardThemeViewController: UIViewController {
         // Do any additional setup after loading the view.
         self.confidenceLabel.text = ""
         self.startButton.tag = 1
-        //SIDE Engine
-        //        sideEngineShared.applicationTheme = .standard //You can update your theme here,this will override your configure method theme
         
         //Configure SIDE engine and register listner
         self.sideEngineConfigure()
@@ -78,21 +76,17 @@ class StandardThemeViewController: UIViewController {
             //It is recommended to activate the high frequency mode when the SOS function is engaged in order to enhance the quality of the live tracking experience.
             sideEngineShared.high_frequency_mode_enabled = false
             
-            
-            
             //You can update below parameters if require
-            //        sideEngineShared.backgroundColor = UIColor //Only for standard theme
-            //        sideEngineShared.contentTextColor = UIColor //Only for standard theme
-            //        sideEngineShared.swipeToCancelTextColor = UIColor //Only for standard theme
-            //        sideEngineShared.swipeToCancelBackgroundColor = UIColor //Only for standard theme
-            //        sideEngineShared.impactBody = "Detected a potential fall or impact involving" //This message show in the SMS, email, webook and slack body with the rider name passed in the section:7 (shared.riderName) parameter
+            //sideEngineShared.backgroundColor = UIColor //Only for standard theme
+            //sideEngineShared.contentTextColor = UIColor //Only for standard theme
+            //sideEngineShared.swipeToCancelTextColor = UIColor //Only for standard theme
+            //sideEngineShared.swipeToCancelBackgroundColor = UIColor //Only for standard theme
+            //sideEngineShared.impactBody = "Detected a potential fall or impact involving" //This message show in the SMS, email, webook and slack body with the rider name passed in the section:7 (shared.riderName) parameter
             
             
             //Start SIDE engine
             sideEngineShared.startSideEngine()
-            
-            //            //Register SIDE engine listener here
-            //            self.registerSideEngineListener()
+           
         } else {
             //stopSideEngine will stop all the services inside SIDE engine and release all the varibales
             self.sideEngineShared.stopSideEngine()
@@ -147,12 +141,14 @@ class StandardThemeViewController: UIViewController {
                 //The incident has been automatically cancelled. If necessary, you may log the incident in the analytics system. Please refrain from invoking any side engine methods at this juncture.
             }
             else if response.type == .timerStarted {
-                //Countdown timer started after breach delay, this called only if you configured standard theme.
+                //A 30-second countdown timer has started, and the SIDE engine is waiting for a response from the user or an automatic cancellation event. If no events are received within the 30-second intervals of the timer, the SIDE engine will log the incident on the dashboard.
             }
             else if response.type == .timerFinished {
-                //Countdown timer finished and jump to the incident summary page, this called only if you configured standard theme.
+                //After the 30-second timer ended, the SIDE engine began the process of registering the incident on the dashboard and sending notifications to emergency contacts.
                 self.sendSMS()
                 self.sendEmail()
+            }else if response.type == .incidentAutoCancel {
+                //The incident has been automatically cancelled. If necessary, you may log the incident in the analytics system. Please refrain from invoking any side engine methods at this juncture.
             }
             else if response.type == .incidentAlertSent {
                 //Return the alert sent (returns alert details (i.e. time, location, recipient, success/failure))
