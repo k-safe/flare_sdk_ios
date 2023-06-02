@@ -6,7 +6,7 @@
 	<dict>
 		<key>Headers/BBSideEngine-Swift.h</key>
 		<data>
-		BUujhdgaH4wJ3sd9n3feUlFqbPA=
+		nODW7ucbCqA8vnYw1kS65lMvinc=
 		</data>
 		<key>Headers/BBSideEngine.h</key>
 		<data>
@@ -46,7 +46,7 @@
 		</data>
 		<key>Modules/BBSideEngine.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
-		bqXvr/8WfPoi7uoEWceBgSRQguM=
+		43qpTu03PM1GzZcgZZlDbnOehMI=
 		</data>
 		<key>Modules/BBSideEngine.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
@@ -62,11 +62,11 @@
 		</data>
 		<key>Modules/BBSideEngine.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		6p+DGfYATqGlMBf1emcEjEm7C5w=
+		S434v+VREloHKC8zMCOsq19vMug=
 		</data>
 		<key>Modules/BBSideEngine.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		bqXvr/8WfPoi7uoEWceBgSRQguM=
+		43qpTu03PM1GzZcgZZlDbnOehMI=
 		</data>
 		<key>Modules/BBSideEngine.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
@@ -82,7 +82,7 @@
 		</data>
 		<key>Modules/BBSideEngine.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		4Qbn3l6SP0uJkh3DnKXWc7imnew=
+		89YIh24KidvRqYTatH7Z+JTPNrQ=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -123,7 +123,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			rQY1Ce0a0lW/9sRLcX1x8k/5J05GIT3MB22ugWkkuGA=
+			SymrB74l7uNnvx9MktYr0zKJJiDP5b1mvzIPdauDkU8=
 			</data>
 		</dict>
 		<key>Headers/BBSideEngine.h</key>
@@ -186,7 +186,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			8vjXXA2UlU1Dg+IL6prb1sXz4wBFfIDHslzu4ruP3+0=
+			ygLWH+CyZv2IuS5dEtJGTbRRx/DIUW33x9yOHTNtVLU=
 			</data>
 		</dict>
 		<key>Modules/BBSideEngine.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
@@ -214,14 +214,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			4SrfEm74k4TWs+pHaz4sGqvvC3RHi69Z9SN8vNYVP9U=
+			zDTGlW4o5+mkVNrOczM9kA331DLqWa3Us3Zc51PWCtM=
 			</data>
 		</dict>
 		<key>Modules/BBSideEngine.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			8vjXXA2UlU1Dg+IL6prb1sXz4wBFfIDHslzu4ruP3+0=
+			ygLWH+CyZv2IuS5dEtJGTbRRx/DIUW33x9yOHTNtVLU=
 			</data>
 		</dict>
 		<key>Modules/BBSideEngine.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
@@ -249,7 +249,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			S5HKg7Fduy0/QIiU2E/QEXHwMVkl8frVQhftGdixgmA=
+			NtqonTp5PKoLeMjVcVMy98bzcPzCMSt3OQkq5Bpc4CI=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
