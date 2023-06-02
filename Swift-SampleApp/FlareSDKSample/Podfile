@@ -4,6 +4,6 @@
 target 'FlareSDKSample' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
-  pod 'SideEngine-iOS', '4.0.0'
+  pod 'SideEngine-iOS'
   pod 'IQKeyboardManager', '~> 6.5'
 end
