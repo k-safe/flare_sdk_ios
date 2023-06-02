@@ -6331,14 +6331,14 @@
       "kind": "FloatLiteral",
       "offset": 2016,
       "length": 3,
-      "value": "2.0"
+      "value": "6.0"
     },
     {
       "filePath": "\/Users\/phoenix\/Documents\/K-Safe\/iOS-SDK\/Develop\/busbysdk_ios\/Framework\/BBSideEngine\/Main\/BBSideEngineManager.swift",
       "kind": "FloatLiteral",
       "offset": 2078,
       "length": 3,
-      "value": "2.2"
+      "value": "6.2"
     },
     {
       "filePath": "\/Users\/phoenix\/Documents\/K-Safe\/iOS-SDK\/Develop\/busbysdk_ios\/Framework\/BBSideEngine\/Main\/BBSideEngineManager.swift",
@@ -6377,435 +6377,435 @@
     },
     {
       "filePath": "\/Users\/phoenix\/Documents\/K-Safe\/iOS-SDK\/Develop\/busbysdk_ios\/Framework\/BBSideEngine\/Main\/BBSideEngineManager.swift",
-      "kind": "IntegerLiteral",
+      "kind": "FloatLiteral",
       "offset": 2439,
-      "length": 1,
-      "value": "0"
+      "length": 3,
+      "value": "2.2"
     },
     {
       "filePath": "\/Users\/phoenix\/Documents\/K-Safe\/iOS-SDK\/Develop\/busbysdk_ios\/Framework\/BBSideEngine\/Main\/BBSideEngineManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 2672,
+      "offset": 2674,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/phoenix\/Documents\/K-Safe\/iOS-SDK\/Develop\/busbysdk_ios\/Framework\/BBSideEngine\/Main\/BBSideEngineManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 2798,
+      "offset": 2800,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/phoenix\/Documents\/K-Safe\/iOS-SDK\/Develop\/busbysdk_ios\/Framework\/BBSideEngine\/Main\/BBSideEngineManager.swift",
       "kind": "StringLiteral",
-      "offset": 2831,
+      "offset": 2833,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/phoenix\/Documents\/K-Safe\/iOS-SDK\/Develop\/busbysdk_ios\/Framework\/BBSideEngine\/Main\/BBSideEngineManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 2869,
+      "offset": 2871,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/phoenix\/Documents\/K-Safe\/iOS-SDK\/Develop\/busbysdk_ios\/Framework\/BBSideEngine\/Main\/BBSideEngineManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 2916,
+      "offset": 2918,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/phoenix\/Documents\/K-Safe\/iOS-SDK\/Develop\/busbysdk_ios\/Framework\/BBSideEngine\/Main\/BBSideEngineManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 2962,
+      "offset": 2964,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/phoenix\/Documents\/K-Safe\/iOS-SDK\/Develop\/busbysdk_ios\/Framework\/BBSideEngine\/Main\/BBSideEngineManager.swift",
       "kind": "StringLiteral",
-      "offset": 3010,
+      "offset": 3012,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/phoenix\/Documents\/K-Safe\/iOS-SDK\/Develop\/busbysdk_ios\/Framework\/BBSideEngine\/Main\/BBSideEngineManager.swift",
       "kind": "StringLiteral",
-      "offset": 3051,
+      "offset": 3053,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/phoenix\/Documents\/K-Safe\/iOS-SDK\/Develop\/busbysdk_ios\/Framework\/BBSideEngine\/Main\/BBSideEngineManager.swift",
       "kind": "FloatLiteral",
-      "offset": 3097,
+      "offset": 3099,
       "length": 3,
       "value": "0.0"
     },
     {
       "filePath": "\/Users\/phoenix\/Documents\/K-Safe\/iOS-SDK\/Develop\/busbysdk_ios\/Framework\/BBSideEngine\/Main\/BBSideEngineManager.swift",
       "kind": "FloatLiteral",
-      "offset": 3132,
+      "offset": 3134,
       "length": 3,
       "value": "0.0"
     },
     {
       "filePath": "\/Users\/phoenix\/Documents\/K-Safe\/iOS-SDK\/Develop\/busbysdk_ios\/Framework\/BBSideEngine\/Main\/BBSideEngineManager.swift",
       "kind": "FloatLiteral",
-      "offset": 3170,
+      "offset": 3172,
       "length": 3,
       "value": "0.0"
     },
     {
       "filePath": "\/Users\/phoenix\/Documents\/K-Safe\/iOS-SDK\/Develop\/busbysdk_ios\/Framework\/BBSideEngine\/Main\/BBSideEngineManager.swift",
       "kind": "FloatLiteral",
-      "offset": 3207,
+      "offset": 3209,
       "length": 3,
       "value": "0.0"
     },
     {
       "filePath": "\/Users\/phoenix\/Documents\/K-Safe\/iOS-SDK\/Develop\/busbysdk_ios\/Framework\/BBSideEngine\/Main\/BBSideEngineManager.swift",
       "kind": "StringLiteral",
-      "offset": 3248,
+      "offset": 3250,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/phoenix\/Documents\/K-Safe\/iOS-SDK\/Develop\/busbysdk_ios\/Framework\/BBSideEngine\/Main\/BBSideEngineManager.swift",
       "kind": "StringLiteral",
-      "offset": 3281,
+      "offset": 3283,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/phoenix\/Documents\/K-Safe\/iOS-SDK\/Develop\/busbysdk_ios\/Framework\/BBSideEngine\/Main\/BBSideEngineManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 3314,
+      "offset": 3316,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/phoenix\/Documents\/K-Safe\/iOS-SDK\/Develop\/busbysdk_ios\/Framework\/BBSideEngine\/Main\/BBSideEngineManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 3353,
+      "offset": 3355,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/phoenix\/Documents\/K-Safe\/iOS-SDK\/Develop\/busbysdk_ios\/Framework\/BBSideEngine\/Main\/BBSideEngineManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 3389,
+      "offset": 3391,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/phoenix\/Documents\/K-Safe\/iOS-SDK\/Develop\/busbysdk_ios\/Framework\/BBSideEngine\/Main\/BBSideEngineManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 3424,
+      "offset": 3426,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/phoenix\/Documents\/K-Safe\/iOS-SDK\/Develop\/busbysdk_ios\/Framework\/BBSideEngine\/Main\/BBSideEngineManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 3466,
+      "offset": 3468,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/phoenix\/Documents\/K-Safe\/iOS-SDK\/Develop\/busbysdk_ios\/Framework\/BBSideEngine\/Main\/BBSideEngineManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 3505,
+      "offset": 3507,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/phoenix\/Documents\/K-Safe\/iOS-SDK\/Develop\/busbysdk_ios\/Framework\/BBSideEngine\/Main\/BBSideEngineManager.swift",
       "kind": "StringLiteral",
-      "offset": 3536,
+      "offset": 3538,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/phoenix\/Documents\/K-Safe\/iOS-SDK\/Develop\/busbysdk_ios\/Framework\/BBSideEngine\/Main\/BBSideEngineManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 3575,
+      "offset": 3577,
       "length": 2,
       "value": "30"
     },
     {
       "filePath": "\/Users\/phoenix\/Documents\/K-Safe\/iOS-SDK\/Develop\/busbysdk_ios\/Framework\/BBSideEngine\/Main\/BBSideEngineManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 3770,
+      "offset": 3772,
       "length": 2,
       "value": "30"
     },
     {
       "filePath": "\/Users\/phoenix\/Documents\/K-Safe\/iOS-SDK\/Develop\/busbysdk_ios\/Framework\/BBSideEngine\/Main\/BBSideEngineManager.swift",
       "kind": "StringLiteral",
-      "offset": 3847,
+      "offset": 3849,
       "length": 9,
       "value": "\"#E93323\""
     },
     {
       "filePath": "\/Users\/phoenix\/Documents\/K-Safe\/iOS-SDK\/Develop\/busbysdk_ios\/Framework\/BBSideEngine\/Main\/BBSideEngineManager.swift",
       "kind": "StringLiteral",
-      "offset": 3993,
+      "offset": 3995,
       "length": 9,
       "value": "\"#0B0B0B\""
     },
     {
       "filePath": "\/Users\/phoenix\/Documents\/K-Safe\/iOS-SDK\/Develop\/busbysdk_ios\/Framework\/BBSideEngine\/Main\/BBSideEngineManager.swift",
       "kind": "StringLiteral",
-      "offset": 4223,
+      "offset": 4225,
       "length": 7,
       "value": "\"Rider\""
     },
     {
       "filePath": "\/Users\/phoenix\/Documents\/K-Safe\/iOS-SDK\/Develop\/busbysdk_ios\/Framework\/BBSideEngine\/Main\/BBSideEngineManager.swift",
       "kind": "StringLiteral",
-      "offset": 4287,
+      "offset": 4289,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/phoenix\/Documents\/K-Safe\/iOS-SDK\/Develop\/busbysdk_ios\/Framework\/BBSideEngine\/Main\/BBSideEngineManager.swift",
       "kind": "StringLiteral",
-      "offset": 4344,
+      "offset": 4346,
       "length": 3,
       "value": "\"-\""
     },
     {
       "filePath": "\/Users\/phoenix\/Documents\/K-Safe\/iOS-SDK\/Develop\/busbysdk_ios\/Framework\/BBSideEngine\/Main\/BBSideEngineManager.swift",
       "kind": "StringLiteral",
-      "offset": 4504,
+      "offset": 4506,
       "length": 47,
       "value": "\"Detected a potential fall or impact involving\""
     },
     {
       "filePath": "\/Users\/phoenix\/Documents\/K-Safe\/iOS-SDK\/Develop\/busbysdk_ios\/Framework\/BBSideEngine\/Main\/BBSideEngineManager.swift",
       "kind": "StringLiteral",
-      "offset": 4641,
+      "offset": 4643,
       "length": 30,
       "value": "\"has just activated Flare SOS\""
     },
     {
       "filePath": "\/Users\/phoenix\/Documents\/K-Safe\/iOS-SDK\/Develop\/busbysdk_ios\/Framework\/BBSideEngine\/Main\/BBSideEngineManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 4753,
+      "offset": 4755,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/phoenix\/Documents\/K-Safe\/iOS-SDK\/Develop\/busbysdk_ios\/Framework\/BBSideEngine\/Main\/BBSideEngineManager.swift",
       "kind": "StringLiteral",
-      "offset": 4789,
+      "offset": 4791,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/phoenix\/Documents\/K-Safe\/iOS-SDK\/Develop\/busbysdk_ios\/Framework\/BBSideEngine\/Main\/BBSideEngineManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 5192,
+      "offset": 5194,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/phoenix\/Documents\/K-Safe\/iOS-SDK\/Develop\/busbysdk_ios\/Framework\/BBSideEngine\/Main\/BBSideEngineManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 5239,
+      "offset": 5241,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/phoenix\/Documents\/K-Safe\/iOS-SDK\/Develop\/busbysdk_ios\/Framework\/BBSideEngine\/Main\/BBSideEngineManager.swift",
       "kind": "Array",
-      "offset": 5345,
+      "offset": 5347,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/phoenix\/Documents\/K-Safe\/iOS-SDK\/Develop\/busbysdk_ios\/Framework\/BBSideEngine\/Main\/BBSideEngineManager.swift",
       "kind": "FloatLiteral",
-      "offset": 5388,
+      "offset": 5390,
       "length": 3,
       "value": "0.0"
     },
     {
       "filePath": "\/Users\/phoenix\/Documents\/K-Safe\/iOS-SDK\/Develop\/busbysdk_ios\/Framework\/BBSideEngine\/Main\/BBSideEngineManager.swift",
       "kind": "StringLiteral",
-      "offset": 5684,
+      "offset": 5686,
       "length": 9,
       "value": "\"Scooter\""
     },
     {
       "filePath": "\/Users\/phoenix\/Documents\/K-Safe\/iOS-SDK\/Develop\/busbysdk_ios\/Framework\/BBSideEngine\/Main\/BBSideEngineManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 5785,
+      "offset": 5787,
       "length": 1,
       "value": "9"
     },
     {
       "filePath": "\/Users\/phoenix\/Documents\/K-Safe\/iOS-SDK\/Develop\/busbysdk_ios\/Framework\/BBSideEngine\/Main\/BBSideEngineManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 5876,
+      "offset": 5878,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/phoenix\/Documents\/K-Safe\/iOS-SDK\/Develop\/busbysdk_ios\/Framework\/BBSideEngine\/Main\/BBSideEngineManager.swift",
       "kind": "FloatLiteral",
-      "offset": 5943,
+      "offset": 5945,
       "length": 5,
       "value": "9.81"
     },
     {
       "filePath": "\/Users\/phoenix\/Documents\/K-Safe\/iOS-SDK\/Develop\/busbysdk_ios\/Framework\/BBSideEngine\/Main\/BBSideEngineManager.swift",
       "kind": "StringLiteral",
-      "offset": 7014,
+      "offset": 7016,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/phoenix\/Documents\/K-Safe\/iOS-SDK\/Develop\/busbysdk_ios\/Framework\/BBSideEngine\/Main\/BBSideEngineManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 7115,
+      "offset": 7117,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/phoenix\/Documents\/K-Safe\/iOS-SDK\/Develop\/busbysdk_ios\/Framework\/BBSideEngine\/Main\/BBSideEngineManager.swift",
       "kind": "StringLiteral",
-      "offset": 7157,
+      "offset": 7159,
       "length": 7,
-      "value": "\"4.0.3\""
+      "value": "\"4.1.1\""
     },
     {
       "filePath": "\/Users\/phoenix\/Documents\/K-Safe\/iOS-SDK\/Develop\/busbysdk_ios\/Framework\/BBSideEngine\/Main\/BBSideEngineManager.swift",
       "kind": "StringLiteral",
-      "offset": 7243,
+      "offset": 7245,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/phoenix\/Documents\/K-Safe\/iOS-SDK\/Develop\/busbysdk_ios\/Framework\/BBSideEngine\/Main\/BBSideEngineManager.swift",
       "kind": "StringLiteral",
-      "offset": 7274,
+      "offset": 7276,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/phoenix\/Documents\/K-Safe\/iOS-SDK\/Develop\/busbysdk_ios\/Framework\/BBSideEngine\/Main\/BBSideEngineManager.swift",
       "kind": "StringLiteral",
-      "offset": 7293,
+      "offset": 7295,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/phoenix\/Documents\/K-Safe\/iOS-SDK\/Develop\/busbysdk_ios\/Framework\/BBSideEngine\/Main\/BBSideEngineManager.swift",
       "kind": "StringLiteral",
-      "offset": 7325,
+      "offset": 7327,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/phoenix\/Documents\/K-Safe\/iOS-SDK\/Develop\/busbysdk_ios\/Framework\/BBSideEngine\/Main\/BBSideEngineManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 7359,
+      "offset": 7361,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/phoenix\/Documents\/K-Safe\/iOS-SDK\/Develop\/busbysdk_ios\/Framework\/BBSideEngine\/Main\/BBSideEngineManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 7413,
+      "offset": 7415,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/phoenix\/Documents\/K-Safe\/iOS-SDK\/Develop\/busbysdk_ios\/Framework\/BBSideEngine\/Main\/BBSideEngineManager.swift",
       "kind": "StringLiteral",
-      "offset": 7444,
+      "offset": 7446,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/phoenix\/Documents\/K-Safe\/iOS-SDK\/Develop\/busbysdk_ios\/Framework\/BBSideEngine\/Main\/BBSideEngineManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 7504,
+      "offset": 7506,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/phoenix\/Documents\/K-Safe\/iOS-SDK\/Develop\/busbysdk_ios\/Framework\/BBSideEngine\/Main\/BBSideEngineManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 7552,
+      "offset": 7554,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/phoenix\/Documents\/K-Safe\/iOS-SDK\/Develop\/busbysdk_ios\/Framework\/BBSideEngine\/Main\/BBSideEngineManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 7678,
+      "offset": 7680,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/phoenix\/Documents\/K-Safe\/iOS-SDK\/Develop\/busbysdk_ios\/Framework\/BBSideEngine\/Main\/BBSideEngineManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 7765,
+      "offset": 7767,
       "length": 2,
       "value": "15"
     },
     {
       "filePath": "\/Users\/phoenix\/Documents\/K-Safe\/iOS-SDK\/Develop\/busbysdk_ios\/Framework\/BBSideEngine\/Main\/BBSideEngineManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 7941,
+      "offset": 7943,
       "length": 1,
       "value": "3"
     },
     {
       "filePath": "\/Users\/phoenix\/Documents\/K-Safe\/iOS-SDK\/Develop\/busbysdk_ios\/Framework\/BBSideEngine\/Main\/BBSideEngineManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 8062,
+      "offset": 8064,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/phoenix\/Documents\/K-Safe\/iOS-SDK\/Develop\/busbysdk_ios\/Framework\/BBSideEngine\/Main\/BBSideEngineManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 8195,
+      "offset": 8197,
       "length": 2,
       "value": "20"
     },
     {
       "filePath": "\/Users\/phoenix\/Documents\/K-Safe\/iOS-SDK\/Develop\/busbysdk_ios\/Framework\/BBSideEngine\/Main\/BBSideEngineManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 8308,
+      "offset": 8310,
       "length": 2,
       "value": "15"
     },
     {
       "filePath": "\/Users\/phoenix\/Documents\/K-Safe\/iOS-SDK\/Develop\/busbysdk_ios\/Framework\/BBSideEngine\/Main\/BBSideEngineManager.swift",
       "kind": "StringLiteral",
-      "offset": 8421,
+      "offset": 8423,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/phoenix\/Documents\/K-Safe\/iOS-SDK\/Develop\/busbysdk_ios\/Framework\/BBSideEngine\/Main\/BBSideEngineManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 29482,
+      "offset": 29639,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/phoenix\/Documents\/K-Safe\/iOS-SDK\/Develop\/busbysdk_ios\/Framework\/BBSideEngine\/Main\/BBSideEngineManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 128553,
+      "offset": 129084,
       "length": 5,
       "value": "false"
     },
