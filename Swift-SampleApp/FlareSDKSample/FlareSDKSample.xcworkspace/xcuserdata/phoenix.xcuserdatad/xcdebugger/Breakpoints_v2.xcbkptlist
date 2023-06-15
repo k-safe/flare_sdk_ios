@@ -3,4 +3,133 @@
    uuid = "8449E374-404E-4BAF-B3B6-D6FB593757AA"
    type = "0"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "445A4084-17D7-43F3-B6D7-D68BE7290CAE"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../Framework/BBSideEngine/Main/BBSideEngineManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "1961"
+            endingLineNumber = "1961"
+            landmarkName = "updateIncidentTelemetry()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "445A4084-17D7-43F3-B6D7-D68BE7290CAE - ad941e9b4f189b8b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in BBSideEngine.BBSideEngineManager.updateIncidentTelemetry() -&gt; ()"
+                  moduleName = "BBSideEngine"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/phoenix/Documents/K-Safe/iOS-SDK/Develop/busbysdk_ios/Framework/BBSideEngine/Main/BBSideEngineManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "1962"
+                  endingLineNumber = "1962"
+                  offsetFromSymbolStart = "856">
+               </Location>
+               <Location
+                  uuid = "445A4084-17D7-43F3-B6D7-D68BE7290CAE - ad941e9b4f189b8b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in BBSideEngine.BBSideEngineManager.updateIncidentTelemetry() -&gt; ()"
+                  moduleName = "BBSideEngine"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/phoenix/Documents/K-Safe/iOS-SDK/Develop/busbysdk_ios/Framework/BBSideEngine/Main/BBSideEngineManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "1962"
+                  endingLineNumber = "1962"
+                  offsetFromSymbolStart = "924">
+               </Location>
+               <Location
+                  uuid = "445A4084-17D7-43F3-B6D7-D68BE7290CAE - ad941e9b4f189baa"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in BBSideEngine.BBSideEngineManager.updateIncidentTelemetry() -&gt; ()"
+                  moduleName = "BBSideEngine"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/phoenix/Documents/K-Safe/iOS-SDK/Develop/busbysdk_ios/Framework/BBSideEngine/Main/BBSideEngineManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "1963"
+                  endingLineNumber = "1963"
+                  offsetFromSymbolStart = "76">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D9B95207-969F-4A2F-979F-FC8E1E20819F"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../Framework/BBSideEngine/Main/BBSideEngineManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "1959"
+            endingLineNumber = "1959"
+            landmarkName = "updateIncidentTelemetry()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "D9B95207-969F-4A2F-979F-FC8E1E20819F - ad941e9b4f186436"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in BBSideEngine.BBSideEngineManager.updateIncidentTelemetry() -&gt; ()"
+                  moduleName = "BBSideEngine"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/phoenix/Documents/K-Safe/iOS-SDK/Develop/busbysdk_ios/Framework/BBSideEngine/Main/BBSideEngineManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "1959"
+                  endingLineNumber = "1959"
+                  offsetFromSymbolStart = "288">
+               </Location>
+               <Location
+                  uuid = "D9B95207-969F-4A2F-979F-FC8E1E20819F - ad941e9b4f189baa"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in BBSideEngine.BBSideEngineManager.updateIncidentTelemetry() -&gt; ()"
+                  moduleName = "BBSideEngine"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/phoenix/Documents/K-Safe/iOS-SDK/Develop/busbysdk_ios/Framework/BBSideEngine/Main/BBSideEngineManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "1963"
+                  endingLineNumber = "1963"
+                  offsetFromSymbolStart = "76">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0276BEEB-D39F-4CC6-9197-4D994A8C7266"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../Framework/BBSideEngine/Main/BBSideEngineManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "1946"
+            endingLineNumber = "1946"
+            landmarkName = "updateIncidentTelemetry()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>
