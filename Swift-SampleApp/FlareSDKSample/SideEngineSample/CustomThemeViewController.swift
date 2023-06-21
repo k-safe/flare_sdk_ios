@@ -58,20 +58,20 @@ class CustomThemeViewController: UIViewController {
             sideEngineShared.countDownDuration = 30 // for live mode
             sideEngineShared.showLog = true //Default true //false when release app to the store
             
-            //The "enableVRUUpdates" feature is a safety measure designed for cyclists, which allows them to send notifications to nearby fleet users.
-            sideEngineShared.enable_flare_aware_network = true
+            //The "enable_flare_aware_network" feature is a safety measure designed for cyclists, which allows them to send notifications to nearby fleet users.
+            sideEngineShared.enable_flare_aware_network = true //(Optional)
             
             //It is possible to activate the distance filter in order to transmit location data in the live tracking URL. This will ensure that location updates are transmitted every 20 meters, once the timer interval has been reached.
-            sideEngineShared.distance_filter_meters = 20
+            sideEngineShared.distance_filter_meters = 20 //(Optional)
             
             //The default value is 15 seconds, which can be adjusted to meet specific requirements. This parameter will only be utilized in cases where "sideEngineShared.high_frequency_mode_enabled = false" is invoked.
-            sideEngineShared.low_frequency_intervals_seconds = 15
+            sideEngineShared.low_frequency_intervals_seconds = 15 //(Optional)
             
             //The default value is 3 seconds, which can be adjusted to meet specific requirements. This parameter will only be utilized in cases where "sideEngineShared.high_frequency_mode_enabled = true" is invoked.
-            sideEngineShared.high_frequency_intervals_seconds = 3
+            sideEngineShared.high_frequency_intervals_seconds = 3 //(Optional)
             
             //It is recommended to activate the high frequency mode when the SOS function is engaged in order to enhance the quality of the live tracking experience.
-            sideEngineShared.high_frequency_mode_enabled = false
+            sideEngineShared.high_frequency_mode_enabled = false //(Optional)
             
             //Start SIDE engine
             sideEngineShared.startSideEngine()
