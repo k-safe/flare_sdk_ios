@@ -6304,7 +6304,7 @@
       "kind": "StringLiteral",
       "offset": 513,
       "length": 7,
-      "value": "\"4.1.3\""
+      "value": "\"4.2.0\""
     },
     {
       "filePath": "\/Users\/phoenix\/Documents\/K-Safe\/iOS-SDK\/Develop\/busbysdk_ios\/Framework\/BBSideEngine\/Main\/BBSideEngineManager.swift",
@@ -6876,7 +6876,7 @@
     {
       "filePath": "\/Users\/phoenix\/Documents\/K-Safe\/iOS-SDK\/Develop\/busbysdk_ios\/Framework\/BBSideEngine\/Main\/BBSideEngineManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 133228,
+      "offset": 133240,
       "length": 5,
       "value": "false"
     },
