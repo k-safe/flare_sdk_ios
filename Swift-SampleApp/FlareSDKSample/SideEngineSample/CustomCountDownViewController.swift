@@ -47,7 +47,6 @@ class CustomCountDownViewController: UIViewController {
             self.counterTimer.invalidate()
             self.counterTimer = nil
          }
-        BBSideEngineManager.shared.resumeSideEngine() //You need to resume side engine when go to back screen
         
         if isModal == true {
             self.dismiss(animated: true)
@@ -130,6 +129,12 @@ extension CustomCountDownViewController{
             }
         }
      }
+    func clearTimer() {
+        if self.counterTimer != nil{
+            self.counterTimer.invalidate()
+            self.counterTimer = nil
+         }
+    }
 }
 
 

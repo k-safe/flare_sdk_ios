@@ -20,10 +20,14 @@ class CustomThemeViewController: UIViewController {
     @IBOutlet var startButton : UIButton!
     @IBOutlet weak var confidenceLabel: UILabel!
     
+    let customUIController = UIStoryboard(name: "Main", bundle:nil).instantiateViewController(withIdentifier: "CustomCountDownViewController") as! CustomCountDownViewController
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.confidenceLabel.text = ""
         self.startButton.tag = 1
+        
+        self.customUIController.delegate = self //This will used to send sms or email when countdown finished
         
         //Configure SIDE engine and register listner
         self.sideEngineConfigure()
@@ -120,15 +124,12 @@ class CustomThemeViewController: UIViewController {
                 }
                 //You can open your custom count down controller here in the custom theme
                 if self.sideEngineShared.applicationTheme == .custom {
-                    let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-                    let customUIController = storyBoard.instantiateViewController(withIdentifier: "CustomCountDownViewController") as! CustomCountDownViewController
-                    customUIController.delegate = self //This will used to send sms or email when countdown finished
                     DispatchQueue.main.async {
                         let state = UIApplication.shared.applicationState
                         if state != .active {
-                            self.present(customUIController, animated: true)
+                            self.present(self.customUIController, animated: true)
                         }else {
-                            self.navigationController?.pushViewController(customUIController, animated: false)
+                            self.navigationController?.pushViewController(self.customUIController, animated: false)
                         }
                     }
                 }
@@ -136,12 +137,7 @@ class CustomThemeViewController: UIViewController {
             }
             else if response.type == .incidentAutoCancel {
                 // Please disregard your customised countdown page in this instance and refrain from invoking any functions from external engines. The external engine will autonomously handle any necessary actions.
-                for controller in self.navigationController!.viewControllers as Array {
-                    if let customController = controller as? CustomCountDownViewController {
-                        customController.cancelAutoIncident()
-                        break
-                    }
-                }
+                self.customUIController.cancelAutoIncident()
             }
             else if response.type == .incidentAlertSent {
                 //This message is intended solely to provide notification regarding the transmission status of alerts. It is unnecessary to invoke any SIDE engine functions in this context.
