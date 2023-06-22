@@ -1,6 +1,6 @@
 PODS:
   - IQKeyboardManager (6.5.12)
-  - SideEngine-iOS (4.1.3)
+  - SideEngine-iOS (4.2.0)
 
 DEPENDENCIES:
   - IQKeyboardManager (~> 6.5)
@@ -13,7 +13,7 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   IQKeyboardManager: b1fd66ccf7a79095bdcc4a2735231586f744216e
-  SideEngine-iOS: 072b1ad3597992bbe2e2710508c47cdff09e5a5e
+  SideEngine-iOS: 7d500660fe9cb3e864259860b82887302724ecc3
 
 PODFILE CHECKSUM: 65af43676cf9e01a0f8e974a90592895d0143d7e
 
