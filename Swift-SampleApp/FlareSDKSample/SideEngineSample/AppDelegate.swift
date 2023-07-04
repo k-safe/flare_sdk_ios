@@ -8,6 +8,8 @@
 import UIKit
 import BBSideEngine
 import IQKeyboardManager
+import FirebaseCore
+import FirebaseCrashlytics
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,6 +17,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        FirebaseApp.configure()
+//        Crashlytics.crashlytics().setCrashlyticsCollectionEnabled(true)
+        Crashlytics.crashlytics().setCrashlyticsCollectionEnabled(true) // Enable data collection
+        
+//        let uuid = NSUUID().uuidString
+        
         
         IQKeyboardManager.shared().isEnabled = true // manage keyboard behaviour
        

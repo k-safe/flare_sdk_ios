@@ -99,6 +99,7 @@ import _StringProcessing
   @objc public var riderName: Swift.String
   @objc public var riderEmail: Swift.String
   @objc public var riderId: Swift.String
+  @objc public var deviceId: Swift.String
   @objc public var impactBody: Swift.String
   @objc public var impactBodySOS: Swift.String
   @objc public var showLog: Swift.Bool

@@ -41,7 +41,7 @@ class CustomThemeViewController: UIViewController {
         //Sandbox mode used only for while developing your App (You can use any of the one theme e.g. .standard OR .custom)
         
         let mode: BBMode = isProductionMode ? .production : .sandbox
-        let accessKey = isProductionMode ? "Your production license key here" : "Your sandbox license key here"
+        let accessKey = isProductionMode ? "8b53824f-ed7a-4829-860b-f6161c568fad" : "9518a8f7-a55f-41f4-9eaa-963bdb1fce5f" //Production
         shared.configure(accessKey: accessKey, mode: mode, theme: .custom)
         
         //------------Register SIDE engine listener here------------
@@ -62,8 +62,9 @@ class CustomThemeViewController: UIViewController {
             sideEngineShared.countDownDuration = 30 // for live mode
             sideEngineShared.showLog = true //Default true //false when release app to the store
             
+            sideEngineShared.enableActivityTelemetry = false
             //The "enable_flare_aware_network" feature is a safety measure designed for cyclists, which allows them to send notifications to nearby fleet users.
-            sideEngineShared.enable_flare_aware_network = true //(Optional)
+            sideEngineShared.enable_flare_aware_network = false //(Optional)
             
             //It is possible to activate the distance filter in order to transmit location data in the live tracking URL. This will ensure that location updates are transmitted every 20 meters, once the timer interval has been reached.
             sideEngineShared.distance_filter_meters = 20 //(Optional)

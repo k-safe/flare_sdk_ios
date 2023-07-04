@@ -20,6 +20,7 @@
 		D05B6964280FDFE700356644 /* CustomCountDownViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05B6963280FDFE600356644 /* CustomCountDownViewController.swift */; };
 		D05B6967280FE89600356644 /* TestSideEngineSupportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05B6966280FE89600356644 /* TestSideEngineSupportViewController.swift */; };
 		D0AA8CDB29376B190086B1CC /* VideoAskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AA8CDA29376B190086B1CC /* VideoAskViewController.swift */; };
+		D0EFF3752A4E9A6700D2702C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D0EFF3742A4E9A6700D2702C /* GoogleService-Info.plist */; };
 		D4315A4229DFDF21003CB087 /* EmergencySOSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4315A4129DFDF21003CB087 /* EmergencySOSViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +54,7 @@
 		D05B6963280FDFE600356644 /* CustomCountDownViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCountDownViewController.swift; sourceTree = "<group>"; };
 		D05B6966280FE89600356644 /* TestSideEngineSupportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestSideEngineSupportViewController.swift; sourceTree = "<group>"; };
 		D0AA8CDA29376B190086B1CC /* VideoAskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoAskViewController.swift; sourceTree = "<group>"; };
+		D0EFF3742A4E9A6700D2702C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D4315A4129DFDF21003CB087 /* EmergencySOSViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmergencySOSViewController.swift; sourceTree = "<group>"; };
 		D652B2033D651D8276B3193A /* Pods-FlareSDKSample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlareSDKSample.debug.xcconfig"; path = "Target Support Files/Pods-FlareSDKSample/Pods-FlareSDKSample.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -80,6 +82,7 @@
 		D018BCC3269C4FDB00F21A20 = {
 			isa = PBXGroup;
 			children = (
+				D0EFF3742A4E9A6700D2702C /* GoogleService-Info.plist */,
 				D018BCCE269C4FDB00F21A20 /* SideEngineSample */,
 				D018BCCD269C4FDB00F21A20 /* Products */,
 				FF1F652BAA6E453F1A246123 /* Pods */,
@@ -138,12 +141,15 @@
 				D018BCCA269C4FDB00F21A20 /* Resources */,
 				D0332AF329FFAD5100D24816 /* Embed Frameworks */,
 				442422DFF4C306368E4F9973 /* [CP] Embed Pods Frameworks */,
+				D0EFF3762A4E9C4D00D2702C /* ShellScript */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = FlareSDKSample;
+			packageProductDependencies = (
+			);
 			productName = SideEngineSample;
 			productReference = D018BCCC269C4FDB00F21A20 /* FlareSDKSample.app */;
 			productType = "com.apple.product-type.application";
@@ -171,6 +177,8 @@
 				Base,
 			);
 			mainGroup = D018BCC3269C4FDB00F21A20;
+			packageReferences = (
+			);
 			productRefGroup = D018BCCD269C4FDB00F21A20 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -186,6 +194,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D018BCDC269C4FDE00F21A20 /* LaunchScreen.storyboard in Resources */,
+				D0EFF3752A4E9A6700D2702C /* GoogleService-Info.plist in Resources */,
 				D018BCD9269C4FDE00F21A20 /* Assets.xcassets in Resources */,
 				D018BCD7269C4FDB00F21A20 /* Main.storyboard in Resources */,
 			);
@@ -232,6 +241,25 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FlareSDKSample/Pods-FlareSDKSample-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		D0EFF3762A4E9C4D00D2702C /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Resources/DWARF/${TARGET_NAME}",
+				"$(SRCROOT)/$(BUILT_PRODUCTS_DIR)/$(INFOPLIST_PATH)",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"${PODS_ROOT}/FirebaseCrashlytics/run\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
