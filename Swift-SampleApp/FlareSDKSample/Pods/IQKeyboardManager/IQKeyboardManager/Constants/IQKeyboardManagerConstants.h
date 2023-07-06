@@ -24,7 +24,7 @@
 #ifndef IQKeyboardManagerConstants_h
 #define IQKeyboardManagerConstants_h
 
-#import <Foundation/Foundation.h>
+#import <Foundation/NSObjCRuntime.h>
 
 ///-----------------------------------
 /// @name IQAutoToolbarManageBehaviour

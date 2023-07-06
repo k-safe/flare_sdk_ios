@@ -129,12 +129,6 @@ extension CustomCountDownViewController{
             }
         }
      }
-    func clearTimer() {
-        if self.counterTimer != nil{
-            self.counterTimer.invalidate()
-            self.counterTimer = nil
-         }
-    }
 }
 
 

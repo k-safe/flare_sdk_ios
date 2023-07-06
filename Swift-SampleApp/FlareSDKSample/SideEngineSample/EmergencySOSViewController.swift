@@ -71,7 +71,8 @@ class EmergencySOSViewController: UIViewController {
     
     //TODO: Register SIDE engine listener to receive call back from side engine
     func registerSideEngineListener() {
-        sideEngineShared.sideEventsListener { (response) in
+        sideEngineShared.sideEventsListener { [weak self] (response) in
+            guard let self = self else { return }
             //This call back basiclly where you call the configure method
             if response.type == .configure && response.success == true {
                 //You now have the capability to activate an SOS signal at any time. In the event that a user input button is unavailable, you may activate the SOS signal using the function provided below.:
