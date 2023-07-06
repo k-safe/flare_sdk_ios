@@ -48,10 +48,10 @@ class TestSideEngineSupportViewController: UIViewController, VideoAskDelegate {
     //TODO: fetch location from what3word
     func fetchLocation() {
         
-        BBSideEngineManager.shared.fetchWhat3WordLocation { response in
+        BBSideEngineManager.shared.fetchWhat3WordLocation { [weak self] response in
             
             if let tempRes = response["response"] as? NSDictionary {
-                
+                guard let self = self else { return }
                 if let coordinates = tempRes.object(forKey: "coordinates") as? NSDictionary {
                     if let tempLat = coordinates.object(forKey: "lat") as? NSNumber {
                         self.lat = tempLat.doubleValue
@@ -160,13 +160,13 @@ extension TestSideEngineSupportViewController: MKMapViewDelegate {
         
         if annotationView == nil {
                 annotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: identifier)
-                annotationView!.canShowCallout = true
+                annotationView?.canShowCallout = true
              let imgAnotaion = UIImage(named: "mappin",
                                 in: Bundle(for: type(of:self)),
                                 compatibleWith: nil)
                 annotationView?.image = imgAnotaion
             } else {
-                annotationView!.annotation = annotation
+                annotationView?.annotation = annotation
             }
         return annotationView
     }

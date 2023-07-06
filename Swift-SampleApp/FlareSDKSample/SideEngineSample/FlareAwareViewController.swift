@@ -66,7 +66,8 @@ class FlareAwareViewController: UIViewController {
     
     //TODO: Register SIDE engine listener to receive call back from side engine
     func registerSideEngineListener() {
-        sideEngineShared.sideEventsListener { (response) in
+        sideEngineShared.sideEventsListener { [weak self] (response) in
+            guard let self = self else { return }
             //This call back basiclly where you call the configure method
             if response.type == .configure && response.success == true {
                 //You are now able to initiate the SIDE engine process at any time. In the event that there is no user input button available to commence the activity, you may commence the SIDE engine by executing the following command:

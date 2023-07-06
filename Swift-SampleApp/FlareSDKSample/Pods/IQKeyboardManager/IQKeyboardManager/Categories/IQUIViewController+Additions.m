@@ -21,11 +21,9 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <UIKit/UIKit.h>
-#import <objc/runtime.h>
-
 #import "IQUIViewController+Additions.h"
-
+#import <UIKit/NSLayoutConstraint.h>
+#import <objc/runtime.h>
 
 @implementation UIViewController (Additions)
 

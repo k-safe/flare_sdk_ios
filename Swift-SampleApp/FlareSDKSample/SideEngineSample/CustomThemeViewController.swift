@@ -20,14 +20,13 @@ class CustomThemeViewController: UIViewController {
     @IBOutlet var startButton : UIButton!
     @IBOutlet weak var confidenceLabel: UILabel!
     
-    let customUIController = UIStoryboard(name: "Main", bundle:nil).instantiateViewController(withIdentifier: "CustomCountDownViewController") as! CustomCountDownViewController
+    var customUIController: CustomCountDownViewController?
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.confidenceLabel.text = ""
         self.startButton.tag = 1
-        
-        self.customUIController.delegate = self //This will used to send sms or email when countdown finished
         
         //Configure SIDE engine and register listner
         self.sideEngineConfigure()
@@ -63,7 +62,7 @@ class CustomThemeViewController: UIViewController {
             sideEngineShared.showLog = true //Default true //false when release app to the store
             
             //The "enable_flare_aware_network" feature is a safety measure designed for cyclists, which allows them to send notifications to nearby fleet users.
-            sideEngineShared.enable_flare_aware_network = true //(Optional)
+            sideEngineShared.enable_flare_aware_network = false //(Optional)
             
             //It is possible to activate the distance filter in order to transmit location data in the live tracking URL. This will ensure that location updates are transmitted every 20 meters, once the timer interval has been reached.
             sideEngineShared.distance_filter_meters = 20 //(Optional)
@@ -88,7 +87,8 @@ class CustomThemeViewController: UIViewController {
     
     //TODO: Register SIDE engine listener to receive call back from side engine
     func registerSideEngineListener() {
-        sideEngineShared.sideEventsListener { (response) in
+        sideEngineShared.sideEventsListener { [weak self] (response) in
+            guard let self = self else { return }
             if response.type == .configure && response.success == true {
                 //You are now able to initiate the SIDE engine process at any time. In the event that there is no user input button available to commence the activity, you may commence the SIDE engine by executing the following command:
                 
@@ -124,12 +124,16 @@ class CustomThemeViewController: UIViewController {
                 }
                 //You can open your custom count down controller here in the custom theme
                 if self.sideEngineShared.applicationTheme == .custom {
+                   
+                    let controller = UIStoryboard(name: "Main", bundle:nil).instantiateViewController(withIdentifier: "CustomCountDownViewController") as! CustomCountDownViewController
+                    controller.delegate = self
+                    self.customUIController = controller
                     DispatchQueue.main.async {
                         let state = UIApplication.shared.applicationState
                         if state != .active {
-                            self.present(self.customUIController, animated: true)
+                            self.present(controller, animated: true)
                         }else {
-                            self.navigationController?.pushViewController(self.customUIController, animated: false)
+                            self.navigationController?.pushViewController(controller, animated: false)
                         }
                     }
                 }
@@ -137,7 +141,9 @@ class CustomThemeViewController: UIViewController {
             }
             else if response.type == .incidentAutoCancel {
                 // Please disregard your customised countdown page in this instance and refrain from invoking any functions from external engines. The external engine will autonomously handle any necessary actions.
-                self.customUIController.cancelAutoIncident()
+                if let controller = self.customUIController {
+                    controller.cancelAutoIncident()
+                }
             }
             else if response.type == .incidentAlertSent {
                 //This message is intended solely to provide notification regarding the transmission status of alerts. It is unnecessary to invoke any SIDE engine functions in this context.

@@ -62,7 +62,7 @@ class StandardThemeViewController: UIViewController {
             sideEngineShared.showLog = true //Default true //false when release app to the store
             
             //The "enable_flare_aware_network" feature is a safety measure designed for cyclists, which allows them to send notifications to nearby fleet users.
-            sideEngineShared.enable_flare_aware_network = true //(Optional)
+            sideEngineShared.enable_flare_aware_network = false //(Optional)
             
             //It is possible to activate the distance filter in order to transmit location data in the live tracking URL. This will ensure that location updates are transmitted every 20 meters, once the timer interval has been reached.
             sideEngineShared.distance_filter_meters = 20 //(Optional)
@@ -96,7 +96,8 @@ class StandardThemeViewController: UIViewController {
     
     //TODO: Register SIDE engine listener to receive call back from side engine
     func registerSideEngineListener() {
-        sideEngineShared.sideEventsListener { (response) in
+        sideEngineShared.sideEventsListener { [weak self] (response) in
+            guard let self = self else { return }
             //This call back basiclly where you call the configure method
             if response.type == .configure && response.success == true {
                 //You are now able to initiate the SIDE engine process at any time. In the event that there is no user input button available to commence the activity, you may commence the SIDE engine by executing the following command:

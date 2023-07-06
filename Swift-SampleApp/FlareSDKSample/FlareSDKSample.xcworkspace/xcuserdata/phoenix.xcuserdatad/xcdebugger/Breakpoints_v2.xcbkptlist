@@ -7,62 +7,139 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "445A4084-17D7-43F3-B6D7-D68BE7290CAE"
+            uuid = "FF692C74-D424-4C46-9DCC-339586633423"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "../../Framework/BBSideEngine/Main/BBSideEngineManager.swift"
+            filePath = "../../Framework/BBSideEngine/Utils/BBConstants.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1961"
-            endingLineNumber = "1961"
-            landmarkName = "updateIncidentTelemetry()"
+            startingLineNumber = "72"
+            endingLineNumber = "72"
+            landmarkName = "unknown"
+            landmarkType = "0">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "55164AA3-7414-4364-BDCD-69CB1514C2A6"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SideEngineSample/CustomCountDownViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "106"
+            endingLineNumber = "106"
+            landmarkName = "runTimer()"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "88A1B1EE-FA91-41FA-9F3E-05FE91047097"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SideEngineSample/CustomCountDownViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
+            landmarkName = "CustomCountDownViewController"
+            landmarkType = "3">
             <Locations>
                <Location
-                  uuid = "445A4084-17D7-43F3-B6D7-D68BE7290CAE - ad941e9b4f189b8b"
+                  uuid = "88A1B1EE-FA91-41FA-9F3E-05FE91047097 - 85580221cedb07f6"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in BBSideEngine.BBSideEngineManager.updateIncidentTelemetry() -&gt; ()"
-                  moduleName = "BBSideEngine"
+                  symbolName = "FlareSDKSample.CustomCountDownViewController.counter.getter : Swift.Int"
+                  moduleName = "FlareSDKSample"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/phoenix/Documents/K-Safe/iOS-SDK/Develop/busbysdk_ios/Framework/BBSideEngine/Main/BBSideEngineManager.swift"
+                  urlString = "file:///Users/phoenix/Documents/K-Safe/iOS-SDK/Develop/busbysdk_ios/Swift-SampleApp/FlareSDKSample/SideEngineSample/CustomCountDownViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "1962"
-                  endingLineNumber = "1962"
-                  offsetFromSymbolStart = "856">
+                  startingLineNumber = "25"
+                  endingLineNumber = "25"
+                  offsetFromSymbolStart = "84">
                </Location>
                <Location
-                  uuid = "445A4084-17D7-43F3-B6D7-D68BE7290CAE - ad941e9b4f189b8b"
+                  uuid = "88A1B1EE-FA91-41FA-9F3E-05FE91047097 - cc3ab1a2271235e2"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in BBSideEngine.BBSideEngineManager.updateIncidentTelemetry() -&gt; ()"
-                  moduleName = "BBSideEngine"
+                  symbolName = "FlareSDKSample.CustomCountDownViewController.counter.setter : Swift.Int"
+                  moduleName = "FlareSDKSample"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/phoenix/Documents/K-Safe/iOS-SDK/Develop/busbysdk_ios/Framework/BBSideEngine/Main/BBSideEngineManager.swift"
+                  urlString = "file:///Users/phoenix/Documents/K-Safe/iOS-SDK/Develop/busbysdk_ios/Swift-SampleApp/FlareSDKSample/SideEngineSample/CustomCountDownViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "1962"
-                  endingLineNumber = "1962"
-                  offsetFromSymbolStart = "924">
+                  startingLineNumber = "25"
+                  endingLineNumber = "25"
+                  offsetFromSymbolStart = "92">
                </Location>
                <Location
-                  uuid = "445A4084-17D7-43F3-B6D7-D68BE7290CAE - ad941e9b4f189baa"
+                  uuid = "88A1B1EE-FA91-41FA-9F3E-05FE91047097 - 878bc60aafc4ab71"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in BBSideEngine.BBSideEngineManager.updateIncidentTelemetry() -&gt; ()"
-                  moduleName = "BBSideEngine"
+                  symbolName = "FlareSDKSample.CustomCountDownViewController.counter.modify : Swift.Int"
+                  moduleName = "FlareSDKSample"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/phoenix/Documents/K-Safe/iOS-SDK/Develop/busbysdk_ios/Framework/BBSideEngine/Main/BBSideEngineManager.swift"
+                  urlString = "file:///Users/phoenix/Documents/K-Safe/iOS-SDK/Develop/busbysdk_ios/Swift-SampleApp/FlareSDKSample/SideEngineSample/CustomCountDownViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "1963"
-                  endingLineNumber = "1963"
-                  offsetFromSymbolStart = "76">
+                  startingLineNumber = "25"
+                  endingLineNumber = "25"
+                  offsetFromSymbolStart = "0">
+               </Location>
+               <Location
+                  uuid = "88A1B1EE-FA91-41FA-9F3E-05FE91047097 - 9a1107f5898bb832"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FlareSDKSample.CustomCountDownViewController.counter.modify : Swift.Int with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "FlareSDKSample"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/phoenix/Documents/K-Safe/iOS-SDK/Develop/busbysdk_ios/Swift-SampleApp/FlareSDKSample/SideEngineSample/CustomCountDownViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "25"
+                  endingLineNumber = "25"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  uuid = "88A1B1EE-FA91-41FA-9F3E-05FE91047097 - 6b8831bb42ef7220"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FlareSDKSample.CustomCountDownViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; FlareSDKSample.CustomCountDownViewController"
+                  moduleName = "FlareSDKSample"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/phoenix/Documents/K-Safe/iOS-SDK/Develop/busbysdk_ios/Swift-SampleApp/FlareSDKSample/SideEngineSample/CustomCountDownViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "25"
+                  endingLineNumber = "25"
+                  offsetFromSymbolStart = "252">
+               </Location>
+               <Location
+                  uuid = "88A1B1EE-FA91-41FA-9F3E-05FE91047097 - 969df4313777aabd"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FlareSDKSample.CustomCountDownViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;FlareSDKSample.CustomCountDownViewController&gt;"
+                  moduleName = "FlareSDKSample"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/phoenix/Documents/K-Safe/iOS-SDK/Develop/busbysdk_ios/Swift-SampleApp/FlareSDKSample/SideEngineSample/CustomCountDownViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "25"
+                  endingLineNumber = "25"
+                  offsetFromSymbolStart = "228">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -70,64 +147,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "D9B95207-969F-4A2F-979F-FC8E1E20819F"
+            uuid = "51577E0B-2F0C-4B1A-A2A0-AFAD7548126D"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "../../Framework/BBSideEngine/Main/BBSideEngineManager.swift"
+            filePath = "SideEngineSample/CustomCountDownViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1959"
-            endingLineNumber = "1959"
-            landmarkName = "updateIncidentTelemetry()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "D9B95207-969F-4A2F-979F-FC8E1E20819F - ad941e9b4f186436"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in BBSideEngine.BBSideEngineManager.updateIncidentTelemetry() -&gt; ()"
-                  moduleName = "BBSideEngine"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/phoenix/Documents/K-Safe/iOS-SDK/Develop/busbysdk_ios/Framework/BBSideEngine/Main/BBSideEngineManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "1959"
-                  endingLineNumber = "1959"
-                  offsetFromSymbolStart = "288">
-               </Location>
-               <Location
-                  uuid = "D9B95207-969F-4A2F-979F-FC8E1E20819F - ad941e9b4f189baa"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in BBSideEngine.BBSideEngineManager.updateIncidentTelemetry() -&gt; ()"
-                  moduleName = "BBSideEngine"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/phoenix/Documents/K-Safe/iOS-SDK/Develop/busbysdk_ios/Framework/BBSideEngine/Main/BBSideEngineManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "1963"
-                  endingLineNumber = "1963"
-                  offsetFromSymbolStart = "76">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "0276BEEB-D39F-4CC6-9197-4D994A8C7266"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "../../Framework/BBSideEngine/Main/BBSideEngineManager.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1946"
-            endingLineNumber = "1946"
-            landmarkName = "updateIncidentTelemetry()"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
+            landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

@@ -21,10 +21,9 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <UIKit/UIKit.h>
+#import <IQKeyboardManagerConstants.h>
 
-#import "IQKeyboardManagerConstants.h"
-
+#import <UIKit/UITextView.h>
 
 /**
  UITextView with placeholder support

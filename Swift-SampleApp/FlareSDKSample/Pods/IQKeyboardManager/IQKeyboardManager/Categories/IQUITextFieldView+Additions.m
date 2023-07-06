@@ -21,9 +21,8 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <objc/runtime.h>
-
 #import "IQUITextFieldView+Additions.h"
+#import <objc/runtime.h>
 
 @implementation UIView (Additions)
 
