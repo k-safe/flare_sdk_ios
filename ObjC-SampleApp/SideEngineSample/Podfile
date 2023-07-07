@@ -6,6 +6,8 @@ target 'SideEngineSample' do
   use_frameworks!
 
   # Pods for SideEngineSample
-pod 'IQKeyboardManager', '~> 6.5'
+#pod 'IQKeyboardManager', '~> 6.5'
+pod 'SideEngine-iOS'
+#pod 'IQKeyboardManager' 
 
 end

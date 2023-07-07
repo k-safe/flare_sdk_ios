@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AB55BB7D26395ADF122F7923 /* Pods_SideEngineSample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 295909CBFF0B2D4C5DF3ACD6 /* Pods_SideEngineSample.framework */; };
+		93FBF13ADF699D6DADA359F7 /* Pods_SideEngineSample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08ABE6785282144E2E4A505C /* Pods_SideEngineSample.framework */; };
 		D05BB7F12918DCCD00510CC6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D05BB7F02918DCCD00510CC6 /* AppDelegate.m */; };
 		D05BB7F42918DCCD00510CC6 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D05BB7F32918DCCD00510CC6 /* SceneDelegate.m */; };
 		D05BB7F72918DCCD00510CC6 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D05BB7F62918DCCD00510CC6 /* ViewController.m */; };
@@ -18,13 +18,13 @@
 		D05BB80C2918DCCE00510CC6 /* SideEngineSampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D05BB80B2918DCCE00510CC6 /* SideEngineSampleTests.m */; };
 		D05BB8162918DCCE00510CC6 /* SideEngineSampleUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = D05BB8152918DCCE00510CC6 /* SideEngineSampleUITests.m */; };
 		D05BB8182918DCCE00510CC6 /* SideEngineSampleUITestsLaunchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D05BB8172918DCCE00510CC6 /* SideEngineSampleUITestsLaunchTests.m */; };
-		D0AA8CCE29372FE70086B1CC /* BBSideEngine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0AA8CCD29372FD30086B1CC /* BBSideEngine.framework */; };
-		D0AA8CCF29372FE70086B1CC /* BBSideEngine.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D0AA8CCD29372FD30086B1CC /* BBSideEngine.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D0C38A3E29193D2C0056806A /* StandardThemeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0C38A3D29193D2C0056806A /* StandardThemeViewController.m */; };
+		D49233E82A57F63D009DD72E /* VideoAskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D49233E72A57F63D009DD72E /* VideoAskViewController.m */; };
+		D49233EB2A57F704009DD72E /* EmergencySOSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D49233EA2A57F704009DD72E /* EmergencySOSViewController.m */; };
+		D49233EE2A57F711009DD72E /* FlareAwareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D49233ED2A57F711009DD72E /* FlareAwareViewController.m */; };
 		F58C07DB29261465004901FF /* CustomThemeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F58C07DA29261465004901FF /* CustomThemeViewController.m */; };
 		F58C07DF2926155A004901FF /* CustomCountDownViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F58C07DE2926155A004901FF /* CustomCountDownViewController.m */; };
 		F58C07E22926157B004901FF /* TestSideEngineSupportViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F58C07E12926157B004901FF /* TestSideEngineSupportViewController.m */; };
-		F58C07E5292615AB004901FF /* TestViewModeController.m in Sources */ = {isa = PBXBuildFile; fileRef = F58C07E4292615AB004901FF /* TestViewModeController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,13 +42,6 @@
 			remoteGlobalIDString = D05BB7EB2918DCCD00510CC6;
 			remoteInfo = SideEngineSample;
 		};
-		D0AA8CCC29372FD30086B1CC /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D0AA8CC829372FD30086B1CC /* BBSideEngine.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = D05F9690265CBC9800FC0AE0;
-			remoteInfo = BBSideEngine;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -58,7 +51,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				D0AA8CCF29372FE70086B1CC /* BBSideEngine.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -66,8 +58,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		295909CBFF0B2D4C5DF3ACD6 /* Pods_SideEngineSample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SideEngineSample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		598E3F0E588B94494B5B6426 /* Pods-SideEngineSample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SideEngineSample.debug.xcconfig"; path = "Target Support Files/Pods-SideEngineSample/Pods-SideEngineSample.debug.xcconfig"; sourceTree = "<group>"; };
+		08ABE6785282144E2E4A505C /* Pods_SideEngineSample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SideEngineSample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		461DD3D5ECEE3402E79A954F /* Pods-SideEngineSample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SideEngineSample.debug.xcconfig"; path = "Target Support Files/Pods-SideEngineSample/Pods-SideEngineSample.debug.xcconfig"; sourceTree = "<group>"; };
+		C8C8813E4854DBAA3E537A0B /* Pods-SideEngineSample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SideEngineSample.release.xcconfig"; path = "Target Support Files/Pods-SideEngineSample/Pods-SideEngineSample.release.xcconfig"; sourceTree = "<group>"; };
 		D05BB7EC2918DCCD00510CC6 /* SideEngineSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SideEngineSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D05BB7EF2918DCCD00510CC6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D05BB7F02918DCCD00510CC6 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -85,18 +78,20 @@
 		D05BB8112918DCCE00510CC6 /* SideEngineSampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SideEngineSampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D05BB8152918DCCE00510CC6 /* SideEngineSampleUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SideEngineSampleUITests.m; sourceTree = "<group>"; };
 		D05BB8172918DCCE00510CC6 /* SideEngineSampleUITestsLaunchTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SideEngineSampleUITestsLaunchTests.m; sourceTree = "<group>"; };
-		D0AA8CC829372FD30086B1CC /* BBSideEngine.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = BBSideEngine.xcodeproj; path = ../../../Framework/BBSideEngine.xcodeproj; sourceTree = "<group>"; };
 		D0C38A3C29193D2C0056806A /* StandardThemeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StandardThemeViewController.h; sourceTree = "<group>"; };
 		D0C38A3D29193D2C0056806A /* StandardThemeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StandardThemeViewController.m; sourceTree = "<group>"; };
-		E6D2B2651BDC4A7136D56313 /* Pods-SideEngineSample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SideEngineSample.release.xcconfig"; path = "Target Support Files/Pods-SideEngineSample/Pods-SideEngineSample.release.xcconfig"; sourceTree = "<group>"; };
+		D49233E62A57F63D009DD72E /* VideoAskViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VideoAskViewController.h; sourceTree = "<group>"; };
+		D49233E72A57F63D009DD72E /* VideoAskViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VideoAskViewController.m; sourceTree = "<group>"; };
+		D49233E92A57F704009DD72E /* EmergencySOSViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EmergencySOSViewController.h; sourceTree = "<group>"; };
+		D49233EA2A57F704009DD72E /* EmergencySOSViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EmergencySOSViewController.m; sourceTree = "<group>"; };
+		D49233EC2A57F711009DD72E /* FlareAwareViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FlareAwareViewController.h; sourceTree = "<group>"; };
+		D49233ED2A57F711009DD72E /* FlareAwareViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FlareAwareViewController.m; sourceTree = "<group>"; };
 		F58C07D929261465004901FF /* CustomThemeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomThemeViewController.h; sourceTree = "<group>"; };
 		F58C07DA29261465004901FF /* CustomThemeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomThemeViewController.m; sourceTree = "<group>"; };
 		F58C07DD2926155A004901FF /* CustomCountDownViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomCountDownViewController.h; sourceTree = "<group>"; };
 		F58C07DE2926155A004901FF /* CustomCountDownViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomCountDownViewController.m; sourceTree = "<group>"; };
 		F58C07E02926157B004901FF /* TestSideEngineSupportViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestSideEngineSupportViewController.h; sourceTree = "<group>"; };
 		F58C07E12926157B004901FF /* TestSideEngineSupportViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestSideEngineSupportViewController.m; sourceTree = "<group>"; };
-		F58C07E3292615AB004901FF /* TestViewModeController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestViewModeController.h; sourceTree = "<group>"; };
-		F58C07E4292615AB004901FF /* TestViewModeController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestViewModeController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,8 +99,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D0AA8CCE29372FE70086B1CC /* BBSideEngine.framework in Frameworks */,
-				AB55BB7D26395ADF122F7923 /* Pods_SideEngineSample.framework in Frameworks */,
+				93FBF13ADF699D6DADA359F7 /* Pods_SideEngineSample.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -129,18 +123,10 @@
 		1294179DE0F9319C0F007E7F /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				598E3F0E588B94494B5B6426 /* Pods-SideEngineSample.debug.xcconfig */,
-				E6D2B2651BDC4A7136D56313 /* Pods-SideEngineSample.release.xcconfig */,
+				461DD3D5ECEE3402E79A954F /* Pods-SideEngineSample.debug.xcconfig */,
+				C8C8813E4854DBAA3E537A0B /* Pods-SideEngineSample.release.xcconfig */,
 			);
 			path = Pods;
-			sourceTree = "<group>";
-		};
-		8F9489BB93527194496B184E /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				295909CBFF0B2D4C5DF3ACD6 /* Pods_SideEngineSample.framework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		D05BB7E32918DCCD00510CC6 = {
@@ -151,7 +137,7 @@
 				D05BB8142918DCCE00510CC6 /* SideEngineSampleUITests */,
 				D05BB7ED2918DCCD00510CC6 /* Products */,
 				1294179DE0F9319C0F007E7F /* Pods */,
-				8F9489BB93527194496B184E /* Frameworks */,
+				E52D4833036320EA915503EF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -168,7 +154,6 @@
 		D05BB7EE2918DCCD00510CC6 /* SideEngineSample */ = {
 			isa = PBXGroup;
 			children = (
-				D0AA8CC829372FD30086B1CC /* BBSideEngine.xcodeproj */,
 				D05BB7EF2918DCCD00510CC6 /* AppDelegate.h */,
 				D05BB7F02918DCCD00510CC6 /* AppDelegate.m */,
 				D05BB7F22918DCCD00510CC6 /* SceneDelegate.h */,
@@ -183,8 +168,12 @@
 				F58C07DE2926155A004901FF /* CustomCountDownViewController.m */,
 				F58C07E02926157B004901FF /* TestSideEngineSupportViewController.h */,
 				F58C07E12926157B004901FF /* TestSideEngineSupportViewController.m */,
-				F58C07E3292615AB004901FF /* TestViewModeController.h */,
-				F58C07E4292615AB004901FF /* TestViewModeController.m */,
+				D49233E62A57F63D009DD72E /* VideoAskViewController.h */,
+				D49233E72A57F63D009DD72E /* VideoAskViewController.m */,
+				D49233E92A57F704009DD72E /* EmergencySOSViewController.h */,
+				D49233EA2A57F704009DD72E /* EmergencySOSViewController.m */,
+				D49233EC2A57F711009DD72E /* FlareAwareViewController.h */,
+				D49233ED2A57F711009DD72E /* FlareAwareViewController.m */,
 				D05BB7F82918DCCD00510CC6 /* Main.storyboard */,
 				D05BB7FB2918DCCE00510CC6 /* Assets.xcassets */,
 				D05BB7FD2918DCCE00510CC6 /* LaunchScreen.storyboard */,
@@ -211,12 +200,12 @@
 			path = SideEngineSampleUITests;
 			sourceTree = "<group>";
 		};
-		D0AA8CC929372FD30086B1CC /* Products */ = {
+		E52D4833036320EA915503EF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				D0AA8CCD29372FD30086B1CC /* BBSideEngine.framework */,
+				08ABE6785282144E2E4A505C /* Pods_SideEngineSample.framework */,
 			);
-			name = Products;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -226,12 +215,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D05BB81B2918DCCE00510CC6 /* Build configuration list for PBXNativeTarget "SideEngineSample" */;
 			buildPhases = (
-				F1E065715C2247E07B2D08AB /* [CP] Check Pods Manifest.lock */,
+				78D5D10F4887FE99B846D5D3 /* [CP] Check Pods Manifest.lock */,
 				D05BB7E82918DCCD00510CC6 /* Sources */,
 				D05BB7E92918DCCD00510CC6 /* Frameworks */,
 				D05BB7EA2918DCCD00510CC6 /* Resources */,
 				D05BB82E2918F65B00510CC6 /* Embed Frameworks */,
-				683A336810B26EE1E060BBBF /* [CP] Embed Pods Frameworks */,
+				1FA938DB305B417EFDAD8153 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -311,12 +300,6 @@
 			mainGroup = D05BB7E32918DCCD00510CC6;
 			productRefGroup = D05BB7ED2918DCCD00510CC6 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = D0AA8CC929372FD30086B1CC /* Products */;
-					ProjectRef = D0AA8CC829372FD30086B1CC /* BBSideEngine.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				D05BB7EB2918DCCD00510CC6 /* SideEngineSample */,
@@ -325,16 +308,6 @@
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		D0AA8CCD29372FD30086B1CC /* BBSideEngine.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = BBSideEngine.framework;
-			remoteRef = D0AA8CCC29372FD30086B1CC /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		D05BB7EA2918DCCD00510CC6 /* Resources */ = {
@@ -364,7 +337,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		683A336810B26EE1E060BBBF /* [CP] Embed Pods Frameworks */ = {
+		1FA938DB305B417EFDAD8153 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -381,7 +354,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SideEngineSample/Pods-SideEngineSample-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		F1E065715C2247E07B2D08AB /* [CP] Check Pods Manifest.lock */ = {
+		78D5D10F4887FE99B846D5D3 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -412,13 +385,15 @@
 			files = (
 				D05BB7F72918DCCD00510CC6 /* ViewController.m in Sources */,
 				D05BB7F12918DCCD00510CC6 /* AppDelegate.m in Sources */,
+				D49233EE2A57F711009DD72E /* FlareAwareViewController.m in Sources */,
 				D05BB8022918DCCE00510CC6 /* main.m in Sources */,
 				F58C07DB29261465004901FF /* CustomThemeViewController.m in Sources */,
+				D49233E82A57F63D009DD72E /* VideoAskViewController.m in Sources */,
 				D0C38A3E29193D2C0056806A /* StandardThemeViewController.m in Sources */,
+				D49233EB2A57F704009DD72E /* EmergencySOSViewController.m in Sources */,
 				D05BB7F42918DCCD00510CC6 /* SceneDelegate.m in Sources */,
 				F58C07DF2926155A004901FF /* CustomCountDownViewController.m in Sources */,
 				F58C07E22926157B004901FF /* TestSideEngineSupportViewController.m in Sources */,
-				F58C07E5292615AB004901FF /* TestViewModeController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -586,7 +561,7 @@
 		};
 		D05BB81C2918DCCE00510CC6 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 598E3F0E588B94494B5B6426 /* Pods-SideEngineSample.debug.xcconfig */;
+			baseConfigurationReference = 461DD3D5ECEE3402E79A954F /* Pods-SideEngineSample.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -594,7 +569,9 @@
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 3FNS7HP583;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GENERATE_INFOPLIST_FILE = YES;
+				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = SideEngineSample/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "app would like to use your camera to access post incident video surveys";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "app requires access to location services to let your emergency contacts know where you are if you have an incident";
@@ -621,7 +598,7 @@
 		};
 		D05BB81D2918DCCE00510CC6 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E6D2B2651BDC4A7136D56313 /* Pods-SideEngineSample.release.xcconfig */;
+			baseConfigurationReference = C8C8813E4854DBAA3E537A0B /* Pods-SideEngineSample.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -629,7 +606,9 @@
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 3FNS7HP583;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GENERATE_INFOPLIST_FILE = YES;
+				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = SideEngineSample/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "app would like to use your camera to access post incident video surveys";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "app requires access to location services to let your emergency contacts know where you are if you have an incident";

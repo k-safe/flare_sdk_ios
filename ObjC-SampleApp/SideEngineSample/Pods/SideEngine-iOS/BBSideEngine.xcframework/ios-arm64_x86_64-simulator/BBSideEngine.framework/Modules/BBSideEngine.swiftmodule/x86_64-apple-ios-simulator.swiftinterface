@@ -1,0 +1,162 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.7.2 (swiftlang-5.7.2.135.5 clang-1400.0.29.51)
+// swift-module-flags: -target x86_64-apple-ios13.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name BBSideEngine
+// swift-module-flags-ignorable: -enable-bare-slash-regex
+import AVFoundation
+import AudioToolbox
+@_exported import BBSideEngine
+import CoreGraphics
+import CoreLocation
+import CoreMotion
+import Foundation
+import MapKit
+import Network
+import Swift
+import SystemConfiguration
+import UIKit
+import WebKit
+import _Concurrency
+import _StringProcessing
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class BBPermissionHelper : ObjectiveC.NSObject {
+  public typealias BBPermission = ([Swift.String : Any]) -> Swift.Void
+  public func permissionEventsHandler(handler: @escaping BBSideEngine.BBPermissionHelper.BBPermission)
+  @objc deinit
+}
+@objc public enum BBMode : Swift.Int {
+  case sandbox
+  case production
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc public enum BBSideEngineMode : Swift.Int {
+  case test
+  case live
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc public enum BBTheme : Swift.Int {
+  case custom
+  case standard
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc public enum BBSideOperation : Swift.Int {
+  case none
+  case configure
+  case start
+  case stop
+  case sms
+  case email
+  case incidentDetected
+  case incidentCancel
+  case incidentAlertSent
+  case incidentVerifiedByUser
+  case timerStarted
+  case timerFinished
+  case location
+  case openVideoSurvey
+  case closeVideoSurvey
+  case incidentAutoCancel
+  case resumeSideEngine
+  case sosActive
+  case sosDeActive
+  case startFlareAware
+  case stopFlareAware
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@_hasMissingDesignatedInitializers @objc public class BBResponse : ObjectiveC.NSObject {
+  @objc public var success: Swift.Bool
+  @objc public var type: BBSideEngine.BBSideOperation
+  @objc public var payload: [Swift.String : Any]?
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @objcMembers public class BBSideEngineManager : ObjectiveC.NSObject {
+  public typealias callbackHelper = (BBSideEngine.BBResponse) -> Swift.Void
+  @objc public var completion: BBSideEngine.BBSideEngineManager.callbackHelper?
+  @objc public static let shared: BBSideEngine.BBSideEngineManager
+  @objc public var applicationTheme: BBSideEngine.BBTheme
+  @objc public var enableActivityTelemetry: Swift.Bool
+  @objc public var applicationLicenseKey: Swift.String
+  @objc public var surveyVideoURL: Swift.String
+  @objc public var countDownDuration: Swift.Int
+  @objc public var backgroundColor: UIKit.UIColor
+  @objc public var contentTextColor: UIKit.UIColor
+  @objc public var swipeToCancelTextColor: UIKit.UIColor
+  @objc public var swipeToCancelBackgroundColor: UIKit.UIColor
+  @objc public var riderName: Swift.String
+  @objc public var riderEmail: Swift.String
+  @objc public var riderId: Swift.String
+  @objc public var impactBody: Swift.String
+  @objc public var impactBodySOS: Swift.String
+  @objc public var showLog: Swift.Bool
+  @objc public var appType: Swift.String
+  @objc public var activity: Swift.String
+  @objc public var enable_flare_aware_network: Swift.Bool
+  @objc public var low_frequency_intervals_seconds: Swift.Int
+  @objc public var high_frequency_intervals_seconds: Swift.Int
+  @objc public var high_frequency_mode_enabled: Swift.Bool {
+    @objc get
+    @objc set
+  }
+  @objc public var distance_filter_meters: Swift.Double
+  @objc override dynamic public init()
+  @objc deinit
+  @objc public func configure(accessKey: Swift.String, mode: BBSideEngine.BBMode, theme: BBSideEngine.BBTheme)
+}
+extension BBSideEngine.BBSideEngineManager {
+  @objc dynamic public func startSideEngine()
+  @objc dynamic public func stopSideEngine()
+  @objc dynamic public func activeSOS()
+  @objc dynamic public func startFlareAware()
+  @objc dynamic public func stopFlareAware()
+  @objc dynamic public func deActiveSOS()
+}
+extension BBSideEngine.BBSideEngineManager {
+  @objc dynamic public func resumeSideEngine()
+  @objc dynamic public func presentVideoSurveys()
+}
+extension BBSideEngine.BBSideEngineManager {
+  @objc dynamic public func sideEventsListener(handler: @escaping BBSideEngine.BBSideEngineManager.callbackHelper)
+}
+extension BBSideEngine.BBSideEngineManager {
+  @objc dynamic public func sendSMS(contact: [Swift.String : Any])
+  @objc dynamic public func sendSMS(contacts: Foundation.NSArray)
+  @objc dynamic public func sendEmail(toEmail: Swift.String)
+  @objc dynamic public func sendError(error: Swift.String)
+  @objc dynamic public func fetchWhat3WordLocation(completion: @escaping ([Swift.String : Any]) -> ())
+  @objc dynamic public func notifyPartner()
+  @objc dynamic public func isConnectedToNetwork() -> Swift.Bool
+}
+public class BBViews {
+  public static let shared: BBSideEngine.BBViews
+  public init()
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class BBMotionHandler : ObjectiveC.NSObject {
+  @objc deinit
+}
+extension BBSideEngine.BBMode : Swift.Equatable {}
+extension BBSideEngine.BBMode : Swift.Hashable {}
+extension BBSideEngine.BBMode : Swift.RawRepresentable {}
+extension BBSideEngine.BBSideEngineMode : Swift.Equatable {}
+extension BBSideEngine.BBSideEngineMode : Swift.Hashable {}
+extension BBSideEngine.BBSideEngineMode : Swift.RawRepresentable {}
+extension BBSideEngine.BBTheme : Swift.Equatable {}
+extension BBSideEngine.BBTheme : Swift.Hashable {}
+extension BBSideEngine.BBTheme : Swift.RawRepresentable {}
+extension BBSideEngine.BBSideOperation : Swift.Equatable {}
+extension BBSideEngine.BBSideOperation : Swift.Hashable {}
+extension BBSideEngine.BBSideOperation : Swift.RawRepresentable {}

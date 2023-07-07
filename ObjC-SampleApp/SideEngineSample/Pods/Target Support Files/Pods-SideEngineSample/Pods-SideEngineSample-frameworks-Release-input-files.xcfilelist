@@ -1,2 +1,2 @@
 ${PODS_ROOT}/Target Support Files/Pods-SideEngineSample/Pods-SideEngineSample-frameworks.sh
-${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework
+${PODS_XCFRAMEWORKS_BUILD_DIR}/SideEngine-iOS/BBSideEngine.framework/BBSideEngine
