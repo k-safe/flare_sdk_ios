@@ -70,6 +70,7 @@ class ViewController: UIViewController {
     @IBAction func flareAwareTapped() {
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         let controller = storyBoard.instantiateViewController(withIdentifier: "FlareAwareViewController") as! FlareAwareViewController
+//        let controller = storyBoard.instantiateViewController(withIdentifier: "LimeSampleViewController") as! LimeSampleViewController
         self.navigationController?.pushViewController(controller, animated: true)
     }
 }

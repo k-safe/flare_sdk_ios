@@ -4,7 +4,7 @@
 target 'FlareSDKSample' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
-  pod 'SideEngine-iOS', '4.0.3'
+  pod 'SideEngine-iOS'
   pod 'IQKeyboardManager', '~> 6.5'
   # Add the Firebase pod for Google Analytics
   pod 'Firebase/Analytics'

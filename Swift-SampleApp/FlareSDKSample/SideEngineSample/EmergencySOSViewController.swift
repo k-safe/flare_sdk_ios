@@ -34,7 +34,7 @@ class EmergencySOSViewController: UIViewController {
         
         /****How to configure production mode****/
         //The live tracking feature is solely accessible in the production mode. Therefore, it is imperative that the side engine configuration method is set up in accordance with the production mode.
-        let accessKey = "Your production license key here"
+        let accessKey = "8b53824f-ed7a-4829-860b-f6161c568fad"
         sideEngineShared.configure(accessKey: accessKey, mode: .production, theme: .standard)
         
         //------------Register SIDE engine listener here------------

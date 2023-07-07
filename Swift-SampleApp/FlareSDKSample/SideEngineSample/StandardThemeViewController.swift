@@ -62,7 +62,7 @@ class StandardThemeViewController: UIViewController {
             sideEngineShared.showLog = true //Default true //false when release app to the store
             
             //The "enable_flare_aware_network" feature is a safety measure designed for cyclists, which allows them to send notifications to nearby fleet users.
-            sideEngineShared.enable_flare_aware_network = true //(Optional)
+            
             
             //It is possible to activate the distance filter in order to transmit location data in the live tracking URL. This will ensure that location updates are transmitted every 20 meters, once the timer interval has been reached.
             sideEngineShared.distance_filter_meters = 20 //(Optional)

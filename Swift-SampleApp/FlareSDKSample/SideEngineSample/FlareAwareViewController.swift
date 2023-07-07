@@ -57,7 +57,7 @@ class FlareAwareViewController: UIViewController {
         
         //let accessKey = "Your production license key here"
         let mode: BBMode = .production
-        let accessKey = "Your production license key here"
+        let accessKey = "8b53824f-ed7a-4829-860b-f6161c568fad"
         shared.configure(accessKey: accessKey, mode: mode, theme: .standard)
         
         //------------Register SIDE engine listener here------------

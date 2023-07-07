@@ -305,7 +305,6 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) BBSideEngine
 @property (nonatomic, copy) NSString * _Nonnull riderName;
 @property (nonatomic, copy) NSString * _Nonnull riderEmail;
 @property (nonatomic, copy) NSString * _Nonnull riderId;
-@property (nonatomic, copy) NSString * _Nonnull deviceId;
 @property (nonatomic, copy) NSString * _Nonnull impactBody;
 @property (nonatomic, copy) NSString * _Nonnull impactBodySOS;
 @property (nonatomic) BOOL showLog;
@@ -709,7 +708,6 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) BBSideEngine
 @property (nonatomic, copy) NSString * _Nonnull riderName;
 @property (nonatomic, copy) NSString * _Nonnull riderEmail;
 @property (nonatomic, copy) NSString * _Nonnull riderId;
-@property (nonatomic, copy) NSString * _Nonnull deviceId;
 @property (nonatomic, copy) NSString * _Nonnull impactBody;
 @property (nonatomic, copy) NSString * _Nonnull impactBodySOS;
 @property (nonatomic) BOOL showLog;
