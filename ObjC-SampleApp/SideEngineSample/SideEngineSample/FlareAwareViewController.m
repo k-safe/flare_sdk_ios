@@ -15,7 +15,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    self.sideEngineShared = [BBSideEngineManager shared];
+
     // Do any additional setup after loading the view.
     self.startButton.tag = 1;
     
@@ -44,8 +45,7 @@
 }
 
 - (void)sideEngineConfigure {
-    BBSideEngineManager *shared = [BBSideEngineManager shared];
-    
+
     /****How to configure production mode****/
     // Production mode used when you release app to the app store (You can use any of the one theme e.g. .standard OR .custom)
     // Sandbox mode used only for while developing your App (You can use any of the one theme e.g. .standard OR .custom)
@@ -55,7 +55,7 @@
 //    NSString *accessKey = @"Your production license key here";
     NSString *accessKey = @"8b53824f-ed7a-4829-860b-f6161c568fad" ;
 
-    [shared configureWithAccessKey:accessKey mode:mode theme:BBThemeStandard];
+    [self.sideEngineShared configureWithAccessKey:accessKey mode:mode theme:BBThemeStandard];
     
     // Register SIDE engine listener here
     [self registerSideEngineListener];
@@ -64,8 +64,8 @@
 - (void)registerSideEngineListener {
     __weak typeof(self) weakSelf = self;
     [self.sideEngineShared sideEventsListenerWithHandler:^(BBResponse *response) {
-        typeof(self) strongSelf = weakSelf;
-        
+        __strong typeof(weakSelf) strongSelf = weakSelf;
+
         if (response.type == BBSideOperationConfigure && response.success) {
             // You are now able to initiate the SIDE engine process at any time. In the event that there is no user input button available to commence the activity, you may commence the SIDE engine by executing the following command:
             NSLog(@"CONFIGURE with status: %@", response.success ? @"true" : @"false");

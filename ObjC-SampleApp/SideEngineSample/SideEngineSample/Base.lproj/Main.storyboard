@@ -304,7 +304,7 @@
                                     <constraint firstAttribute="width" constant="60" id="UKB-VE-Tgc"/>
                                     <constraint firstAttribute="height" constant="60" id="l7Z-2b-17I"/>
                                 </constraints>
-                                <state key="normal" image="closeButton.png"/>
+                                <state key="normal" image="closeButton"/>
                                 <connections>
                                     <action selector="closeTapped" destination="wY4-IA-jPE" eventType="touchUpInside" id="F3R-sO-stv"/>
                                 </connections>
@@ -348,9 +348,9 @@
                                     <constraint firstAttribute="height" constant="60" id="BQr-ED-0iU"/>
                                     <constraint firstAttribute="width" constant="60" id="f7W-Cl-qRL"/>
                                 </constraints>
-                                <state key="normal" image="closeButton.png"/>
+                                <state key="normal" image="closeButton"/>
                                 <connections>
-                                    <action selector="closeTapped" destination="DSh-hS-IYf" eventType="touchUpInside" id="Mup-Aj-v4K"/>
+                                    <action selector="closeTapped:" destination="DSh-hS-IYf" eventType="touchUpInside" id="g27-Rk-bUq"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rOb-FG-I6w">
@@ -565,7 +565,7 @@
                                     <constraint firstAttribute="width" constant="60" id="2wX-re-Qk0"/>
                                     <constraint firstAttribute="height" constant="60" id="iNS-wk-A2I"/>
                                 </constraints>
-                                <state key="normal" image="closeButton.png"/>
+                                <state key="normal" image="closeButton"/>
                                 <connections>
                                     <action selector="closeTapped" destination="fxV-5Y-QlX" eventType="touchUpInside" id="MIW-EJ-jsg"/>
                                 </connections>
@@ -718,7 +718,7 @@
     <resources>
         <image name="FlareLogo" width="512" height="512"/>
         <image name="checked" width="40" height="40"/>
-        <image name="closeButton.png" width="123" height="123"/>
+        <image name="closeButton" width="123" height="123"/>
         <image name="un_checked" width="40" height="40"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

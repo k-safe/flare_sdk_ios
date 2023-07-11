@@ -16,63 +16,89 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    
     self.counter = [[BBSideEngineManager shared] countDownDuration];
     [self configureTimer];
 }
+
+- (IBAction)closeTapped {
+    [self stopTimerWithFinished:NO];
+    [[BBSideEngineManager shared] resumeSideEngine];
+    if ([self isModal]) {
+        [self dismissViewControllerAnimated:YES completion:nil];
+    } else {
+        [self.navigationController popViewControllerAnimated:YES];
+    }
+}
+
+- (void)cancelAutoIncident {
+    if (self.counterTimer) {
+        [self.counterTimer invalidate];
+        self.counterTimer = nil;
+    }
+    if ([self isModal]) {
+        [self dismissViewControllerAnimated:YES completion:nil];
+    } else {
+        [self.navigationController popViewControllerAnimated:YES];
+    }
+}
+
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    [self.navigationController setNavigationBarHidden:NO animated:NO];
+    [self.navigationController setNavigationBarHidden:YES animated:NO];
 }
 
-- (IBAction)closeTapped:(UIButton *)sender {
-    [self stopTimer:NO];
-    [[BBSideEngineManager shared] resumeSideEngine];//You need to resume side engine when go to back screen
-    [self.navigationController popViewControllerAnimated:YES];
+- (void)configureTimer {
+    self.countDownLabel.text = [NSString stringWithFormat:@"%ld", (long)self.counter];
+    self.counterTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(runTimer) userInfo:nil repeats:YES];
 }
 
-//TODO: Configure Timer
--(void)configureTimer {
-    [self.countDownLabel setText:[NSString stringWithFormat:@"0"]];
-    self.counterTimer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(runTimer:) userInfo:nil repeats:YES];
-}
-//TODO: Support screen
--(void)openSupportScreen {
-    double delayInSeconds = 0.3;
-    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
-    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-        //code to be executed on the main queue after delay
-        UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-        TestSideEngineSupportViewController *testSideEngineSupport = [storyBoard instantiateViewControllerWithIdentifier:@"TestSideEngineSupportViewController"];
-        [self.navigationController pushViewController:testSideEngineSupport animated:YES];
-    });
-}
-//MARK: **************Start count down timer**************
--(void)runTimer:(NSTimer *)timer {
-    counter = counter - 1;
-    [self.countDownLabel setText:[NSString stringWithFormat:@"%ld",(long)counter]];
-    AudioServicesPlayAlertSound(kSystemSoundID_Vibrate);
-    if (counter == 0) {
-        [self stopTimer:YES];
-    }
-}
--(void)stopTimer:(BOOL)finished {
-    self.counter = 0;
-    [self.countDownLabel setText:[NSString stringWithFormat:@"%ld",(long)counter]];
-    if (self.counterTimer != nil) {
-        [self.counterTimer invalidate];
-        //self.counterTimer = nil;
-        //self.counterTimer = nil;
-    }
-    
-    if (finished == YES) {
-        if ([[BBSideEngineManager shared] sideEngineMode] == BBSideEngineModeLive) {
-            [[BBSideEngineManager shared] notifyPartner];
+- (void)openSupportScreen {
+    UIApplicationState state = [UIApplication sharedApplication].applicationState;
+    if (state != UIApplicationStateActive || [self isModal]) {
+        [self closeTapped];
+    } else {
+        if (self.delegate) {
+            [self.delegate didFinishTimer];
         }
-        [self openSupportScreen];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+            TestSideEngineSupportViewController *testViewController = [storyboard instantiateViewControllerWithIdentifier:@"TestSideEngineSupportViewController"];
+            [self.navigationController pushViewController:testViewController animated:YES];
+        });
     }
 }
 
+- (void)runTimer {
+    self.counter--;
+    self.countDownLabel.text = [NSString stringWithFormat:@"%ld", (long)self.counter];
+    if (self.counter >= 0) {
+        AudioServicesPlayAlertSound(kSystemSoundID_Vibrate);
+    }
+    if (self.counter <= 0) {
+        [self stopTimerWithFinished:YES];
+    }
+}
+
+- (void)stopTimerWithFinished:(BOOL)finished {
+    self.countDownLabel.text = @"0";
+    self.counter = 0;
+    if (self.counterTimer) {
+        [self.counterTimer invalidate];
+        self.counterTimer = nil;
+    }
+    if (finished) {
+        [[BBSideEngineManager shared] notifyPartner];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self openSupportScreen];
+        });
+    }
+}
+
+- (BOOL)isModal {
+    BOOL presentingIsModal = self.presentingViewController != nil;
+    BOOL presentingIsNavigation = self.navigationController.presentingViewController.presentedViewController == self.navigationController;
+    BOOL presentingIsTabBar = [self.tabBarController.presentingViewController isKindOfClass:[UITabBarController class]];
+    return presentingIsModal || presentingIsNavigation || presentingIsTabBar;
+}
 
 @end

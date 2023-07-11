@@ -9,6 +9,7 @@
 //#import <BBSideEngine/BBSideEngine-swift.h>
 #import <BBSideEngine/BBSideEngine.h>
 
+//@class BBSideEngineManager;
 
 @interface AppDelegate ()
 
@@ -23,8 +24,9 @@
         [self.window setOverrideUserInterfaceStyle:UIUserInterfaceStyleLight];
     }
     
-//    [[IQKeyboardManager sharedManager] setEnable:YES];
-    
+    [[IQKeyboardManager sharedManager] setEnable:YES];
+    [[IQKeyboardManager sharedManager] setEnableAutoToolbar:YES];
+
     return YES;
 }
 

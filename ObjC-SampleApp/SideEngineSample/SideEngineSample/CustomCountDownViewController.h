@@ -6,31 +6,35 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "TestViewModeController.h"
 #import "TestSideEngineSupportViewController.h"
-
+#import <AVFoundation/AVFoundation.h>
+#import <AudioToolbox/AudioToolbox.h>
+#import "BBSideEngine/BBSideEngine.h"
+NS_ASSUME_NONNULL_BEGIN
 @import AVFoundation;
 @import AudioToolbox;
 @import BBSideEngine;
 
-NS_ASSUME_NONNULL_BEGIN
+@protocol CustomTimerDelegate <NSObject>
+- (void)didFinishTimer;
+@end
+
+
 
 @interface CustomCountDownViewController : UIViewController
-{
-    
-}
+ 
 
-@property(nonatomic, weak) IBOutlet UILabel *mainTitleLabel;
-@property(nonatomic, weak) IBOutlet UILabel *secondsLabel;
-@property(nonatomic, weak) IBOutlet UILabel *countDownLabel;
-@property(nonatomic, strong) NSTimer *counterTimer;
-@property(nonatomic, assign) NSInteger counter;
+@property (nonatomic, weak) id<CustomTimerDelegate> delegate;
+@property (nonatomic, weak) IBOutlet UILabel *mainTitleLabel;
+@property (nonatomic, weak) IBOutlet UILabel *secondsLabel;
+@property (nonatomic, weak) IBOutlet UILabel *countDownLabel;
 
-- (IBAction)closeTapped:(UIButton *)sender;
--(void)runTimer:(NSTimer *)timer;
--(void)stopTimer:(BOOL)finished;
--(void)openSupportScreen;
--(void)configureTimer;
+@property (nonatomic, assign) NSInteger counter;
+@property (nonatomic, strong) NSTimer *counterTimer;
+
+- (IBAction)closeTapped;
+- (void)cancelAutoIncident;
+
 /**
  @IBOutlet var mainTitleLabel : UILabel!
  @IBOutlet var secondsLabel : UILabel!
@@ -43,3 +47,5 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 NS_ASSUME_NONNULL_END
+
+ 
