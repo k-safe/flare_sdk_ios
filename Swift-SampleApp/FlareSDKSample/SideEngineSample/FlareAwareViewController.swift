@@ -55,9 +55,8 @@ class FlareAwareViewController: UIViewController {
         //Production mode used when you release app to the app store (You can use any of the one theme e.g. .standard OR .custom)
         //Sandbox mode used only for while developing your App (You can use any of the one theme e.g. .standard OR .custom)
         
-        //let accessKey = "Your production license key here"
+        let accessKey = "Your production license key here"
         let mode: BBMode = .production
-        let accessKey = "8b53824f-ed7a-4829-860b-f6161c568fad"
         shared.configure(accessKey: accessKey, mode: mode, theme: .standard)
         
         //------------Register SIDE engine listener here------------
