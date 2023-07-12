@@ -15,7 +15,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.sideEngineShared = [BBSideEngineManager shared];
 
     // Do any additional setup after loading the view.
     self.startButton.tag = 1;
@@ -45,15 +44,14 @@
 }
 
 - (void)sideEngineConfigure {
+    self.sideEngineShared = [BBSideEngineManager shared];
 
     /****How to configure production mode****/
     // Production mode used when you release app to the app store (You can use any of the one theme e.g. .standard OR .custom)
     // Sandbox mode used only for while developing your App (You can use any of the one theme e.g. .standard OR .custom)
     
-    // NSString *accessKey = @"Your production license key here";
+     NSString *accessKey = @"Your production license key here";
     BBMode mode = BBModeProduction;
-//    NSString *accessKey = @"Your production license key here";
-    NSString *accessKey = @"8b53824f-ed7a-4829-860b-f6161c568fad" ;
 
     [self.sideEngineShared configureWithAccessKey:accessKey mode:mode theme:BBThemeStandard];
     

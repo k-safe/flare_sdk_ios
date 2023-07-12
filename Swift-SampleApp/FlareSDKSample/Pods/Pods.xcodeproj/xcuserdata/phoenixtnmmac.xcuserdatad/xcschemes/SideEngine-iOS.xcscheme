@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1300"
+   LastUpgradeVersion = "1240"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "02CD9CB01959104DF3C997D00B708EA3"
-               BuildableName = "Pods_FlareSDKSample.framework"
-               BlueprintName = "Pods-FlareSDKSample"
+               BlueprintIdentifier = "319A8952AE72083F216230856B90B281"
+               BuildableName = "SideEngine-iOS"
+               BlueprintName = "SideEngine-iOS"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>

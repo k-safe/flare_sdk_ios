@@ -29,9 +29,8 @@
 - (void)sideEngineConfigure {
     /****How to configure production mode****/
     // The live tracking feature is solely accessible in the production mode. Therefore, it is imperative that the side engine configuration method is set up in accordance with the production mode.
-//    NSString *accessKey = @"Your production license key here";
-    NSString *accessKey = @"8b53824f-ed7a-4829-860b-f6161c568fad" ;
-
+    NSString *accessKey = @"Your production license key here";
+ 
     self.sideEngineShared = [BBSideEngineManager shared];
     [self.sideEngineShared configureWithAccessKey:accessKey mode:BBModeProduction theme:BBThemeStandard];
 

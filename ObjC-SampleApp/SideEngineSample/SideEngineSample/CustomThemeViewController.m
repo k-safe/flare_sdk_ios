@@ -35,8 +35,7 @@
     
     // Configure production mode or sandbox mode
     BBMode mode = self.isProductionMode ? BBModeProduction : BBModeSandbox;
-//    NSString *accessKey = self.isProductionMode ? @"Your production license key here" : @"Your sandbox license key here";
-    NSString *accessKey = self.isProductionMode ? @"8b53824f-ed7a-4829-860b-f6161c568fad" : @"9518a8f7-a55f-41f4-9eaa-963bdb1fce5f";
+    NSString *accessKey = self.isProductionMode ? @"Your production license key here" : @"Your sandbox license key here";
 
     [self.sideEngineShared configureWithAccessKey:accessKey mode:mode theme:BBThemeCustom];
     
