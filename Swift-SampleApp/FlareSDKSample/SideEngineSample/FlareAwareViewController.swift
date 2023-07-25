@@ -55,8 +55,9 @@ class FlareAwareViewController: UIViewController {
         //Production mode used when you release app to the app store (You can use any of the one theme e.g. .standard OR .custom)
         //Sandbox mode used only for while developing your App (You can use any of the one theme e.g. .standard OR .custom)
         
-        let accessKey = "Your production license key here"
+        //let accessKey = "Your production license key here"
         let mode: BBMode = .production
+        let accessKey = "Your production license key here"
         shared.configure(accessKey: accessKey, mode: mode, theme: .standard)
         
         //------------Register SIDE engine listener here------------
@@ -88,8 +89,6 @@ class FlareAwareViewController: UIViewController {
             else if response.type == .stopFlareAware && response.success == true {
                 //Update your UI here (e.g. update STOP button color or text here when SIDE engine stopped)
                 print("STOP live mode with status: \(String(describing: response.success))")
-                print("Error message: \(String(describing: response.payload))")
-
                 self.startButton.tag = 1
                 self.startButton.setTitle("START Flare Aware", for: .normal)
                 self.startButton.backgroundColor = .systemGreen
