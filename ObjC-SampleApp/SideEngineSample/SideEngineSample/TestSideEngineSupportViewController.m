@@ -56,7 +56,6 @@
         if (tempRes != nil) {
             NSDictionary *coordinates = [tempRes objectForKey:@"coordinates"];
             if (coordinates != nil) {
-                //NSNumber *tempLat = [coordinates objectForKey:@"lat"];
                 self.lat = [[coordinates objectForKey:@"lat"] doubleValue];
                 self.lng = [[coordinates objectForKey:@"lng"] doubleValue];
             }
@@ -77,6 +76,7 @@
     }];
 }
 
+
 -(void)setRegionlat:(double)lat lng:(double)lng nearPlace:(NSString *)nearestPlace {
     NSDictionary *dict = [[NSDictionary alloc] initWithObjectsAndKeys:[NSString stringWithFormat:@"%f",lat],@"latitude",[NSString stringWithFormat:@"%f",lng],@"longitude", nil];
     [[self payload] setValue:dict forKey:@"location"];
@@ -94,12 +94,6 @@
 
 -(void)tappedMap:(UITapGestureRecognizer *)sender {
     if ([self.mapUrl isEqualToString:@""] == NO) {
-//        NSURL *url = [[NSURL alloc] initWithString:self.mapUrl];
-//        if (url != nil) {
-//            //[[UIApplication sharedApplication] openURL:url options:<#(nonnull NSDictionary<UIApplicationOpenExternalURLOptionsKey,id> *)#> completionHandler:<#^(BOOL success)completion#>]
-//            [[UIApplication sharedApplication] openURL:url];
-//        }
-        
         UIApplication *application = [UIApplication sharedApplication];
         NSURL *URL = [NSURL URLWithString:self.mapUrl];
         
@@ -108,10 +102,7 @@
                completionHandler:^(BOOL success) {
                 NSLog(@"Open %@: %d",self.mapUrl,success);
             }];
-        } else {
-            BOOL success = [application openURL:URL];
-            NSLog(@"Open %@: %d",self.mapUrl,success);
-        }
+        } 
     }
 }
 

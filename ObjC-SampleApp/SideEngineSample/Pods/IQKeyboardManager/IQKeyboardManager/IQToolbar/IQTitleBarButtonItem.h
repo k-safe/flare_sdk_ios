@@ -21,10 +21,11 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
+#import <Foundation/Foundation.h>
+
 #import "IQKeyboardManagerConstants.h"
 #import "IQBarButtonItem.h"
 
-#import <Foundation/NSObjCRuntime.h>
 
 /**
  BarButtonItem with title text.

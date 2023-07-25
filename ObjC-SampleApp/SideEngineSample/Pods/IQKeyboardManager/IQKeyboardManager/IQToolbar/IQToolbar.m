@@ -21,13 +21,12 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
+#import <UIKit/UIKit.h>
+
 #import "IQToolbar.h"
 #import "IQKeyboardManagerConstantsInternal.h"
 #import "IQUIView+Hierarchy.h"
 
-#import <UIKit/UIButton.h>
-#import <UIKit/UIAccessibility.h>
-#import <UIKit/UIViewController.h>
 
 @implementation IQToolbar
 @synthesize previousBarButton = _previousBarButton;
@@ -36,28 +35,22 @@
 @synthesize doneBarButton = _doneBarButton;
 @synthesize fixedSpaceBarButton = _fixedSpaceBarButton;
 
-+(void)initialize
+-(void)initialize
 {
-    [super initialize];
+    [self sizeToFit];
+    self.autoresizingMask = UIViewAutoresizingFlexibleWidth;// | UIViewAutoresizingFlexibleHeight;
+    self.translucent = YES;
+    self.barTintColor = nil;
 
-    IQToolbar *appearanceProxy = [self appearance];
-    
     NSArray <NSNumber*> *positions = @[@(UIBarPositionAny),@(UIBarPositionBottom),@(UIBarPositionTop),@(UIBarPositionTopAttached)];
 
     for (NSNumber *position in positions)
     {
         UIToolbarPosition toolbarPosition = [position unsignedIntegerValue];
 
-        [appearanceProxy setBackgroundImage:nil forToolbarPosition:toolbarPosition barMetrics:UIBarMetricsDefault];
-        [appearanceProxy setShadowImage:nil forToolbarPosition:toolbarPosition];
+        [self setBackgroundImage:nil forToolbarPosition:toolbarPosition barMetrics:UIBarMetricsDefault];
+        [self setShadowImage:nil forToolbarPosition:toolbarPosition];
     }
-}
-
--(void)initialize
-{
-    [self sizeToFit];
-    self.autoresizingMask = UIViewAutoresizingFlexibleWidth;// | UIViewAutoresizingFlexibleHeight;
-    self.translucent = YES;
 }
 
 - (instancetype)initWithFrame:(CGRect)frame

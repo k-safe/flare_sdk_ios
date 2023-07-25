@@ -25,7 +25,8 @@
     }
     
     [[IQKeyboardManager sharedManager] setEnable:YES];
-    
+    [[IQKeyboardManager sharedManager] setEnableAutoToolbar:YES];
+
     return YES;
 }
 

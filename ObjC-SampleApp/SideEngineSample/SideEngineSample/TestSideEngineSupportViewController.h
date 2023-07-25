@@ -7,6 +7,7 @@
 
 #import <UIKit/UIKit.h>
 #import "CustomThemeViewController.h"
+#import "VideoAskViewController.h"
 
 @import MapKit;
 @import BBSideEngine;
@@ -18,29 +19,19 @@ NS_ASSUME_NONNULL_BEGIN
     
 }
 
-@property(nonatomic, weak) IBOutlet MKMapView *mapview;
-@property(nonatomic, weak) IBOutlet UILabel *latitudeLabel;
-@property(nonatomic, weak) IBOutlet UILabel *longitudeLabel;
-@property(nonatomic, weak) IBOutlet UILabel *w3wLink;
 
-@property(nonatomic, strong) NSString *mapUrl;
-@property(nonatomic, assign) double lat;
-@property(nonatomic, assign) double lng;
-@property(nonatomic, strong) NSMutableDictionary *payload;
+@property (nonatomic, weak) IBOutlet MKMapView *mapview;
+@property (nonatomic, weak) IBOutlet UILabel *latitudeLabel;
+@property (nonatomic, weak) IBOutlet UILabel *longitudeLabel;
+@property (nonatomic, weak) IBOutlet UILabel *w3wLink;
 
-/**
- var mapUrl = ""
- var lat :Double = 0.0
- var lng :Double = 0.0
+@property (nonatomic, strong) NSString *mapUrl;
+@property (nonatomic, assign) double lat;
+@property (nonatomic, assign) double lng;
+
+@property (nonatomic, strong) NSMutableDictionary *payload;
+
  
- let payload = NSMutableDictionary()
- */
-- (IBAction)closeTapped:(UIButton *)sender;
-@end
-/**
- @IBOutlet var mapview : MKMapView!
- @IBOutlet var latitudeLabel : UILabel!
- @IBOutlet var longitudeLabel : UILabel!
- @IBOutlet weak var w3wLink: UILabel!
- */
+ @end
+ 
 NS_ASSUME_NONNULL_END

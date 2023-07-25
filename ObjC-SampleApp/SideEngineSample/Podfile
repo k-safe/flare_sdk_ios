@@ -7,5 +7,6 @@ target 'SideEngineSample' do
 
   # Pods for SideEngineSample
 pod 'IQKeyboardManager', '~> 6.5'
+pod 'SideEngine-iOS'
 
 end
