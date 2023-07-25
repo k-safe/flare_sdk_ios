@@ -102,10 +102,7 @@
                completionHandler:^(BOOL success) {
                 NSLog(@"Open %@: %d",self.mapUrl,success);
             }];
-        } else {
-            BOOL success = [application openURL:URL];
-            NSLog(@"Open %@: %d",self.mapUrl,success);
-        }
+        } 
     }
 }
 

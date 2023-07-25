@@ -33,7 +33,6 @@
 - (void)cancelAutoIncident {
     if (self.counterTimer) {
         [self.counterTimer invalidate];
-        self.counterTimer = nil;
     }
     if ([self isModal]) {
         [self dismissViewControllerAnimated:YES completion:nil];
@@ -84,7 +83,7 @@
     self.counter = 0;
     if (self.counterTimer) {
         [self.counterTimer invalidate];
-        self.counterTimer = nil;
+//        self.counterTimer = nil;
     }
     if (finished) {
         [[BBSideEngineManager shared] notifyPartner];
