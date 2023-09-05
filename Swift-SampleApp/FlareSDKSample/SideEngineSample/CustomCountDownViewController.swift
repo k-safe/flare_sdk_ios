@@ -25,6 +25,12 @@ class CustomCountDownViewController: UIViewController {
     var counter = BBSideEngineManager.shared.countDownDuration
     var counterTimer : Timer!
  
+    var countryCode: String?
+    var emergencyContact: String?
+    var emergencyContactName: String?
+    var emergencyContactEmail: String?
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -33,7 +39,7 @@ class CustomCountDownViewController: UIViewController {
     
     @IBAction func closeTapped() {
         self.stopTimer(finished: false)
-         BBSideEngineManager.shared.resumeSideEngine() //You need to resume side engine when go to back screen
+        BBSideEngineManager.shared.resumeSideEngine() //You need to resume side engine when go to back screen
         if isModal == true {
             self.dismiss(animated: true)
         }else {
@@ -80,17 +86,23 @@ extension CustomCountDownViewController {
         
         let state = UIApplication.shared.applicationState
         if state != .active || isModal == true {
-            self.closeTapped() //Auto dismiss and resume side engine
-        } else {
             
+            //If App in the background mode then auto verify incident
+            BBSideEngineManager.shared.notifyPartner()
             //Delegate used to send sms or email in user emergency contacts
             if self.delegate != nil {
                 self.delegate?.didFinishTimer()
             }
+            self.closeTapped() //Auto dismiss and resume side engine
+        } else {
             DispatchQueue.main.async {
                 let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-                let testViewModeController = storyBoard.instantiateViewController(withIdentifier: "TestSideEngineSupportViewController") as! TestSideEngineSupportViewController
-                self.navigationController?.pushViewController(testViewModeController, animated: true)
+                let controller = storyBoard.instantiateViewController(withIdentifier: "TestSideEngineSupportViewController") as! TestSideEngineSupportViewController
+                controller.countryCode = self.countryCode
+                controller.emergencyContact = self.emergencyContact
+                controller.emergencyContactName = self.emergencyContactName
+                controller.emergencyContactEmail = self.emergencyContactEmail
+                self.navigationController?.pushViewController(controller, animated: true)
             }
         }
         
@@ -123,7 +135,6 @@ extension CustomCountDownViewController{
          }
         
         if finished == true {
-            BBSideEngineManager.shared.notifyPartner()
             DispatchQueue.main.async {
                 self.openSupportScreen()
             }

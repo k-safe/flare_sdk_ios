@@ -22,6 +22,11 @@ class TestSideEngineSupportViewController: UIViewController, VideoAskDelegate {
     var lat :Double = 0.0
     var lng :Double = 0.0
     
+    var countryCode: String?
+    var emergencyContact: String?
+    var emergencyContactName: String?
+    var emergencyContactEmail: String?
+    
     let payload = NSMutableDictionary()
     
     override func viewDidLoad() {
@@ -111,11 +116,40 @@ class TestSideEngineSupportViewController: UIViewController, VideoAskDelegate {
     }
     
     @IBAction func closeTapped() {
+        self.handleIncidentFeedback()
+    }
+    
+    //*******: Furnish user feedback regarding the incident, please help Flare become smarter. This helps us make everyone safer.*******://
+    func handleIncidentFeedback() {
+        let appName = "SDKSampleApp"
+        let alert = UIAlertController(title: "Help \(appName) become smarter", message: "\(appName) incident detection can be improved by learning from your incident.\nWas this an accurate alert?",         preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "Yes", style: .cancel, handler: { _ in
+            self.handleConfirmIncident(isConfirm: false)
+        }))
+        alert.addAction(UIAlertAction(title: "No", style: .default, handler: { _ in
+            self.handleConfirmIncident(isConfirm: true)
+        }))
+        
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    
+    func handleConfirmIncident(isConfirm: Bool) {
+        //
+        if isConfirm == true {
+            
+            //Send partner notification
+            BBSideEngineManager.shared.notifyPartner()
+            
+            //Send emregency contact notifications
+            self.handleEmergencyContactNotifications()
+        }else {
+            BBSideEngineManager.shared.declineIncident()
+        }
         
         if BBSideEngineManager.shared.surveyVideoURL.isEmpty == false {
-            
             //Use desined UI to open video sruvey
-//            BBSideEngineManager.shared.presentVideoSurveys()
             let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
             let videoAskViewController = storyBoard.instantiateViewController(withIdentifier: "VideoAskViewController") as! VideoAskViewController
             videoAskViewController.delegate = self
@@ -128,7 +162,36 @@ class TestSideEngineSupportViewController: UIViewController, VideoAskDelegate {
                 self.didFinishSurvey()
             }
         }
+    }
+    
+    func handleEmergencyContactNotifications() {
+        self.sendSMS()
+        self.sendEmail()
+    }
+    func sendSMS() {
+        guard let code = self.countryCode else {
+            return
+        }
+        guard let contactNumber = self.emergencyContact else {
+            return
+        }
+        guard let contactName = self.emergencyContactName else {
+            return
+        }
+        let contact = [
+            "countryCode": code,
+            "phoneNumber": contactNumber,
+            "username": contactName
+        ]
         
+        BBSideEngineManager.shared.sendSMS(contact: contact)
+    }
+    
+    func sendEmail() {
+        guard let email = self.emergencyContactEmail else {
+            return
+        }
+        BBSideEngineManager.shared.sendEmail(toEmail: email)
     }
     
     func didFinishSurvey() {
