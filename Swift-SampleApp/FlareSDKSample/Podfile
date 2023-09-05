@@ -1,9 +1,7 @@
-# Uncomment the next line to define a global platform for your project
-# platform :ios, '9.0'
+#workspace '/Users/phoenix/Documents/K-Safe/iOS-SDK/Develop/busbysdk_ios/SDKSampleApp.xcworkspace'
+platform :ios, '13.0'
 
 target 'FlareSDKSample' do
-  # Comment the next line if you don't want to use dynamic frameworks
-  use_frameworks!
-  pod 'SideEngine-iOS'
-  pod 'IQKeyboardManager', '~> 6.5'
+use_frameworks!
+pod 'IQKeyboardManager', '~> 6.5'
 end

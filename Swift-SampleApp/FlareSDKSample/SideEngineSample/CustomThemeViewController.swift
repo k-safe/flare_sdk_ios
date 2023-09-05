@@ -52,39 +52,69 @@ class CustomThemeViewController: UIViewController {
         
     }
     //TODO: SIDE engine live mode
+    
+   
     @IBAction func startPressed(button : UIButton) {
         //Start and Stop SIDE engine
         if self.startButton.tag == 1 {
-            sideEngineShared.riderName = riderName.text! //Rider Name (optional)
-            sideEngineShared.riderEmail = riderEmail.text! // Rider Email (optional)
-            sideEngineShared.riderId = self.uniqueId() // Unique rider ID (optional)
-            sideEngineShared.countDownDuration = 30 // for live mode
-            sideEngineShared.showLog = true //Default true //false when release app to the store
-            
-            //The "enable_flare_aware_network" feature is a safety measure designed for cyclists, which allows them to send notifications to nearby fleet users.
-            sideEngineShared.enable_flare_aware_network = false //(Optional)
-            
-            //It is possible to activate the distance filter in order to transmit location data in the live tracking URL. This will ensure that location updates are transmitted every 20 meters, once the timer interval has been reached.
-            sideEngineShared.distance_filter_meters = 20 //(Optional)
-            
-            //The default value is 15 seconds, which can be adjusted to meet specific requirements. This parameter will only be utilized in cases where "sideEngineShared.high_frequency_mode_enabled = false" is invoked.
-            sideEngineShared.low_frequency_intervals_seconds = 15 //(Optional)
-            
-            //The default value is 3 seconds, which can be adjusted to meet specific requirements. This parameter will only be utilized in cases where "sideEngineShared.high_frequency_mode_enabled = true" is invoked.
-            sideEngineShared.high_frequency_intervals_seconds = 3 //(Optional)
-            
-            //It is recommended to activate the high frequency mode when the SOS function is engaged in order to enhance the quality of the live tracking experience.
-            sideEngineShared.high_frequency_mode_enabled = false //(Optional)
-            
-            //Start SIDE engine
-            sideEngineShared.startSideEngine()
+            self.selectActivity()
         } else {
             //stopSideEngine will stop all the services inside SIDE engine and release all the varibales
             self.sideEngineShared.stopSideEngine()
         }
         
     }
-    
+    //Select Activity type (optional) - Default activity type: Scooter
+    func selectActivity() {
+        let alert = UIAlertController(title: "", message: "Select Activity", preferredStyle: .actionSheet)
+        let activity1 = "Bike"
+        let activity2 = "Scooter"
+        let activity3 = "Cycling"
+        alert.addAction(UIAlertAction(title: activity1, style: UIAlertAction.Style.default, handler: { _ in
+            self.startSideEngine(activity: activity1)
+        }))
+        alert.addAction(UIAlertAction(title: activity2, style: UIAlertAction.Style.default, handler: { _ in
+            self.startSideEngine(activity: activity2)
+        }))
+        alert.addAction(UIAlertAction(title: activity3, style: UIAlertAction.Style.default, handler: { _ in
+            self.startSideEngine(activity: activity3)
+        }))
+        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel, handler: { _ in
+            //Cancel Action
+        }))
+        
+        DispatchQueue.main.async {
+            self.present(alert, animated: false, completion: nil)
+        }
+        
+    }
+    //TODO: Start SIDE Engine
+    func startSideEngine(activity: String) {
+        sideEngineShared.riderName = riderName.text! //Rider Name (optional)
+        sideEngineShared.riderEmail = riderEmail.text! // Rider Email (optional)
+        sideEngineShared.riderId = self.uniqueId() // Unique rider ID (optional)
+        sideEngineShared.countDownDuration = 30 // for live mode
+        sideEngineShared.showLog = true //false when release app to the store
+        sideEngineShared.activity = activity
+        //The "enable_flare_aware_network" feature is a safety measure designed for cyclists, which allows them to send notifications to nearby fleet users.
+        
+        sideEngineShared.enable_flare_aware_network = false //(Optional)
+        
+        //It is possible to activate the distance filter in order to transmit location data in the live tracking URL. This will ensure that location updates are transmitted every 20 meters, once the timer interval has been reached.
+        sideEngineShared.distance_filter_meters = 20 //(Optional)
+        
+        //The default value is 15 seconds, which can be adjusted to meet specific requirements. This parameter will only be utilized in cases where "sideEngineShared.high_frequency_mode_enabled = false" is invoked.
+        sideEngineShared.low_frequency_intervals_seconds = 15 //(Optional)
+        
+        //The default value is 3 seconds, which can be adjusted to meet specific requirements. This parameter will only be utilized in cases where "sideEngineShared.high_frequency_mode_enabled = true" is invoked.
+        sideEngineShared.high_frequency_intervals_seconds = 3 //(Optional)
+        
+        //It is recommended to activate the high frequency mode when the SOS function is engaged in order to enhance the quality of the live tracking experience.
+        sideEngineShared.high_frequency_mode_enabled = false //(Optional)
+        
+        //Start SIDE engine
+        sideEngineShared.startSideEngine()
+    }
     //TODO: Register SIDE engine listener to receive call back from side engine
     func registerSideEngineListener() {
         sideEngineShared.sideEventsListener { [weak self] (response) in
@@ -128,6 +158,12 @@ class CustomThemeViewController: UIViewController {
                     let controller = UIStoryboard(name: "Main", bundle:nil).instantiateViewController(withIdentifier: "CustomCountDownViewController") as! CustomCountDownViewController
                     controller.delegate = self
                     self.customUIController = controller
+                    
+                    controller.countryCode = self.countryCode.text
+                    controller.emergencyContact = self.phoneNumber.text
+                    controller.emergencyContactName = self.riderName.text
+                    controller.emergencyContactEmail = self.riderEmail.text
+                    
                     DispatchQueue.main.async {
                         let state = UIApplication.shared.applicationState
                         if state != .active {
@@ -161,7 +197,7 @@ class CustomThemeViewController: UIViewController {
         }
     }
     
-    
+   
     func sendSMS() {
         if countryCode.text?.isEmpty == false && self.phoneNumber.text?.isEmpty == false {
             let contact = [

@@ -230,6 +230,7 @@ using UInt = size_t;
 #if __has_warning("-Watimport-in-framework-header")
 #pragma clang diagnostic ignored "-Watimport-in-framework-header"
 #endif
+@import CoreLocation;
 @import Foundation;
 @import ObjectiveC;
 #endif
@@ -256,14 +257,6 @@ typedef SWIFT_ENUM(NSInteger, BBMode, open) {
   BBModeSandbox = 0,
   BBModeProduction = 1,
 };
-
-
-SWIFT_CLASS("_TtC12BBSideEngine15BBMotionHandler")
-@interface BBMotionHandler : NSObject
-/// MARK: - Initializer
-- (nonnull instancetype)init SWIFT_UNAVAILABLE;
-+ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
-@end
 
 
 SWIFT_CLASS("_TtC12BBSideEngine18BBPermissionHelper")
@@ -308,7 +301,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) BBSideEngine
 @property (nonatomic, copy) NSString * _Nonnull impactBody;
 @property (nonatomic, copy) NSString * _Nonnull impactBodySOS;
 @property (nonatomic) BOOL showLog;
-@property (nonatomic, copy) NSString * _Nonnull appType;
+@property (nonatomic, copy) NSString * _Nonnull appName;
 @property (nonatomic, copy) NSString * _Nonnull activity;
 @property (nonatomic) BOOL enable_flare_aware_network;
 @property (nonatomic) NSInteger low_frequency_intervals_seconds;
@@ -328,10 +321,26 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) BBSideEngine
 
 
 
+
+
+
+
+
 @interface BBSideEngineManager (SWIFT_EXTENSION(BBSideEngine))
 - (void)resumeSideEngine;
 - (void)presentVideoSurveys;
 @end
+
+@class CLLocation;
+@class CLLocationManager;
+
+@interface BBSideEngineManager (SWIFT_EXTENSION(BBSideEngine)) <CLLocationManagerDelegate>
+- (CLLocation * _Nullable)fetchCurrentLocation SWIFT_WARN_UNUSED_RESULT;
+- (void)locationManager:(CLLocationManager * _Nonnull)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status;
+- (void)locationManager:(CLLocationManager * _Nonnull)manager didFailWithError:(NSError * _Nonnull)error;
+- (void)locationManager:(CLLocationManager * _Nonnull)manager didUpdateLocations:(NSArray<CLLocation *> * _Nonnull)locations;
+@end
+
 
 
 @interface BBSideEngineManager (SWIFT_EXTENSION(BBSideEngine))
@@ -345,7 +354,6 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) BBSideEngine
 
 
 
-@class NSArray;
 
 @interface BBSideEngineManager (SWIFT_EXTENSION(BBSideEngine))
 - (void)sendSMSWithContact:(NSDictionary<NSString *, id> * _Nonnull)contact;
@@ -354,6 +362,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) BBSideEngine
 - (void)sendErrorWithError:(NSString * _Nonnull)error;
 - (void)fetchWhat3WordLocationWithCompletion:(void (^ _Nonnull)(NSDictionary<NSString *, id> * _Nonnull))completion;
 - (void)notifyPartner;
+- (void)declineIncident;
 - (BOOL)isConnectedToNetwork SWIFT_WARN_UNUSED_RESULT;
 @end
 
@@ -633,6 +642,7 @@ using UInt = size_t;
 #if __has_warning("-Watimport-in-framework-header")
 #pragma clang diagnostic ignored "-Watimport-in-framework-header"
 #endif
+@import CoreLocation;
 @import Foundation;
 @import ObjectiveC;
 #endif
@@ -659,14 +669,6 @@ typedef SWIFT_ENUM(NSInteger, BBMode, open) {
   BBModeSandbox = 0,
   BBModeProduction = 1,
 };
-
-
-SWIFT_CLASS("_TtC12BBSideEngine15BBMotionHandler")
-@interface BBMotionHandler : NSObject
-/// MARK: - Initializer
-- (nonnull instancetype)init SWIFT_UNAVAILABLE;
-+ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
-@end
 
 
 SWIFT_CLASS("_TtC12BBSideEngine18BBPermissionHelper")
@@ -711,7 +713,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) BBSideEngine
 @property (nonatomic, copy) NSString * _Nonnull impactBody;
 @property (nonatomic, copy) NSString * _Nonnull impactBodySOS;
 @property (nonatomic) BOOL showLog;
-@property (nonatomic, copy) NSString * _Nonnull appType;
+@property (nonatomic, copy) NSString * _Nonnull appName;
 @property (nonatomic, copy) NSString * _Nonnull activity;
 @property (nonatomic) BOOL enable_flare_aware_network;
 @property (nonatomic) NSInteger low_frequency_intervals_seconds;
@@ -731,10 +733,26 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) BBSideEngine
 
 
 
+
+
+
+
+
 @interface BBSideEngineManager (SWIFT_EXTENSION(BBSideEngine))
 - (void)resumeSideEngine;
 - (void)presentVideoSurveys;
 @end
+
+@class CLLocation;
+@class CLLocationManager;
+
+@interface BBSideEngineManager (SWIFT_EXTENSION(BBSideEngine)) <CLLocationManagerDelegate>
+- (CLLocation * _Nullable)fetchCurrentLocation SWIFT_WARN_UNUSED_RESULT;
+- (void)locationManager:(CLLocationManager * _Nonnull)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status;
+- (void)locationManager:(CLLocationManager * _Nonnull)manager didFailWithError:(NSError * _Nonnull)error;
+- (void)locationManager:(CLLocationManager * _Nonnull)manager didUpdateLocations:(NSArray<CLLocation *> * _Nonnull)locations;
+@end
+
 
 
 @interface BBSideEngineManager (SWIFT_EXTENSION(BBSideEngine))
@@ -748,7 +766,6 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) BBSideEngine
 
 
 
-@class NSArray;
 
 @interface BBSideEngineManager (SWIFT_EXTENSION(BBSideEngine))
 - (void)sendSMSWithContact:(NSDictionary<NSString *, id> * _Nonnull)contact;
@@ -757,6 +774,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) BBSideEngine
 - (void)sendErrorWithError:(NSString * _Nonnull)error;
 - (void)fetchWhat3WordLocationWithCompletion:(void (^ _Nonnull)(NSDictionary<NSString *, id> * _Nonnull))completion;
 - (void)notifyPartner;
+- (void)declineIncident;
 - (BOOL)isConnectedToNetwork SWIFT_WARN_UNUSED_RESULT;
 @end
 
