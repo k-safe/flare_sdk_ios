@@ -124,10 +124,10 @@ class TestSideEngineSupportViewController: UIViewController, VideoAskDelegate {
         let appName = "SDKSampleApp"
         let alert = UIAlertController(title: "Help \(appName) become smarter", message: "\(appName) incident detection can be improved by learning from your incident.\nWas this an accurate alert?",         preferredStyle: .alert)
         
-        alert.addAction(UIAlertAction(title: "Yes", style: .cancel, handler: { _ in
+        alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { _ in
             self.handleConfirmIncident(isConfirm: false)
         }))
-        alert.addAction(UIAlertAction(title: "No", style: .default, handler: { _ in
+        alert.addAction(UIAlertAction(title: "No", style: .cancel, handler: { _ in
             self.handleConfirmIncident(isConfirm: true)
         }))
         
@@ -138,10 +138,8 @@ class TestSideEngineSupportViewController: UIViewController, VideoAskDelegate {
     func handleConfirmIncident(isConfirm: Bool) {
         //
         if isConfirm == true {
-            
             //Send partner notification
             BBSideEngineManager.shared.notifyPartner()
-            
             //Send emregency contact notifications
             self.handleEmergencyContactNotifications()
         }else {

@@ -44,7 +44,7 @@ class StandardThemeViewController: UIViewController {
         //Sandbox mode used only for while developing your App (You can use any of the one theme e.g. .standard OR .custom)
         
         let mode: BBMode = isProductionMode ? .production : .sandbox
-        let accessKey = isProductionMode ? "Your production license key here" : "Your sandbox license key here"
+        let accessKey = isProductionMode ? "8b53824f-ed7a-4829-860b-f6161c568fad" : "9518a8f7-a55f-41f4-9eaa-963bdb1fce5f" //Production
         shared.configure(accessKey: accessKey, mode: mode, theme: .standard)
         
         //------------Register SIDE engine listener here------------
@@ -94,7 +94,7 @@ class StandardThemeViewController: UIViewController {
         sideEngineShared.countDownDuration = 30 // for live mode
         sideEngineShared.showLog = true //false when release app to the store
         sideEngineShared.activity = activity
-        sideEngineShared.appName = "Test"
+        sideEngineShared.appName = "Flare"
         //The "enable_flare_aware_network" feature is a safety measure designed for cyclists, which allows them to send notifications to nearby fleet users.
         sideEngineShared.enable_flare_aware_network = false //(Optional)
         
