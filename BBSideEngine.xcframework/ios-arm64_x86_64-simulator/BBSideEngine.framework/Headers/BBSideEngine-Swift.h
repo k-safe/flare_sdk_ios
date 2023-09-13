@@ -288,6 +288,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) BBSideEngine
 + (BBSideEngineManager * _Nonnull)shared SWIFT_WARN_UNUSED_RESULT;
 @property (nonatomic) enum BBTheme applicationTheme;
 @property (nonatomic) BOOL enableActivityTelemetry;
+@property (nonatomic) BOOL activateIncidentTestMode;
 @property (nonatomic, copy) NSString * _Nonnull applicationLicenseKey;
 @property (nonatomic, copy) NSString * _Nonnull surveyVideoURL;
 @property (nonatomic) NSInteger countDownDuration;
@@ -700,6 +701,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) BBSideEngine
 + (BBSideEngineManager * _Nonnull)shared SWIFT_WARN_UNUSED_RESULT;
 @property (nonatomic) enum BBTheme applicationTheme;
 @property (nonatomic) BOOL enableActivityTelemetry;
+@property (nonatomic) BOOL activateIncidentTestMode;
 @property (nonatomic, copy) NSString * _Nonnull applicationLicenseKey;
 @property (nonatomic, copy) NSString * _Nonnull surveyVideoURL;
 @property (nonatomic) NSInteger countDownDuration;

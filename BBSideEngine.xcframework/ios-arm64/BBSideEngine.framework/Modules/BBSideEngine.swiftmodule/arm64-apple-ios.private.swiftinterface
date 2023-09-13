@@ -219,6 +219,7 @@ public struct QuantizationParameters : Swift.Equatable, Swift.Hashable {
   @objc public static let shared: BBSideEngine.BBSideEngineManager
   @objc public var applicationTheme: BBSideEngine.BBTheme
   @objc public var enableActivityTelemetry: Swift.Bool
+  @objc public var activateIncidentTestMode: Swift.Bool
   @objc public var applicationLicenseKey: Swift.String
   @objc public var surveyVideoURL: Swift.String
   @objc public var countDownDuration: Swift.Int
