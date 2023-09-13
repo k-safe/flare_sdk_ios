@@ -95,6 +95,8 @@ class StandardThemeViewController: UIViewController {
         sideEngineShared.showLog = true //false when release app to the store
         sideEngineShared.activity = activity
         sideEngineShared.appName = "Flare"
+        sideEngineShared.activateIncidentTestMode = false //This is only used in sandbox mode and is TRUE by default. This is why you should test your workflow in sandbox mode. You can change it to FALSE if you want to experience real-life incident detection.
+        
         //The "enable_flare_aware_network" feature is a safety measure designed for cyclists, which allows them to send notifications to nearby fleet users.
         sideEngineShared.enable_flare_aware_network = false //(Optional)
         
