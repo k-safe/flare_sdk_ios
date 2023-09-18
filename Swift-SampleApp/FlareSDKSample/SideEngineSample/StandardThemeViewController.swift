@@ -157,6 +157,8 @@ class StandardThemeViewController: UIViewController {
                 
                 //The user has identified an incident, and if necessary, it may be appropriate to log the incident in either the analytics system or an external database. Please refrain from invoking any side engine methods at this juncture.
                 
+                //response.success: involves receiving a "true" or "false" outcome for each event. If you receive a "true" response, you can proceed with your next action. If you receive a "false" response, you should inspect the error logs located in the "response.payload"
+                
                 if self.isProductionMode == true {
                     if let confidence = response.payload?["confidence"] {
                         print("SIDE engine confidence is: \(confidence)")

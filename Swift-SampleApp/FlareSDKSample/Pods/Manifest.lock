@@ -12,23 +12,14 @@ PODS:
 
 DEPENDENCIES:
   - IQKeyboardManager (~> 6.5)
-  - SideEngine-iOS (from `https://github.com/k-safe/flare_sdk_ios.git`, tag `4.2.4`)
+  - SideEngine-iOS
 
 SPEC REPOS:
   trunk:
     - IQKeyboardManager
+    - SideEngine-iOS
     - TensorFlowLiteC
     - TensorFlowLiteSwift
-
-EXTERNAL SOURCES:
-  SideEngine-iOS:
-    :git: https://github.com/k-safe/flare_sdk_ios.git
-    :tag: 4.2.4
-
-CHECKOUT OPTIONS:
-  SideEngine-iOS:
-    :git: https://github.com/k-safe/flare_sdk_ios.git
-    :tag: 4.2.4
 
 SPEC CHECKSUMS:
   IQKeyboardManager: b1fd66ccf7a79095bdcc4a2735231586f744216e
@@ -36,6 +27,6 @@ SPEC CHECKSUMS:
   TensorFlowLiteC: ac3334fa9dbc90e4744b4497312a393fd02b5408
   TensorFlowLiteSwift: 1d8320fbf292054eb50ef0b347a4b17a92b49731
 
-PODFILE CHECKSUM: 3a08c899755de9983fdfdd47ceb307e51705624d
+PODFILE CHECKSUM: 922ada5cfd4b2b4d8803c7f4f44435d5d370ac7a
 
 COCOAPODS: 1.12.1
