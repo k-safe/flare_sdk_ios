@@ -44,7 +44,7 @@ class StandardThemeViewController: UIViewController {
         //Sandbox mode used only for while developing your App (You can use any of the one theme e.g. .standard OR .custom)
         
         let mode: BBMode = isProductionMode ? .production : .sandbox
-        let accessKey = isProductionMode ? "Your production license key here" : "Your sandbox license key here"
+        let accessKey = isProductionMode ? "8b53824f-ed7a-4829-860b-f6161c568fad" : "9518a8f7-a55f-41f4-9eaa-963bdb1fce5f" //Production
         shared.configure(accessKey: accessKey, mode: mode, theme: .standard)
         
         //------------Register SIDE engine listener here------------
@@ -153,7 +153,7 @@ class StandardThemeViewController: UIViewController {
                 self.startButton.backgroundColor = .systemGreen
                 
             }
-            else if response.type == .incidentDetected {
+            else if response.type == .incidentDetected && response.success == true {
                 
                 //The user has identified an incident, and if necessary, it may be appropriate to log the incident in either the analytics system or an external database. Please refrain from invoking any side engine methods at this juncture.
                 

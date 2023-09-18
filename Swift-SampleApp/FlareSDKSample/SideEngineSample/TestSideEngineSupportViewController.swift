@@ -125,10 +125,10 @@ class TestSideEngineSupportViewController: UIViewController, VideoAskDelegate {
         let alert = UIAlertController(title: "Help \(appName) become smarter", message: "\(appName) incident detection can be improved by learning from your incident.\nWas this an accurate alert?",         preferredStyle: .alert)
         
         alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { _ in
-            self.handleConfirmIncident(isConfirm: false)
+            self.handleConfirmIncident(isConfirm: true)
         }))
         alert.addAction(UIAlertAction(title: "No", style: .cancel, handler: { _ in
-            self.handleConfirmIncident(isConfirm: true)
+            self.handleConfirmIncident(isConfirm: false)
         }))
         
         self.present(alert, animated: true, completion: nil)

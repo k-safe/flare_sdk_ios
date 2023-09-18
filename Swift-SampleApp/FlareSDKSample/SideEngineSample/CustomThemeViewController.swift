@@ -40,7 +40,7 @@ class CustomThemeViewController: UIViewController {
         //Sandbox mode used only for while developing your App (You can use any of the one theme e.g. .standard OR .custom)
         
         let mode: BBMode = isProductionMode ? .production : .sandbox
-        let accessKey = isProductionMode ? "Your production license key here" : "Your sandbox license key here"
+        let accessKey = isProductionMode ? "8b53824f-ed7a-4829-860b-f6161c568fad" : "9518a8f7-a55f-41f4-9eaa-963bdb1fce5f" //Production
         shared.configure(accessKey: accessKey, mode: mode, theme: .custom)
         
         //------------Register SIDE engine listener here------------
@@ -145,7 +145,7 @@ class CustomThemeViewController: UIViewController {
                 self.startButton.backgroundColor = .systemGreen
                 
             }
-            else if response.type == .incidentDetected {
+            else if response.type == .incidentDetected && response.success == true {
                 //You can initiate your bespoke countdown page from this interface, which must have a minimum timer interval of 30 seconds.
                 //Upon completion of your custom countdown, it is imperative to invoke the 'notify partner' method to record the event on the dashboard and dispatch notifications via webhook, Slack, email and SMS.
                 //If it is necessary to dispatch an SMS or Email for personal emergency purposes, please do so.
