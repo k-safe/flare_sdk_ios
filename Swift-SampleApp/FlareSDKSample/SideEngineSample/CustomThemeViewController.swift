@@ -145,11 +145,13 @@ class CustomThemeViewController: UIViewController {
                 self.startButton.backgroundColor = .systemGreen
                 
             }
-            else if response.type == .incidentDetected {
+            else if response.type == .incidentDetected && response.success == true {
                 //You can initiate your bespoke countdown page from this interface, which must have a minimum timer interval of 30 seconds.
                 //Upon completion of your custom countdown, it is imperative to invoke the 'notify partner' method to record the event on the dashboard and dispatch notifications via webhook, Slack, email and SMS.
                 //If it is necessary to dispatch an SMS or Email for personal emergency purposes, please do so.
                 
+                //response.success: involves receiving a "true" or "false" outcome for each event. If you receive a "true" response, you can proceed with your next action. If you receive a "false" response, you should inspect the error logs located in the "response.payload"
+                                                                            
                 if let confidence = response.payload?["confidence"] {
                     print("SIDE engine confidence is: \(confidence)")
                     self.confidenceLabel.text = "SIDE confidence is: \(confidence)"
