@@ -258,14 +258,6 @@ typedef SWIFT_ENUM(NSInteger, BBMode, open) {
   BBModeProduction = 1,
 };
 
-
-SWIFT_CLASS("_TtC12BBSideEngine18BBPermissionHelper")
-@interface BBPermissionHelper : NSObject
-/// MARK: - Initializer
-- (nonnull instancetype)init SWIFT_UNAVAILABLE;
-+ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
-@end
-
 enum BBSideOperation : NSInteger;
 @class NSString;
 
@@ -670,14 +662,6 @@ typedef SWIFT_ENUM(NSInteger, BBMode, open) {
   BBModeSandbox = 0,
   BBModeProduction = 1,
 };
-
-
-SWIFT_CLASS("_TtC12BBSideEngine18BBPermissionHelper")
-@interface BBPermissionHelper : NSObject
-/// MARK: - Initializer
-- (nonnull instancetype)init SWIFT_UNAVAILABLE;
-+ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
-@end
 
 enum BBSideOperation : NSInteger;
 @class NSString;

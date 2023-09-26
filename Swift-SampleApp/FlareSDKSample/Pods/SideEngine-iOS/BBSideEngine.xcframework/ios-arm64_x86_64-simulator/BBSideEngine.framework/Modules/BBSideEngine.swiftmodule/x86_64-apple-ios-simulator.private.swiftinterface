@@ -65,11 +65,6 @@ extension BBSideEngine.Tensor.Shape : Swift.ExpressibleByArrayLiteral {
   public init(arrayLiteral: Swift.Int...)
   public typealias ArrayLiteralElement = Swift.Int
 }
-@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class BBPermissionHelper : ObjectiveC.NSObject {
-  public typealias BBPermission = ([Swift.String : Any]) -> Swift.Void
-  public func permissionEventsHandler(handler: @escaping BBSideEngine.BBPermissionHelper.BBPermission)
-  @objc deinit
-}
 @_hasMissingDesignatedInitializers final public class Interpreter {
   final public let options: BBSideEngine.Interpreter.Options?
   final public let delegates: [BBSideEngine.Delegate]?
