@@ -153,6 +153,7 @@ public enum Runtime {
   case closeVideoSurvey
   case incidentAutoCancel
   case resumeSideEngine
+  case pauseSideEngine
   case sosActive
   case sosDeActive
   case startFlareAware
@@ -258,6 +259,7 @@ extension BBSideEngine.BBSideEngineManager : CoreLocation.CLLocationManagerDeleg
 }
 extension BBSideEngine.BBSideEngineManager {
   @objc dynamic public func resumeSideEngine()
+  @objc dynamic public func pauseSideEngine()
   @objc dynamic public func presentVideoSurveys()
 }
 extension BBSideEngine.BBSideEngineManager {

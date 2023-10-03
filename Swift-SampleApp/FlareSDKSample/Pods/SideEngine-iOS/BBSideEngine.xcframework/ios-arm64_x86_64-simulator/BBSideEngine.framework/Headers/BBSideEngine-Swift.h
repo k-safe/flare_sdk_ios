@@ -318,12 +318,6 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) BBSideEngine
 
 
 
-
-@interface BBSideEngineManager (SWIFT_EXTENSION(BBSideEngine))
-- (void)resumeSideEngine;
-- (void)presentVideoSurveys;
-@end
-
 @class CLLocation;
 @class CLLocationManager;
 
@@ -332,6 +326,13 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) BBSideEngine
 - (void)locationManager:(CLLocationManager * _Nonnull)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status;
 - (void)locationManager:(CLLocationManager * _Nonnull)manager didFailWithError:(NSError * _Nonnull)error;
 - (void)locationManager:(CLLocationManager * _Nonnull)manager didUpdateLocations:(NSArray<CLLocation *> * _Nonnull)locations;
+@end
+
+
+@interface BBSideEngineManager (SWIFT_EXTENSION(BBSideEngine))
+- (void)resumeSideEngine;
+- (void)pauseSideEngine;
+- (void)presentVideoSurveys;
 @end
 
 
@@ -382,16 +383,18 @@ typedef SWIFT_ENUM(NSInteger, BBSideOperation, open) {
   BBSideOperationCloseVideoSurvey = 14,
   BBSideOperationIncidentAutoCancel = 15,
   BBSideOperationResumeSideEngine = 16,
-  BBSideOperationSosActive = 17,
-  BBSideOperationSosDeActive = 18,
-  BBSideOperationStartFlareAware = 19,
-  BBSideOperationStopFlareAware = 20,
+  BBSideOperationPauseSideEngine = 17,
+  BBSideOperationSosActive = 18,
+  BBSideOperationSosDeActive = 19,
+  BBSideOperationStartFlareAware = 20,
+  BBSideOperationStopFlareAware = 21,
 };
 
 typedef SWIFT_ENUM(NSInteger, BBTheme, open) {
   BBThemeCustom = 0,
   BBThemeStandard = 1,
 };
+
 
 
 
@@ -723,12 +726,6 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) BBSideEngine
 
 
 
-
-@interface BBSideEngineManager (SWIFT_EXTENSION(BBSideEngine))
-- (void)resumeSideEngine;
-- (void)presentVideoSurveys;
-@end
-
 @class CLLocation;
 @class CLLocationManager;
 
@@ -737,6 +734,13 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) BBSideEngine
 - (void)locationManager:(CLLocationManager * _Nonnull)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status;
 - (void)locationManager:(CLLocationManager * _Nonnull)manager didFailWithError:(NSError * _Nonnull)error;
 - (void)locationManager:(CLLocationManager * _Nonnull)manager didUpdateLocations:(NSArray<CLLocation *> * _Nonnull)locations;
+@end
+
+
+@interface BBSideEngineManager (SWIFT_EXTENSION(BBSideEngine))
+- (void)resumeSideEngine;
+- (void)pauseSideEngine;
+- (void)presentVideoSurveys;
 @end
 
 
@@ -787,16 +791,18 @@ typedef SWIFT_ENUM(NSInteger, BBSideOperation, open) {
   BBSideOperationCloseVideoSurvey = 14,
   BBSideOperationIncidentAutoCancel = 15,
   BBSideOperationResumeSideEngine = 16,
-  BBSideOperationSosActive = 17,
-  BBSideOperationSosDeActive = 18,
-  BBSideOperationStartFlareAware = 19,
-  BBSideOperationStopFlareAware = 20,
+  BBSideOperationPauseSideEngine = 17,
+  BBSideOperationSosActive = 18,
+  BBSideOperationSosDeActive = 19,
+  BBSideOperationStartFlareAware = 20,
+  BBSideOperationStopFlareAware = 21,
 };
 
 typedef SWIFT_ENUM(NSInteger, BBTheme, open) {
   BBThemeCustom = 0,
   BBThemeStandard = 1,
 };
+
 
 
 
