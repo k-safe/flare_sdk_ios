@@ -156,7 +156,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AUt-iz-QYR">
-                                <rect key="frame" x="107" y="545.66666666666663" width="200" height="70"/>
+                                <rect key="frame" x="107" y="475.66666666666669" width="200" height="70.000000000000057"/>
                                 <color key="backgroundColor" systemColor="systemGreenColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="2XG-W8-0P5"/>
@@ -166,6 +166,19 @@
                                 <state key="normal" title="START"/>
                                 <connections>
                                     <action selector="startPressedWithButton:" destination="O1t-L8-hz1" eventType="touchUpInside" id="HMj-od-2gT"/>
+                                </connections>
+                            </button>
+                            <button hidden="YES" opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dxM-Th-R5Z">
+                                <rect key="frame" x="107" y="560.66666666666663" width="200" height="70"/>
+                                <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="OT7-rO-iSU"/>
+                                    <constraint firstAttribute="width" constant="200" id="qnZ-hV-YEh"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <state key="normal" title="PAUSE"/>
+                                <connections>
+                                    <action selector="pausePressedWithButton:" destination="O1t-L8-hz1" eventType="touchUpInside" id="Lbl-fO-bQE"/>
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ieG-Ad-MnB">
@@ -209,7 +222,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Press button below to activate SIDE engine, then shake your phone repeatedly until an incident triggers" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pfl-O3-u5j">
-                                <rect key="frame" x="20" y="499.33333333333331" width="374" height="31.333333333333314"/>
+                                <rect key="frame" x="20" y="429.33333333333331" width="374" height="31.333333333333314"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -218,24 +231,27 @@
                         <viewLayoutGuide key="safeArea" id="FxL-YF-toP"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="mKU-Zd-xVD" firstAttribute="centerX" secondItem="FxL-YF-toP" secondAttribute="centerX" id="4eR-zM-FGk"/>
+                            <constraint firstItem="mKU-Zd-xVD" firstAttribute="centerX" secondItem="FxL-YF-toP" secondAttribute="centerX" id="9Oo-86-2hn"/>
                             <constraint firstItem="FxL-YF-toP" firstAttribute="trailing" secondItem="pfl-O3-u5j" secondAttribute="trailing" constant="20" id="BAu-Vx-EBN"/>
-                            <constraint firstItem="FxL-YF-toP" firstAttribute="bottom" secondItem="mKU-Zd-xVD" secondAttribute="bottom" constant="70" id="BNb-ac-uFk"/>
+                            <constraint firstItem="FxL-YF-toP" firstAttribute="bottom" secondItem="mKU-Zd-xVD" secondAttribute="bottom" constant="70" id="COU-FB-ql3"/>
                             <constraint firstItem="AUt-iz-QYR" firstAttribute="centerX" secondItem="FxL-YF-toP" secondAttribute="centerX" id="K6r-gL-Kgd"/>
                             <constraint firstItem="FxL-YF-toP" firstAttribute="trailing" secondItem="ieG-Ad-MnB" secondAttribute="trailing" constant="30" id="eRA-Tt-s6m"/>
                             <constraint firstItem="ieG-Ad-MnB" firstAttribute="leading" secondItem="FxL-YF-toP" secondAttribute="leading" constant="30" id="eoT-EX-FN7"/>
-                            <constraint firstItem="mKU-Zd-xVD" firstAttribute="top" secondItem="AUt-iz-QYR" secondAttribute="bottom" constant="30" id="g2m-WS-mhd"/>
+                            <constraint firstItem="dxM-Th-R5Z" firstAttribute="top" secondItem="AUt-iz-QYR" secondAttribute="bottom" constant="15" id="f0c-Ra-H4h"/>
                             <constraint firstItem="Oit-ti-iQe" firstAttribute="top" secondItem="FxL-YF-toP" secondAttribute="top" constant="40" id="g9p-k6-MWG"/>
                             <constraint firstItem="ieG-Ad-MnB" firstAttribute="top" secondItem="Oit-ti-iQe" secondAttribute="bottom" constant="40" id="htg-x3-HM6"/>
+                            <constraint firstItem="dxM-Th-R5Z" firstAttribute="centerX" secondItem="FxL-YF-toP" secondAttribute="centerX" id="iFJ-ue-JWi"/>
                             <constraint firstItem="AUt-iz-QYR" firstAttribute="top" secondItem="pfl-O3-u5j" secondAttribute="bottom" constant="15" id="jdR-mX-pSq"/>
                             <constraint firstItem="pfl-O3-u5j" firstAttribute="leading" secondItem="FxL-YF-toP" secondAttribute="leading" constant="20" id="qLq-1H-Ndi"/>
                             <constraint firstItem="Oit-ti-iQe" firstAttribute="centerX" secondItem="FxL-YF-toP" secondAttribute="centerX" id="u2P-Mm-OiK"/>
+                            <constraint firstItem="mKU-Zd-xVD" firstAttribute="top" secondItem="dxM-Th-R5Z" secondAttribute="bottom" constant="15" id="wQl-U8-cYd"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="iwU-qE-oDw"/>
                     <connections>
                         <outlet property="confidenceLabel" destination="mKU-Zd-xVD" id="ZdT-7M-8VN"/>
                         <outlet property="countryCode" destination="Nzl-i0-UT8" id="CBN-A6-AmU"/>
+                        <outlet property="pauseButton" destination="dxM-Th-R5Z" id="AnJ-oo-GNE"/>
                         <outlet property="phoneNumber" destination="h3X-1z-7uE" id="LjA-zs-3Hw"/>
                         <outlet property="riderEmail" destination="3RT-nM-jbN" id="Rxs-Dg-BwY"/>
                         <outlet property="riderName" destination="QPv-of-kIe" id="sY3-8i-xq6"/>
@@ -453,7 +469,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R9d-22-wpv">
-                                <rect key="frame" x="107" y="545.66666666666663" width="200" height="70"/>
+                                <rect key="frame" x="107" y="466" width="200" height="70"/>
                                 <color key="backgroundColor" systemColor="systemGreenColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="98P-S6-XHC"/>
@@ -506,21 +522,36 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Press button below to activate SIDE engine, then shake your phone repeatedly until an incident triggers" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bih-xt-bDW">
-                                <rect key="frame" x="20" y="499.33333333333331" width="374" height="31.333333333333314"/>
+                                <rect key="frame" x="20" y="419.66666666666669" width="374" height="31.333333333333314"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button hidden="YES" opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oPf-eb-oiF">
+                                <rect key="frame" x="107" y="556" width="200" height="70"/>
+                                <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="eOd-rE-mFV"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="hDe-8f-sZo"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <state key="normal" title="PAUSE"/>
+                                <connections>
+                                    <action selector="pausePressedWithButton:" destination="ikN-Vd-puY" eventType="touchUpInside" id="v6n-Mc-931"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="x9v-om-hYu"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="R9d-22-wpv" firstAttribute="top" secondItem="bih-xt-bDW" secondAttribute="bottom" constant="15" id="2MJ-xx-LrS"/>
                             <constraint firstItem="cWw-8n-EbE" firstAttribute="leading" secondItem="x9v-om-hYu" secondAttribute="leading" constant="30" id="3i0-z2-5uM"/>
+                            <constraint firstItem="xof-Yy-Tkn" firstAttribute="top" secondItem="oPf-eb-oiF" secondAttribute="bottom" constant="19.670000000000002" id="8OU-12-Ecx"/>
                             <constraint firstItem="cWw-8n-EbE" firstAttribute="top" secondItem="V4i-hi-Uvu" secondAttribute="bottom" constant="40" id="QVB-Ov-jzU"/>
                             <constraint firstItem="R9d-22-wpv" firstAttribute="centerX" secondItem="x9v-om-hYu" secondAttribute="centerX" id="Quz-uv-Y1D"/>
                             <constraint firstItem="V4i-hi-Uvu" firstAttribute="centerX" secondItem="x9v-om-hYu" secondAttribute="centerX" id="TcM-8W-38j"/>
-                            <constraint firstItem="xof-Yy-Tkn" firstAttribute="top" secondItem="R9d-22-wpv" secondAttribute="bottom" constant="30" id="TgZ-wp-Rn2"/>
+                            <constraint firstItem="oPf-eb-oiF" firstAttribute="centerX" secondItem="x9v-om-hYu" secondAttribute="centerX" id="Tie-vL-Cj9"/>
+                            <constraint firstItem="oPf-eb-oiF" firstAttribute="top" secondItem="R9d-22-wpv" secondAttribute="bottom" constant="20" id="Zbq-zE-jv5"/>
                             <constraint firstItem="bih-xt-bDW" firstAttribute="leading" secondItem="x9v-om-hYu" secondAttribute="leading" constant="20" id="ZpP-Ty-z5Q"/>
                             <constraint firstItem="x9v-om-hYu" firstAttribute="trailing" secondItem="bih-xt-bDW" secondAttribute="trailing" constant="20" id="g0r-NX-QSG"/>
                             <constraint firstItem="x9v-om-hYu" firstAttribute="bottom" secondItem="xof-Yy-Tkn" secondAttribute="bottom" constant="70" id="gsQ-2B-eRz"/>
@@ -533,6 +564,7 @@
                     <connections>
                         <outlet property="confidenceLabel" destination="xof-Yy-Tkn" id="rtp-WG-BfN"/>
                         <outlet property="countryCode" destination="Sgh-Lt-9ix" id="DUW-TX-UKs"/>
+                        <outlet property="pauseButton" destination="oPf-eb-oiF" id="ayo-sb-XRi"/>
                         <outlet property="phoneNumber" destination="JPK-KW-QEJ" id="B8v-a7-2hF"/>
                         <outlet property="riderEmail" destination="lXf-UJ-ERS" id="7c3-0K-OkR"/>
                         <outlet property="riderName" destination="nOH-mW-DDP" id="6bF-yZ-nY9"/>

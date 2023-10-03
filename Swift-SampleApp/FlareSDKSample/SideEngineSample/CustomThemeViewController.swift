@@ -18,6 +18,7 @@ class CustomThemeViewController: UIViewController {
     @IBOutlet weak var riderName: UITextField!
     @IBOutlet weak var riderEmail: UITextField!
     @IBOutlet var startButton : UIButton!
+    @IBOutlet var pauseButton : UIButton!
     @IBOutlet weak var confidenceLabel: UILabel!
     
     var customUIController: CustomCountDownViewController?
@@ -27,6 +28,7 @@ class CustomThemeViewController: UIViewController {
         super.viewDidLoad()
         self.confidenceLabel.text = ""
         self.startButton.tag = 1
+        self.pauseButton.tag = 1
         
         //Configure SIDE engine and register listner
         self.sideEngineConfigure()
@@ -52,8 +54,6 @@ class CustomThemeViewController: UIViewController {
         
     }
     //TODO: SIDE engine live mode
-    
-   
     @IBAction func startPressed(button : UIButton) {
         //Start and Stop SIDE engine
         if self.startButton.tag == 1 {
@@ -63,6 +63,13 @@ class CustomThemeViewController: UIViewController {
             self.sideEngineShared.stopSideEngine()
         }
         
+    }
+    @IBAction func pausePressed(button : UIButton) {
+        if self.pauseButton.tag == 1 {
+            self.sideEngineShared.pauseSideEngine()
+        }else if self.pauseButton.tag == 2 {
+            self.sideEngineShared.resumeSideEngine()
+        }
     }
     //Select Activity type (optional) - Default activity type: Scooter
     func selectActivity() {
@@ -96,7 +103,7 @@ class CustomThemeViewController: UIViewController {
         sideEngineShared.countDownDuration = 30 // for live mode
         sideEngineShared.showLog = true //false when release app to the store
         sideEngineShared.activity = activity
-        sideEngineShared.activateIncidentTestMode = true //This is only used in sandbox mode and is TRUE by default. This is why you should test your workflow in sandbox mode. You can change it to FALSE if you want to experience real-life incident detection.
+        sideEngineShared.activateIncidentTestMode = true //This is only used in sandbox mode and is TRUE by default. This is why you should test your workflow in sandbox mode. You can change it to FALSE if you want to experience real-life incident detection
         
         //The "enable_flare_aware_network" feature is a safety measure designed for cyclists, which allows them to send notifications to nearby fleet users.
         
@@ -132,6 +139,7 @@ class CustomThemeViewController: UIViewController {
                     self.startButton.tag = 2
                     self.startButton.setTitle("STOP", for: .normal)
                     self.startButton.backgroundColor = .red
+                    self.pauseButton.isHidden = false
                 } else {
                     //Handle error message here
                     print("Error message: \(String(describing: response.payload))")
@@ -144,14 +152,17 @@ class CustomThemeViewController: UIViewController {
                 self.startButton.setTitle("START", for: .normal)
                 self.startButton.backgroundColor = .systemGreen
                 
+                //Reset pause event
+                self.pauseButton.isHidden = true
+                self.pauseButton.tag = 1
+                self.pauseButton.setTitle("PAUSE", for: .normal)
+                self.pauseButton.backgroundColor = .systemGreen
             }
             else if response.type == .incidentDetected && response.success == true {
                 //You can initiate your bespoke countdown page from this interface, which must have a minimum timer interval of 30 seconds.
                 //Upon completion of your custom countdown, it is imperative to invoke the 'notify partner' method to record the event on the dashboard and dispatch notifications via webhook, Slack, email and SMS.
                 //If it is necessary to dispatch an SMS or Email for personal emergency purposes, please do so.
                 
-                //response.success: involves receiving a "true" or "false" outcome for each event. If you receive a "true" response, you can proceed with your next action. If you receive a "false" response, you should inspect the error logs located in the "response.payload"
-                                                                            
                 if let confidence = response.payload?["confidence"] {
                     print("SIDE engine confidence is: \(confidence)")
                     self.confidenceLabel.text = "SIDE confidence is: \(confidence)"
@@ -194,6 +205,25 @@ class CustomThemeViewController: UIViewController {
                 //This message is intended solely to provide notification regarding the transmission status of Email. It is unnecessary to invoke any SIDE engine functions in this context.
             }else if response.type == .resumeSideEngine {
                 //The lateral engine has been restarted, and we are currently monitoring the device's sensors and location in order to analyse another potential incident.
+                //Update your UI here (e.g. update PAUSE button color or text here when SIDE engine resume)
+                
+                if response.success == true {
+                    self.pauseButton.tag = 1
+                    self.pauseButton.setTitle("PAUSE", for: .normal)
+                    self.pauseButton.backgroundColor = .systemGreen
+                }
+            
+                
+                
+            }else if response.type == .pauseSideEngine {
+                //The lateral engine has been restarted, and we are currently monitoring the device's sensors and location in order to analyse another potential incident.
+                if response.type == .pauseSideEngine && response.success == true {
+                    //Update your UI here (e.g. update PAUSE button color or text here when SIDE engine resume)
+                    self.pauseButton.tag = 2
+                    self.pauseButton.setTitle("RESUME", for: .normal)
+                    self.pauseButton.backgroundColor = .red
+                    
+                }
             }
             else if response.type == .location {
                 //You will receive the user's location update status in this location. The payload contains a CLLocation object, which allows you to read any parameters if necessary.

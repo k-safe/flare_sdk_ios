@@ -18,13 +18,14 @@ class StandardThemeViewController: UIViewController {
     @IBOutlet weak var riderEmail: UITextField!
     @IBOutlet var startButton : UIButton!
     @IBOutlet weak var confidenceLabel: UILabel!
+    @IBOutlet var pauseButton : UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         self.confidenceLabel.text = ""
         self.startButton.tag = 1
-        
+        self.pauseButton.tag = 1
         //Configure SIDE engine and register listner
         self.sideEngineConfigure()
         
@@ -60,7 +61,13 @@ class StandardThemeViewController: UIViewController {
             //stopSideEngine will stop all the services inside SIDE engine and release all the varibales
             self.sideEngineShared.stopSideEngine()
         }
-        
+    }
+    @IBAction func pausePressed(button : UIButton) {
+        if self.pauseButton.tag == 1 {
+            self.sideEngineShared.pauseSideEngine()
+        }else if self.pauseButton.tag == 2 {
+            self.sideEngineShared.resumeSideEngine()
+        }
     }
     //Select Activity type (optional) - Default activity type: Scooter
     func selectActivity() {
@@ -94,9 +101,9 @@ class StandardThemeViewController: UIViewController {
         sideEngineShared.countDownDuration = 30 // for live mode
         sideEngineShared.showLog = true //false when release app to the store
         sideEngineShared.activity = activity
-        sideEngineShared.appName = "Flare"
-        sideEngineShared.activateIncidentTestMode = false //This is only used in sandbox mode and is TRUE by default. This is why you should test your workflow in sandbox mode. You can change it to FALSE if you want to experience real-life incident detection.
-        
+        sideEngineShared.appName = "Flare SDK Sample" //Optional
+        sideEngineShared.activateIncidentTestMode = false //This is only used in sandbox mode and is TRUE by default. This is why you should test your workflow in sandbox mode. You can change it to FALSE if you want to experience real-life incident detection
+
         //The "enable_flare_aware_network" feature is a safety measure designed for cyclists, which allows them to send notifications to nearby fleet users.
         sideEngineShared.enable_flare_aware_network = false //(Optional)
         
@@ -140,6 +147,7 @@ class StandardThemeViewController: UIViewController {
                     self.startButton.tag = 2
                     self.startButton.setTitle("STOP", for: .normal)
                     self.startButton.backgroundColor = .red
+                    self.pauseButton.isHidden = false
                 } else {
                     //Handle error message here
                     print("Error message: \(String(describing: response.payload))")
@@ -152,22 +160,21 @@ class StandardThemeViewController: UIViewController {
                 self.startButton.setTitle("START", for: .normal)
                 self.startButton.backgroundColor = .systemGreen
                 
+                //Reset pause event
+                self.pauseButton.isHidden = true
+                self.pauseButton.tag = 1
+                self.pauseButton.setTitle("PAUSE", for: .normal)
+                self.pauseButton.backgroundColor = .systemGreen
+                
             }
-            else if response.type == .incidentDetected && response.success == true {
+            else if response.type == .incidentDetected {
                 
                 //The user has identified an incident, and if necessary, it may be appropriate to log the incident in either the analytics system or an external database. Please refrain from invoking any side engine methods at this juncture.
-                
-                //response.success: involves receiving a "true" or "false" outcome for each event. If you receive a "true" response, you can proceed with your next action. If you receive a "false" response, you should inspect the error logs located in the "response.payload"
-                
-                if self.isProductionMode == true {
-                    if let confidence = response.payload?["confidence"] {
-                        print("SIDE engine confidence is: \(confidence)")
-                        self.confidenceLabel.text = "SIDE confidence is: \(confidence)"
-                    }
-                } else {
-                    //Test mode not return confidence
-                    self.confidenceLabel.text = ""
+                if let confidence = response.payload?["confidence"] {
+                    print("SIDE engine confidence is: \(confidence)")
+                    self.confidenceLabel.text = "SIDE confidence is: \(confidence)"
                 }
+                
             }
             else if response.type == .incidentCancel {
                 //The incident has been automatically cancelled. If necessary, you may log the incident in the analytics system. Please refrain from invoking any side engine methods at this juncture.
@@ -201,6 +208,20 @@ class StandardThemeViewController: UIViewController {
                 }
             }else if response.type == .resumeSideEngine {
                 //The user has confirmed that the incident is accurate, therefore you may transmit the corresponding events to analytics, if needed. There is no requirement to invoke any functions from either party in this context, as the engine on the side will handle the task automatically.
+                if response.success == true {
+                    self.pauseButton.tag = 1
+                    self.pauseButton.setTitle("PAUSE", for: .normal)
+                    self.pauseButton.backgroundColor = .systemGreen
+                }
+            }else if response.type == .pauseSideEngine {
+                //The lateral engine has been restarted, and we are currently monitoring the device's sensors and location in order to analyse another potential incident.
+                if response.type == .pauseSideEngine && response.success == true {
+                    //Update your UI here (e.g. update PAUSE button color or text here when SIDE engine resume)
+                    self.pauseButton.tag = 2
+                    self.pauseButton.setTitle("RESUME", for: .normal)
+                    self.pauseButton.backgroundColor = .red
+                    
+                }
             }
         }
     }

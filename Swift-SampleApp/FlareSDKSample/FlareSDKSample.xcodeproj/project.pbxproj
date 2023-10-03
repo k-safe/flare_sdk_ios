@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		330ACD95564FD77DD5F197B8 /* Pods_FlareSDKSample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4797C6D2F2376C674803E6F8 /* Pods_FlareSDKSample.framework */; };
+		078FC99319AAFAA1F82CC67B /* Pods_FlareSDKSample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85D93F8195157BCE65DF8F09 /* Pods_FlareSDKSample.framework */; };
 		D000A8CE28FFDB480077C9B2 /* StandardThemeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D000A8CC28FFDB480077C9B2 /* StandardThemeViewController.swift */; };
 		D000A8CF28FFDB480077C9B2 /* CustomThemeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D000A8CD28FFDB480077C9B2 /* CustomThemeViewController.swift */; };
 		D018BCD0269C4FDB00F21A20 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D018BCCF269C4FDB00F21A20 /* AppDelegate.swift */; };
@@ -37,9 +37,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		3C8211AAEA300A2B92D7A048 /* Pods-FlareSDKSample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlareSDKSample.release.xcconfig"; path = "Target Support Files/Pods-FlareSDKSample/Pods-FlareSDKSample.release.xcconfig"; sourceTree = "<group>"; };
-		4797C6D2F2376C674803E6F8 /* Pods_FlareSDKSample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FlareSDKSample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		7E9FADF100D05B8FE62638DD /* Pods-FlareSDKSample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlareSDKSample.debug.xcconfig"; path = "Target Support Files/Pods-FlareSDKSample/Pods-FlareSDKSample.debug.xcconfig"; sourceTree = "<group>"; };
+		8225838BB08E0C379D244DD6 /* Pods-FlareSDKSample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlareSDKSample.debug.xcconfig"; path = "Target Support Files/Pods-FlareSDKSample/Pods-FlareSDKSample.debug.xcconfig"; sourceTree = "<group>"; };
+		85D93F8195157BCE65DF8F09 /* Pods_FlareSDKSample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FlareSDKSample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		90962AA718EA1780F6350DD3 /* Pods-FlareSDKSample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlareSDKSample.release.xcconfig"; path = "Target Support Files/Pods-FlareSDKSample/Pods-FlareSDKSample.release.xcconfig"; sourceTree = "<group>"; };
 		D000A8CC28FFDB480077C9B2 /* StandardThemeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StandardThemeViewController.swift; sourceTree = "<group>"; };
 		D000A8CD28FFDB480077C9B2 /* CustomThemeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomThemeViewController.swift; sourceTree = "<group>"; };
 		D018BCCC269C4FDB00F21A20 /* FlareSDKSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlareSDKSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -63,17 +63,17 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				330ACD95564FD77DD5F197B8 /* Pods_FlareSDKSample.framework in Frameworks */,
+				078FC99319AAFAA1F82CC67B /* Pods_FlareSDKSample.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1B5E099665D4D87FB10CC816 /* Frameworks */ = {
+		CD9D06FA70CBCE42AEA505C1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				4797C6D2F2376C674803E6F8 /* Pods_FlareSDKSample.framework */,
+				85D93F8195157BCE65DF8F09 /* Pods_FlareSDKSample.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -85,7 +85,7 @@
 				D018BCCE269C4FDB00F21A20 /* SideEngineSample */,
 				D018BCCD269C4FDB00F21A20 /* Products */,
 				DAF3551432E364931DF8075D /* Pods */,
-				1B5E099665D4D87FB10CC816 /* Frameworks */,
+				CD9D06FA70CBCE42AEA505C1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -121,8 +121,8 @@
 		DAF3551432E364931DF8075D /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				7E9FADF100D05B8FE62638DD /* Pods-FlareSDKSample.debug.xcconfig */,
-				3C8211AAEA300A2B92D7A048 /* Pods-FlareSDKSample.release.xcconfig */,
+				8225838BB08E0C379D244DD6 /* Pods-FlareSDKSample.debug.xcconfig */,
+				90962AA718EA1780F6350DD3 /* Pods-FlareSDKSample.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -134,12 +134,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D018BCE0269C4FDE00F21A20 /* Build configuration list for PBXNativeTarget "FlareSDKSample" */;
 			buildPhases = (
-				638A7FB44A98522D5E318E21 /* [CP] Check Pods Manifest.lock */,
+				9B2B712EB9EF9A6BFA13A659 /* [CP] Check Pods Manifest.lock */,
 				D018BCC8269C4FDB00F21A20 /* Sources */,
 				D018BCC9269C4FDB00F21A20 /* Frameworks */,
 				D018BCCA269C4FDB00F21A20 /* Resources */,
 				D05F5AB72A83A46E0078E581 /* Embed Frameworks */,
-				5AA0CD65442A09D63405CE85 /* [CP] Embed Pods Frameworks */,
+				68AB9E824F5EF5CDF25B0571 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -196,7 +196,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		5AA0CD65442A09D63405CE85 /* [CP] Embed Pods Frameworks */ = {
+		68AB9E824F5EF5CDF25B0571 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -213,7 +213,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FlareSDKSample/Pods-FlareSDKSample-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		638A7FB44A98522D5E318E21 /* [CP] Check Pods Manifest.lock */ = {
+		9B2B712EB9EF9A6BFA13A659 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -395,13 +395,12 @@
 		};
 		D018BCE1269C4FDE00F21A20 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7E9FADF100D05B8FE62638DD /* Pods-FlareSDKSample.debug.xcconfig */;
+			baseConfigurationReference = 8225838BB08E0C379D244DD6 /* Pods-FlareSDKSample.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = FlareSDKSample.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = "";
@@ -417,7 +416,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 2.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.flare.sdk-ios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = PhoenixDevelopment;
@@ -429,13 +428,12 @@
 		};
 		D018BCE2269C4FDE00F21A20 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3C8211AAEA300A2B92D7A048 /* Pods-FlareSDKSample.release.xcconfig */;
+			baseConfigurationReference = 90962AA718EA1780F6350DD3 /* Pods-FlareSDKSample.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = FlareSDKSample.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 3FNS7HP583;
@@ -451,7 +449,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 2.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.flare.sdk-ios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = PhoenixDevelopment;
