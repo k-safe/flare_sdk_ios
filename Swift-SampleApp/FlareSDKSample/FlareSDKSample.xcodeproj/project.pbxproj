@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		078FC99319AAFAA1F82CC67B /* Pods_FlareSDKSample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85D93F8195157BCE65DF8F09 /* Pods_FlareSDKSample.framework */; };
+		054C65C72FD434B20FB05DB6 /* Pods_FlareSDKSample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3A7907B21A5681DAE4B74D3 /* Pods_FlareSDKSample.framework */; };
 		D000A8CE28FFDB480077C9B2 /* StandardThemeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D000A8CC28FFDB480077C9B2 /* StandardThemeViewController.swift */; };
 		D000A8CF28FFDB480077C9B2 /* CustomThemeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D000A8CD28FFDB480077C9B2 /* CustomThemeViewController.swift */; };
 		D018BCD0269C4FDB00F21A20 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D018BCCF269C4FDB00F21A20 /* AppDelegate.swift */; };
@@ -37,9 +37,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		8225838BB08E0C379D244DD6 /* Pods-FlareSDKSample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlareSDKSample.debug.xcconfig"; path = "Target Support Files/Pods-FlareSDKSample/Pods-FlareSDKSample.debug.xcconfig"; sourceTree = "<group>"; };
-		85D93F8195157BCE65DF8F09 /* Pods_FlareSDKSample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FlareSDKSample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		90962AA718EA1780F6350DD3 /* Pods-FlareSDKSample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlareSDKSample.release.xcconfig"; path = "Target Support Files/Pods-FlareSDKSample/Pods-FlareSDKSample.release.xcconfig"; sourceTree = "<group>"; };
+		6A75299BF51845EF26AEC1E0 /* Pods-FlareSDKSample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlareSDKSample.release.xcconfig"; path = "Target Support Files/Pods-FlareSDKSample/Pods-FlareSDKSample.release.xcconfig"; sourceTree = "<group>"; };
+		7FD61B33A79DFB119BF3C9B5 /* Pods-FlareSDKSample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlareSDKSample.debug.xcconfig"; path = "Target Support Files/Pods-FlareSDKSample/Pods-FlareSDKSample.debug.xcconfig"; sourceTree = "<group>"; };
 		D000A8CC28FFDB480077C9B2 /* StandardThemeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StandardThemeViewController.swift; sourceTree = "<group>"; };
 		D000A8CD28FFDB480077C9B2 /* CustomThemeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomThemeViewController.swift; sourceTree = "<group>"; };
 		D018BCCC269C4FDB00F21A20 /* FlareSDKSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlareSDKSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -56,6 +55,7 @@
 		D05B6966280FE89600356644 /* TestSideEngineSupportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestSideEngineSupportViewController.swift; sourceTree = "<group>"; };
 		D0AA8CDA29376B190086B1CC /* VideoAskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoAskViewController.swift; sourceTree = "<group>"; };
 		D4315A4129DFDF21003CB087 /* EmergencySOSViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmergencySOSViewController.swift; sourceTree = "<group>"; };
+		E3A7907B21A5681DAE4B74D3 /* Pods_FlareSDKSample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FlareSDKSample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,17 +63,17 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				078FC99319AAFAA1F82CC67B /* Pods_FlareSDKSample.framework in Frameworks */,
+				054C65C72FD434B20FB05DB6 /* Pods_FlareSDKSample.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		CD9D06FA70CBCE42AEA505C1 /* Frameworks */ = {
+		1AD047F452E47400E0084A5D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				85D93F8195157BCE65DF8F09 /* Pods_FlareSDKSample.framework */,
+				E3A7907B21A5681DAE4B74D3 /* Pods_FlareSDKSample.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -85,7 +85,7 @@
 				D018BCCE269C4FDB00F21A20 /* SideEngineSample */,
 				D018BCCD269C4FDB00F21A20 /* Products */,
 				DAF3551432E364931DF8075D /* Pods */,
-				CD9D06FA70CBCE42AEA505C1 /* Frameworks */,
+				1AD047F452E47400E0084A5D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -121,8 +121,8 @@
 		DAF3551432E364931DF8075D /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				8225838BB08E0C379D244DD6 /* Pods-FlareSDKSample.debug.xcconfig */,
-				90962AA718EA1780F6350DD3 /* Pods-FlareSDKSample.release.xcconfig */,
+				7FD61B33A79DFB119BF3C9B5 /* Pods-FlareSDKSample.debug.xcconfig */,
+				6A75299BF51845EF26AEC1E0 /* Pods-FlareSDKSample.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -134,12 +134,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D018BCE0269C4FDE00F21A20 /* Build configuration list for PBXNativeTarget "FlareSDKSample" */;
 			buildPhases = (
-				9B2B712EB9EF9A6BFA13A659 /* [CP] Check Pods Manifest.lock */,
+				25A9832F7FEC0BCD42FB3224 /* [CP] Check Pods Manifest.lock */,
 				D018BCC8269C4FDB00F21A20 /* Sources */,
 				D018BCC9269C4FDB00F21A20 /* Frameworks */,
 				D018BCCA269C4FDB00F21A20 /* Resources */,
 				D05F5AB72A83A46E0078E581 /* Embed Frameworks */,
-				68AB9E824F5EF5CDF25B0571 /* [CP] Embed Pods Frameworks */,
+				7863882EB2631697E919E80A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -196,24 +196,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		68AB9E824F5EF5CDF25B0571 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-FlareSDKSample/Pods-FlareSDKSample-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-FlareSDKSample/Pods-FlareSDKSample-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FlareSDKSample/Pods-FlareSDKSample-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		9B2B712EB9EF9A6BFA13A659 /* [CP] Check Pods Manifest.lock */ = {
+		25A9832F7FEC0BCD42FB3224 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -233,6 +216,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7863882EB2631697E919E80A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FlareSDKSample/Pods-FlareSDKSample-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FlareSDKSample/Pods-FlareSDKSample-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FlareSDKSample/Pods-FlareSDKSample-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -395,7 +395,7 @@
 		};
 		D018BCE1269C4FDE00F21A20 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8225838BB08E0C379D244DD6 /* Pods-FlareSDKSample.debug.xcconfig */;
+			baseConfigurationReference = 7FD61B33A79DFB119BF3C9B5 /* Pods-FlareSDKSample.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -428,7 +428,7 @@
 		};
 		D018BCE2269C4FDE00F21A20 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 90962AA718EA1780F6350DD3 /* Pods-FlareSDKSample.release.xcconfig */;
+			baseConfigurationReference = 6A75299BF51845EF26AEC1E0 /* Pods-FlareSDKSample.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
