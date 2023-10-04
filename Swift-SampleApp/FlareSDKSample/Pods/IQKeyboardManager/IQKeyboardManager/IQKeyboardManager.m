@@ -63,6 +63,9 @@ typedef void (^SizeBlock)(CGSize size);
 /** To save rootViewController.view.frame.origin. */
 @property(nonatomic, assign) CGPoint    topViewBeginOrigin;
 
+/** To save rootViewController.view.frame.origin. */
+@property(nonatomic, assign) UIEdgeInsets    topViewBeginSafeAreaInsets;
+
 /** To save rootViewController */
 @property(nullable, nonatomic, weak) UIViewController *rootViewController;
 
@@ -207,6 +210,7 @@ typedef void (^SizeBlock)(CGSize size);
             [strongSelf.resignFirstResponderGesture setDelegate:strongSelf];
             strongSelf.resignFirstResponderGesture.enabled = strongSelf.shouldResignOnTouchOutside;
             strongSelf.topViewBeginOrigin = kIQCGPointInvalid;
+            strongSelf.topViewBeginSafeAreaInsets = UIEdgeInsetsZero;
             strongSelf.topViewBeginOriginWhilePopGestureRecognizerActive = kIQCGPointInvalid;
             
             //Setting it's initial values
@@ -692,7 +696,10 @@ typedef void (^SizeBlock)(CGSize size);
         
         kbFrame.origin.y -= keyboardDistanceFromTextField;
         kbFrame.size.height += keyboardDistanceFromTextField;
-        
+
+        kbFrame.origin.y -= _topViewBeginSafeAreaInsets.bottom;
+        kbFrame.size.height += _topViewBeginSafeAreaInsets.bottom;
+
         //Calculating actual keyboard displayed size, keyboard frame may be different when hardware keyboard is attached (Bug ID: #469) (Bug ID: #381) (Bug ID: #1506)
         CGRect intersectRect = CGRectIntersection(kbFrame, keyWindow.frame);
         
@@ -1334,6 +1341,7 @@ typedef void (^SizeBlock)(CGSize size);
     {
         [self restorePosition];
         _topViewBeginOrigin = kIQCGPointInvalid;
+        _topViewBeginSafeAreaInsets = UIEdgeInsetsZero;
         return;
     }
 	
@@ -1355,6 +1363,7 @@ typedef void (^SizeBlock)(CGSize size);
         else
         {
             _topViewBeginOrigin = rootController.view.frame.origin;
+            _topViewBeginSafeAreaInsets = rootController.view.safeAreaInsets;
         }
         
         _rootViewControllerWhilePopGestureRecognizerActive = nil;
@@ -1523,6 +1532,7 @@ typedef void (^SizeBlock)(CGSize size);
     [self showLog:[NSString stringWithFormat:@"Notification Object: %@", aNotification.object]];
 
     _topViewBeginOrigin = kIQCGPointInvalid;
+    _topViewBeginSafeAreaInsets = UIEdgeInsetsZero;
 
     _kbFrame = CGRectZero;
     [self notifyKeyboardSize:_kbFrame.size];
@@ -1593,20 +1603,7 @@ typedef void (^SizeBlock)(CGSize size);
         if ([textFieldView respondsToSelector:@selector(isEditable)] && [textFieldView isKindOfClass:[UIScrollView class]] &&
             textFieldView.inputAccessoryView == nil)
         {
-            __weak __typeof__(self) weakSelf = self;
-
-            [UIView animateWithDuration:0.00001 delay:0 options:(_animationCurve|UIViewAnimationOptionBeginFromCurrentState) animations:^{
-
-                __strong __typeof__(self) strongSelf = weakSelf;
-
-                [strongSelf addToolbarIfRequired];
-            } completion:^(BOOL finished) {
-
-                __strong __typeof__(self) strongSelf = weakSelf;
-
-                //On textView toolbar didn't appear on first time, so forcing textView to reload it's inputViews.
-                [strongSelf.textFieldView reloadInputViews];
-            }];
+            [self addToolbarIfRequired];
         }
         //Else adding toolbar
         else
@@ -1627,6 +1624,7 @@ typedef void (^SizeBlock)(CGSize size);
     {
         [self restorePosition];
         _topViewBeginOrigin = kIQCGPointInvalid;
+        _topViewBeginSafeAreaInsets = UIEdgeInsetsZero;
     }
     else
     {
@@ -1643,6 +1641,7 @@ typedef void (^SizeBlock)(CGSize size);
             else
             {
                 _topViewBeginOrigin = rootController.view.frame.origin;
+                _topViewBeginSafeAreaInsets = rootController.view.safeAreaInsets;
             }
             
             _rootViewControllerWhilePopGestureRecognizerActive = nil;
