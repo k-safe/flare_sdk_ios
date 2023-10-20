@@ -252,7 +252,6 @@ extension BBSideEngine.BBSideEngineManager {
   @objc dynamic public func deActiveSOS()
 }
 extension BBSideEngine.BBSideEngineManager : CoreLocation.CLLocationManagerDelegate {
-  @objc dynamic public func fetchCurrentLocation() -> CoreLocation.CLLocation?
   @objc dynamic public func locationManager(_ manager: CoreLocation.CLLocationManager, didChangeAuthorization status: CoreLocation.CLAuthorizationStatus)
   @objc dynamic public func locationManager(_ manager: CoreLocation.CLLocationManager, didFailWithError error: Swift.Error)
   @objc dynamic public func locationManager(_ manager: CoreLocation.CLLocationManager, didUpdateLocations locations: [CoreLocation.CLLocation])
@@ -273,7 +272,6 @@ extension BBSideEngine.BBSideEngineManager {
   @objc dynamic public func fetchWhat3WordLocation(completion: @escaping ([Swift.String : Any]) -> ())
   @objc dynamic public func notifyPartner()
   @objc dynamic public func declineIncident()
-  @objc dynamic public func isConnectedToNetwork() -> Swift.Bool
 }
 public class BBViews {
   public static let shared: BBSideEngine.BBViews

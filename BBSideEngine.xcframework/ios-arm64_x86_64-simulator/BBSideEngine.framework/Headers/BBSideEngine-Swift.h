@@ -306,7 +306,6 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) BBSideEngine
 @end
 
 
-
 @interface BBSideEngineManager (SWIFT_EXTENSION(BBSideEngine))
 - (void)sideEventsListenerWithHandler:(void (^ _Nonnull)(BBResponse * _Nonnull))handler;
 @end
@@ -318,11 +317,11 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) BBSideEngine
 
 
 
-@class CLLocation;
+
 @class CLLocationManager;
+@class CLLocation;
 
 @interface BBSideEngineManager (SWIFT_EXTENSION(BBSideEngine)) <CLLocationManagerDelegate>
-- (CLLocation * _Nullable)fetchCurrentLocation SWIFT_WARN_UNUSED_RESULT;
 - (void)locationManager:(CLLocationManager * _Nonnull)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status;
 - (void)locationManager:(CLLocationManager * _Nonnull)manager didFailWithError:(NSError * _Nonnull)error;
 - (void)locationManager:(CLLocationManager * _Nonnull)manager didUpdateLocations:(NSArray<CLLocation *> * _Nonnull)locations;
@@ -357,7 +356,6 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) BBSideEngine
 - (void)fetchWhat3WordLocationWithCompletion:(void (^ _Nonnull)(NSDictionary<NSString *, id> * _Nonnull))completion;
 - (void)notifyPartner;
 - (void)declineIncident;
-- (BOOL)isConnectedToNetwork SWIFT_WARN_UNUSED_RESULT;
 @end
 
 typedef SWIFT_ENUM(NSInteger, BBSideEngineMode, open) {
@@ -714,7 +712,6 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) BBSideEngine
 @end
 
 
-
 @interface BBSideEngineManager (SWIFT_EXTENSION(BBSideEngine))
 - (void)sideEventsListenerWithHandler:(void (^ _Nonnull)(BBResponse * _Nonnull))handler;
 @end
@@ -726,11 +723,11 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) BBSideEngine
 
 
 
-@class CLLocation;
+
 @class CLLocationManager;
+@class CLLocation;
 
 @interface BBSideEngineManager (SWIFT_EXTENSION(BBSideEngine)) <CLLocationManagerDelegate>
-- (CLLocation * _Nullable)fetchCurrentLocation SWIFT_WARN_UNUSED_RESULT;
 - (void)locationManager:(CLLocationManager * _Nonnull)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status;
 - (void)locationManager:(CLLocationManager * _Nonnull)manager didFailWithError:(NSError * _Nonnull)error;
 - (void)locationManager:(CLLocationManager * _Nonnull)manager didUpdateLocations:(NSArray<CLLocation *> * _Nonnull)locations;
@@ -765,7 +762,6 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) BBSideEngine
 - (void)fetchWhat3WordLocationWithCompletion:(void (^ _Nonnull)(NSDictionary<NSString *, id> * _Nonnull))completion;
 - (void)notifyPartner;
 - (void)declineIncident;
-- (BOOL)isConnectedToNetwork SWIFT_WARN_UNUSED_RESULT;
 @end
 
 typedef SWIFT_ENUM(NSInteger, BBSideEngineMode, open) {
