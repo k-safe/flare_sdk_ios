@@ -210,9 +210,9 @@ public struct QuantizationParameters : Swift.Equatable, Swift.Hashable {
   }
 }
 @objc @_inheritsConvenienceInitializers @objcMembers public class BBSideEngineManager : ObjectiveC.NSObject {
+  @objc public static let shared: BBSideEngine.BBSideEngineManager
   public typealias callbackHelper = (BBSideEngine.BBResponse) -> Swift.Void
   @objc public var completion: BBSideEngine.BBSideEngineManager.callbackHelper?
-  @objc public static let shared: BBSideEngine.BBSideEngineManager
   @objc public var applicationTheme: BBSideEngine.BBTheme
   @objc public var enableActivityTelemetry: Swift.Bool
   @objc public var activateIncidentTestMode: Swift.Bool
