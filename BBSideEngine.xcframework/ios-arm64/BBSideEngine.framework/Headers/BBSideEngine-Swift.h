@@ -275,9 +275,9 @@ enum BBTheme : NSInteger;
 
 SWIFT_CLASS("_TtC12BBSideEngine19BBSideEngineManager")
 @interface BBSideEngineManager : NSObject
-@property (nonatomic, copy) void (^ _Nullable completion)(BBResponse * _Nonnull);
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) BBSideEngineManager * _Nonnull shared;)
 + (BBSideEngineManager * _Nonnull)shared SWIFT_WARN_UNUSED_RESULT;
+@property (nonatomic, copy) void (^ _Nullable completion)(BBResponse * _Nonnull);
 @property (nonatomic) enum BBTheme applicationTheme;
 @property (nonatomic) BOOL enableActivityTelemetry;
 @property (nonatomic) BOOL activateIncidentTestMode;
