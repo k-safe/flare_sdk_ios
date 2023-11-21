@@ -5,5 +5,6 @@ target 'FlareSDKSample' do
 use_frameworks!
 pod 'IQKeyboardManager', '~> 6.5'
 #pod 'SideEngine-iOS'
-pod 'SideEngine-iOS'
+#pod 'SideEngine-iOS'
+pod 'SideEngine-iOS', :git => 'https://github.com/k-safe/flare_sdk_ios.git', :tag => '4.2.9'
 end
