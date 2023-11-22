@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name         = "SideEngine-iOS"
-  spec.version      = "4.2.9"
+  spec.version      = "4.3.0"
   spec.summary      = "Powerful Real-Time Incident Detection, Prevention and Alerting"
   spec.description  = <<-DESC
                     The Flare SDK is an innovative solution that enables mobility providers, food couriers, and insurers to gain a deeper understanding of accidents like never before. With our real-time incident detection, prevention, and alerting capabilities, you can take your safety measures to the next level and offer enhanced safety features to your customers.
