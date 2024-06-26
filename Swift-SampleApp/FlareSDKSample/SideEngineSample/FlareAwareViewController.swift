@@ -50,6 +50,9 @@ class FlareAwareViewController: UIViewController {
     
     //TODO: Configure SIDE engine and register listner
     func sideEngineConfigure() {
+        //Show loading indicator while configuration in process
+        SwiftLoader.show(animated: true)
+        
         let shared = BBSideEngineManager.shared
         /****How to configure production mode****/
         //Production mode used when you release app to the app store (You can use any of the one theme e.g. .standard OR .custom)
@@ -57,8 +60,10 @@ class FlareAwareViewController: UIViewController {
         
         //let accessKey = "Your production license key here"
         let mode: BBMode = isProductionMode ? .production : .sandbox
-        let accessKey = isProductionMode ? "Your production license key here" : "Your sandbox license key here"
-        shared.configure(accessKey: accessKey, mode: mode, theme: .standard)
+        let accessKey = isProductionMode ? "Production key here" : "Sandbox key here"
+        let secretKey = "Secret key here"
+        
+        shared.configure(accessKey: accessKey, secretKey: secretKey, mode: mode, theme: .standard)
         
         //------------Register SIDE engine listener here------------
         self.registerSideEngineListener()
@@ -69,9 +74,15 @@ class FlareAwareViewController: UIViewController {
         sideEngineShared.sideEventsListener { [weak self] (response) in
             guard let self = self else { return }
             //This call back basiclly where you call the configure method
-            if response.type == .configure && response.success == true {
+            if response.type == .configure {
                 //You are now able to initiate the SIDE engine process at any time. In the event that there is no user input button available to commence the activity, you may commence the SIDE engine by executing the following command:
                 print("CONFIGURE with status: \(String(describing: response.success))")
+                if response.success == true {
+                    //sideEngineShared.startFlareAware()
+                }
+                DispatchQueue.main.async {
+                    SwiftLoader.hide()
+                }
             }
             else if response.type == .startFlareAware {
                 //Update your UI here (e.g. update START button color or text here when SIDE engine started)

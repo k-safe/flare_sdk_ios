@@ -1,7 +1,7 @@
 framework module BBSideEngine {
   umbrella header "BBSideEngine.h"
-
   export *
+
   module * { export * }
 }
 

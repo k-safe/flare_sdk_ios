@@ -39,14 +39,24 @@ class StandardThemeViewController: UIViewController {
     
     //TODO: Configure SIDE engine and register listner
     func sideEngineConfigure() {
+        //Show loading indicator while configuration in process
+        SwiftLoader.show(animated: true)
+        
         let shared = BBSideEngineManager.shared
         /****How to configure production mode****/
         //Production mode used when you release app to the app store (You can use any of the one theme e.g. .standard OR .custom)
         //Sandbox mode used only for while developing your App (You can use any of the one theme e.g. .standard OR .custom)
         
         let mode: BBMode = isProductionMode ? .production : .sandbox
-        let accessKey = isProductionMode ? "Your production license key here" : "Your sandbox license key here"
-        shared.configure(accessKey: accessKey, mode: mode, theme: .standard)
+        
+        let accessKey = isProductionMode ? "Production key here" : "Sandbox key here"
+        let secretKey = "Secret key here"
+        
+        /*========================================================
+         The default app will use user device's region, but you can also set a custom region based on your need.
+         ========================================================*/
+        shared.configure(accessKey: accessKey, secretKey: secretKey, mode: mode, theme: .standard)
+        //shared.configure(accessKey: accessKey, secretKey: secretKey, mode: mode, theme: .custom, region: "region here")
         
         //------------Register SIDE engine listener here------------
         self.registerSideEngineListener()
@@ -74,16 +84,16 @@ class StandardThemeViewController: UIViewController {
         let alert = UIAlertController(title: "", message: "Select Activity", preferredStyle: .actionSheet)
         let activity1 = "Bike"
         let activity2 = "Scooter"
-        let activity3 = "Cycling"
+//        let activity3 = "Cycling"
         alert.addAction(UIAlertAction(title: activity1, style: UIAlertAction.Style.default, handler: { _ in
             self.startSideEngine(activity: activity1)
         }))
         alert.addAction(UIAlertAction(title: activity2, style: UIAlertAction.Style.default, handler: { _ in
             self.startSideEngine(activity: activity2)
         }))
-        alert.addAction(UIAlertAction(title: activity3, style: UIAlertAction.Style.default, handler: { _ in
-            self.startSideEngine(activity: activity3)
-        }))
+//        alert.addAction(UIAlertAction(title: activity3, style: UIAlertAction.Style.default, handler: { _ in
+//            self.startSideEngine(activity: activity3)
+//        }))
         alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel, handler: { _ in
             //Cancel Action
         }))
@@ -102,7 +112,7 @@ class StandardThemeViewController: UIViewController {
         sideEngineShared.showLog = true //false when release app to the store
         sideEngineShared.activity = activity
         sideEngineShared.appName = "Flare SDK Sample" //Optional
-        sideEngineShared.activateIncidentTestMode = false //This is only used in sandbox mode and is TRUE by default. This is why you should test your workflow in sandbox mode. You can change it to FALSE if you want to experience real-life incident detection
+        sideEngineShared.activateIncidentTestMode = true //This is only used in sandbox mode and is TRUE by default. This is why you should test your workflow in sandbox mode. You can change it to FALSE if you want to experience real-life incident detection
 
         //The "enable_flare_aware_network" feature is a safety measure designed for cyclists, which allows them to send notifications to nearby fleet users.
         sideEngineShared.enable_flare_aware_network = false //(Optional)
@@ -135,9 +145,15 @@ class StandardThemeViewController: UIViewController {
         sideEngineShared.sideEventsListener { [weak self] (response) in
             guard let self = self else { return }
             //This call back basiclly where you call the configure method
-            if response.type == .configure && response.success == true {
+            if response.type == .configure {
                 //You are now able to initiate the SIDE engine process at any time. In the event that there is no user input button available to commence the activity, you may commence the SIDE engine by executing the following command:
                 print("CONFIGURE with status: \(String(describing: response.success))")
+                if response.success == true {
+                    //sideEngineShared.startSideEngine()
+                }
+                DispatchQueue.main.async {
+                    SwiftLoader.hide()
+                }
             }
             else if response.type == .start {
                 //Update your UI here (e.g. update START button color or text here when SIDE engine started)
@@ -172,7 +188,9 @@ class StandardThemeViewController: UIViewController {
                 //The user has identified an incident, and if necessary, it may be appropriate to log the incident in either the analytics system or an external database. Please refrain from invoking any side engine methods at this juncture.
                 if let confidence = response.payload?["confidence"] {
                     print("SIDE engine confidence is: \(confidence)")
-                    self.confidenceLabel.text = "SIDE confidence is: \(confidence)"
+                    DispatchQueue.main.async {
+                        self.confidenceLabel.text = "SIDE confidence is: \(confidence)"
+                    }
                 }
                 
             }
@@ -203,8 +221,8 @@ class StandardThemeViewController: UIViewController {
             }else if response.type == .incidentVerifiedByUser {
                 //The user has confirmed that the incident is accurate, therefore you may transmit the corresponding events to analytics, if needed. There is no requirement to invoke any functions from either party in this context, as the engine on the side will handle the task automatically.
                 if response.success == true {
-                    self.sendSMS()
-                    self.sendEmail()
+//                    self.sendSMS()
+//                    self.sendEmail()
                 }
             }else if response.type == .resumeSideEngine {
                 //The user has confirmed that the incident is accurate, therefore you may transmit the corresponding events to analytics, if needed. There is no requirement to invoke any functions from either party in this context, as the engine on the side will handle the task automatically.

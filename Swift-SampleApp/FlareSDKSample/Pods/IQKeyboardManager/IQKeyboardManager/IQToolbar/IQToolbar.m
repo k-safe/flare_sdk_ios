@@ -1,7 +1,7 @@
 //
-// IQToolbar.m
-// https://github.com/hackiftekhar/IQKeyboardManager
-// Copyright (c) 2013-16 Iftekhar Qurashi.
+//  IQToolbar.m
+//  https://github.com/hackiftekhar/IQKeyboardManager
+//  Copyright (c) 2013-24 Iftekhar Qurashi.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -104,8 +104,6 @@ NS_EXTENSION_UNAVAILABLE_IOS("Unavailable in extension")
     if (_titleBarButton == nil)
     {
         _titleBarButton = [[IQTitleBarButtonItem alloc] initWithTitle:nil];
-        _titleBarButton.accessibilityLabel = @"Title";
-        _titleBarButton.accessibilityIdentifier = _titleBarButton.accessibilityLabel;
     }
     
     return _titleBarButton;

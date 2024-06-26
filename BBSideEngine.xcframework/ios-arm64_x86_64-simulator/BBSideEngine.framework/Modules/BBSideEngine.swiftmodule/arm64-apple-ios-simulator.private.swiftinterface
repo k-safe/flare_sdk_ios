@@ -1,10 +1,10 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.7.2 (swiftlang-5.7.2.135.5 clang-1400.0.29.51)
-// swift-module-flags: -target arm64-apple-ios13.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name BBSideEngine
-// swift-module-flags-ignorable: -enable-bare-slash-regex
+// swift-compiler-version: Apple Swift version 5.10 (swiftlang-5.10.0.13 clang-1500.3.9.4)
+// swift-module-flags: -target arm64-apple-ios13.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-bare-slash-regex -module-name BBSideEngine
 import AVFoundation
 import AudioToolbox
 @_exported import BBSideEngine
+import BackgroundTasks
 import CoreLocation
 import CoreMotion
 import CryptoKit
@@ -19,6 +19,7 @@ import UIKit
 import WebKit
 import _Concurrency
 import _StringProcessing
+import _SwiftConcurrencyShims
 public struct Tensor : Swift.Equatable, Swift.Hashable {
   public let name: Swift.String
   public let dataType: BBSideEngine.Tensor.DataType
@@ -67,7 +68,7 @@ extension BBSideEngine.Tensor.Shape : Swift.ExpressibleByArrayLiteral {
 }
 @_hasMissingDesignatedInitializers final public class Interpreter {
   final public let options: BBSideEngine.Interpreter.Options?
-  final public let delegates: [BBSideEngine.Delegate]?
+  final public let delegates: [any BBSideEngine.Delegate]?
   final public var inputTensorCount: Swift.Int {
     get
   }
@@ -77,8 +78,8 @@ extension BBSideEngine.Tensor.Shape : Swift.ExpressibleByArrayLiteral {
   final public var signatureKeys: [Swift.String] {
     get
   }
-  convenience public init(modelPath: Swift.String, options: BBSideEngine.Interpreter.Options? = nil, delegates: [BBSideEngine.Delegate]? = nil) throws
-  convenience public init(modelData: Foundation.Data, options: BBSideEngine.Interpreter.Options? = nil, delegates: [BBSideEngine.Delegate]? = nil) throws
+  convenience public init(modelPath: Swift.String, options: BBSideEngine.Interpreter.Options? = nil, delegates: [any BBSideEngine.Delegate]? = nil) throws
+  convenience public init(modelData: Foundation.Data, options: BBSideEngine.Interpreter.Options? = nil, delegates: [any BBSideEngine.Delegate]? = nil) throws
   @objc deinit
   final public func invoke() throws
   final public func input(at index: Swift.Int) throws -> BBSideEngine.Tensor
@@ -154,13 +155,23 @@ public enum Runtime {
   case incidentAutoCancel
   case resumeSideEngine
   case pauseSideEngine
-  case sosActive
-  case sosDeActive
+  case startSOS
+  case stopSOS
   case startFlareAware
   case stopFlareAware
   public init?(rawValue: Swift.Int)
   public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
+    get
+  }
+}
+public enum BBNotifier : Swift.String {
+  case incident
+  case incidentId
+  case environment
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
     get
   }
 }
@@ -241,19 +252,19 @@ public struct QuantizationParameters : Swift.Equatable, Swift.Hashable {
   @objc public var distance_filter_meters: Swift.Double
   @objc override dynamic public init()
   @objc deinit
-  @objc public func configure(accessKey: Swift.String, mode: BBSideEngine.BBMode, theme: BBSideEngine.BBTheme)
+  @objc public func configure(accessKey: Swift.String, secretKey: Swift.String, mode: BBSideEngine.BBMode, theme: BBSideEngine.BBTheme, region: Swift.String = "")
 }
 extension BBSideEngine.BBSideEngineManager {
   @objc dynamic public func startSideEngine()
   @objc dynamic public func stopSideEngine()
-  @objc dynamic public func activeSOS()
+  @objc dynamic public func startSOS()
   @objc dynamic public func startFlareAware()
   @objc dynamic public func stopFlareAware()
-  @objc dynamic public func deActiveSOS()
+  @objc dynamic public func stopSOS()
 }
 extension BBSideEngine.BBSideEngineManager : CoreLocation.CLLocationManagerDelegate {
   @objc dynamic public func locationManager(_ manager: CoreLocation.CLLocationManager, didChangeAuthorization status: CoreLocation.CLAuthorizationStatus)
-  @objc dynamic public func locationManager(_ manager: CoreLocation.CLLocationManager, didFailWithError error: Swift.Error)
+  @objc dynamic public func locationManager(_ manager: CoreLocation.CLLocationManager, didFailWithError error: any Swift.Error)
   @objc dynamic public func locationManager(_ manager: CoreLocation.CLLocationManager, didUpdateLocations locations: [CoreLocation.CLLocation])
 }
 extension BBSideEngine.BBSideEngineManager {
@@ -270,8 +281,17 @@ extension BBSideEngine.BBSideEngineManager {
   @objc dynamic public func sendEmail(toEmail: Swift.String)
   @objc dynamic public func sendError(error: Swift.String)
   @objc dynamic public func fetchWhat3WordLocation(completion: @escaping ([Swift.String : Any]) -> ())
-  @objc dynamic public func notifyPartner()
+  @objc dynamic public func confirmIncident()
   @objc dynamic public func declineIncident()
+}
+extension BBSideEngine.BBSideEngineManager {
+  @objc dynamic public func launchIncidentClassification(controller: UIKit.UIViewController = UIViewController(), onSubmit: @escaping (_ incidentType: Swift.String) -> Swift.Void, onClose: @escaping () -> Swift.Void)
+}
+extension BBSideEngine.BBSideEngineManager {
+  @objc dynamic public func performNotificationAction(notification: UserNotifications.UNNotification)
+}
+extension BBSideEngine.BBSideEngineManager {
+  @objc dynamic public func performAudioRecordingTasks()
 }
 public class BBViews {
   public static let shared: BBSideEngine.BBViews
@@ -334,3 +354,6 @@ extension BBSideEngine.BBTheme : Swift.RawRepresentable {}
 extension BBSideEngine.BBSideOperation : Swift.Equatable {}
 extension BBSideEngine.BBSideOperation : Swift.Hashable {}
 extension BBSideEngine.BBSideOperation : Swift.RawRepresentable {}
+extension BBSideEngine.BBNotifier : Swift.Equatable {}
+extension BBSideEngine.BBNotifier : Swift.Hashable {}
+extension BBSideEngine.BBNotifier : Swift.RawRepresentable {}

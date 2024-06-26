@@ -25,9 +25,7 @@
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>app requires access to location services to let your emergency contacts know where you are if you have an incident</string>
 	<key>NSMicrophoneUsageDescription</key>
-	<string>app would like to use your Microphone to upload post incident video surveys</string>
-	<key>NSMotionUsageDescription</key>
-	<string>app requires access to motion services to detect when there is an incident</string>
+	<string>We need access to the microphone to record audio.</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
@@ -51,6 +49,8 @@
 	<true/>
 	<key>UIBackgroundModes</key>
 	<array>
+		<string>audio</string>
+		<string>fetch</string>
 		<string>location</string>
 	</array>
 	<key>UILaunchStoryboardName</key>

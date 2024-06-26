@@ -31,11 +31,17 @@ class EmergencySOSViewController: UIViewController {
     //TODO: Configure SIDE engine and register listner
     func sideEngineConfigure() {
         
+        //Show loading indicator while configuration in process
+        SwiftLoader.show(animated: true)
+        
         
         /****How to configure production mode****/
         //The live tracking feature is solely accessible in the production mode. Therefore, it is imperative that the side engine configuration method is set up in accordance with the production mode.
-        let accessKey = "Your production license key here"
-        sideEngineShared.configure(accessKey: accessKey, mode: .production, theme: .standard)
+        //Flare producation
+        let accessKey = "Production key here"
+        let secretKey = "Secret key here"
+        
+        sideEngineShared.configure(accessKey: accessKey, secretKey: secretKey, mode: .production, theme: .standard)
         
         //------------Register SIDE engine listener here------------
         self.registerSideEngineListener()
@@ -61,9 +67,9 @@ class EmergencySOSViewController: UIViewController {
             //It is recommended to activate the high frequency mode when the SOS function is engaged in order to enhance the quality of the live tracking experience.
             sideEngineShared.high_frequency_mode_enabled = true 
             
-            sideEngineShared.activeSOS()
+            sideEngineShared.startSOS()
         }else {
-            sideEngineShared.deActiveSOS()
+            sideEngineShared.stopSOS()
         }
         
     }
@@ -74,11 +80,17 @@ class EmergencySOSViewController: UIViewController {
         sideEngineShared.sideEventsListener { [weak self] (response) in
             guard let self = self else { return }
             //This call back basiclly where you call the configure method
-            if response.type == .configure && response.success == true {
+            if response.type == .configure {
                 //You now have the capability to activate an SOS signal at any time. In the event that a user input button is unavailable, you may activate the SOS signal using the function provided below.:
-                //sideEngineShared.activeSOS()
+                if response.success == true {
+                    //sideEngineShared.activeSOS()
+                }
+                
+                DispatchQueue.main.async {
+                    SwiftLoader.hide()
+                }
             }
-            else if response.type == .sosActive && response.success == true {
+            else if response.type == .startSOS && response.success == true {
                 //The SOS function has been activated. You may now proceed to update your user interface and share a live location tracking link with your social contacts, thereby enabling them to access your real-time location.
                 DispatchQueue.main.async {
                     self.btnShare.isHidden = false
@@ -90,7 +102,7 @@ class EmergencySOSViewController: UIViewController {
                         self.btnActivate.backgroundColor = .systemRed
                     }
                 }
-            }else if response.type == .sosDeActive && response.success == true {
+            }else if response.type == .stopSOS && response.success == true {
                 //Disabling the SOS function will cease the transmission of location data to the live tracking dashboard and free up system memory resources, thereby conserving battery and data consumption.
                 DispatchQueue.main.async {
                     self.btnActivate.tag = 1
