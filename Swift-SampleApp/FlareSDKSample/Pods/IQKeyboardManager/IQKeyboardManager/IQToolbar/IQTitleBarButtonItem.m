@@ -1,7 +1,7 @@
 //
-// IQTitleBarButtonItem.m
-// https://github.com/hackiftekhar/IQKeyboardManager
-// Copyright (c) 2013-16 Iftekhar Qurashi.
+//  IQTitleBarButtonItem.m
+//  https://github.com/hackiftekhar/IQKeyboardManager
+//  Copyright (c) 2013-24 Iftekhar Qurashi.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -86,7 +86,7 @@ NS_EXTENSION_UNAVAILABLE_IOS("Unavailable in extension")
         NSLayoutConstraint *bottom = [NSLayoutConstraint constraintWithItem:_titleButton attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:_titleView attribute:NSLayoutAttributeBottom multiplier:1 constant:0];
         NSLayoutConstraint *leading = [NSLayoutConstraint constraintWithItem:_titleButton attribute:NSLayoutAttributeLeading relatedBy:NSLayoutRelationEqual toItem:_titleView attribute:NSLayoutAttributeLeading multiplier:1 constant:0];
         NSLayoutConstraint *trailing = [NSLayoutConstraint constraintWithItem:_titleButton attribute:NSLayoutAttributeTrailing relatedBy:NSLayoutRelationEqual toItem:_titleView attribute:NSLayoutAttributeTrailing multiplier:1 constant:0];
-        [_titleView addConstraints:@[top,bottom,leading,trailing]];
+        [_titleView addConstraints:@[top,bottom, leading, trailing]];
 
         self.customView = _titleView;
     }
@@ -111,6 +111,7 @@ NS_EXTENSION_UNAVAILABLE_IOS("Unavailable in extension")
 {
     [super setTitle:title];
     [_titleButton setTitle:title forState:UIControlStateNormal];
+    [self updateAccessibility];
 }
 
 -(void)setTitleColor:(UIColor*)titleColor
@@ -149,6 +150,25 @@ NS_EXTENSION_UNAVAILABLE_IOS("Unavailable in extension")
         self.enabled = YES;
         _titleButton.enabled = YES;
         [_titleButton addTarget:invocation.target action:invocation.selector forControlEvents:UIControlEventTouchUpInside];
+    }
+}
+
+-(void)updateAccessibility
+{
+    if (self.title == nil || self.title.length == 0) 
+    {
+        self.isAccessibilityElement = NO;
+        self.accessibilityTraits = UIAccessibilityTraitNone;
+    }
+    else if (self.titleButton.isEnabled) 
+    {
+        self.isAccessibilityElement = YES;
+        self.accessibilityTraits = UIAccessibilityTraitButton;
+    } 
+    else
+    {
+        self.isAccessibilityElement = YES;
+        self.accessibilityTraits = UIAccessibilityTraitStaticText;
     }
 }
 
