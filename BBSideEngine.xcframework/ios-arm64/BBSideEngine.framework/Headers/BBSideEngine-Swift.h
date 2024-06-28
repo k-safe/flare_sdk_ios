@@ -343,7 +343,6 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) BBSideEngine
 @property (nonatomic, copy) NSString * _Nonnull impactBodySOS;
 @property (nonatomic) BOOL showLog;
 @property (nonatomic, copy) NSString * _Nonnull appName;
-@property (nonatomic, copy) NSString * _Nonnull activity;
 @property (nonatomic) BOOL enable_flare_aware_network;
 @property (nonatomic) NSInteger low_frequency_intervals_seconds;
 @property (nonatomic) NSInteger high_frequency_intervals_seconds;
@@ -397,7 +396,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) BBSideEngine
 
 
 @interface BBSideEngineManager (SWIFT_EXTENSION(BBSideEngine))
-- (void)startSideEngine;
+- (void)startSideEngineWithActivity:(NSString * _Nonnull)activity;
 - (void)stopSideEngine;
 - (void)startSOS;
 - (void)startFlareAware;
@@ -405,12 +404,12 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) BBSideEngine
 - (void)stopSOS;
 @end
 
+
 @class UNNotification;
 
 @interface BBSideEngineManager (SWIFT_EXTENSION(BBSideEngine))
 - (void)performNotificationActionWithNotification:(UNNotification * _Nonnull)notification;
 @end
-
 
 
 @interface BBSideEngineManager (SWIFT_EXTENSION(BBSideEngine))
