@@ -83,13 +83,11 @@ class SimpleUIViewController: UIViewController {
         //Sandbox mode used only for while developing your App (You can use any of the one theme e.g. .standard OR .custom)
         
         let mode: BBMode = isProduction ? .production : .sandbox
-//        let accessKey = isProductionMode ? "Production key here" : "Sandbox key here" //Production
-        //Flare sandbox keys
-//        let accessKey = isProduction ? "8b53824f-ed7a-4829-860b-f6161c568fad" : "9518a8f7-a55f-41f4-9eaa-963bdb1fce5f" //Flare Sandbox
-//        let secretKey = "LxbtMfP2My9VXiGWeuvwmaWpkaaWHZ8G415eRvUR"
+        let accessKey = isProductionMode ? "Production key here" : "Sandbox key here" //Production
         
-        let accessKey = isProduction ? "4afb485e-a181-4ce7-98f6-38cfe1afc748" : "b6dd8509-d50e-48cc-af9e-ce9dcd712132" //Flare Sandbox
-        let secretKey = "EN7nPbKOc57COfYaPy66j8bXhlvOkrcX87c7mC76"
+        let secretKey = "Secret key"
+        
+      
         
         
         /*========================================================
