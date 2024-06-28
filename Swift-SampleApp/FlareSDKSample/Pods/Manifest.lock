@@ -1,6 +1,6 @@
 PODS:
   - IQKeyboardManager (6.5.19)
-  - SideEngine-iOS (4.3.1):
+  - SideEngine-iOS (4.3.2):
     - TensorFlowLiteSwift (= 2.13.0)
   - TensorFlowLiteC (2.13.0):
     - TensorFlowLiteC/Core (= 2.13.0)
@@ -12,7 +12,7 @@ PODS:
 
 DEPENDENCIES:
   - IQKeyboardManager
-  - SideEngine-iOS
+  - SideEngine-iOS (= 4.3.2)
 
 SPEC REPOS:
   trunk:
@@ -23,10 +23,10 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   IQKeyboardManager: c8665b3396bd0b79402b4c573eac345a31c7d485
-  SideEngine-iOS: db956558c2242f567751b8d75ad02369314f5f64
+  SideEngine-iOS: 17951cbb8e093cd6627e01a8c1270e2577968199
   TensorFlowLiteC: ac3334fa9dbc90e4744b4497312a393fd02b5408
   TensorFlowLiteSwift: 1d8320fbf292054eb50ef0b347a4b17a92b49731
 
-PODFILE CHECKSUM: be3ca1db354924cdf9f75a3232e000aa53203181
+PODFILE CHECKSUM: d68571c4c906c93e1c289f650babcb80dc19ce2e
 
 COCOAPODS: 1.15.2

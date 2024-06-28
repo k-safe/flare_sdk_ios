@@ -41,7 +41,6 @@ class EmergencySOSViewController: UIViewController {
 //        let accessKey = "Production key here"
 //        let secretKey = "Secret key here"
         let accessKey = "Production key here"
-        
         let secretKey = "Secret key"
         
         sideEngineShared.configure(accessKey: accessKey, secretKey: secretKey, mode: .production, theme: .standard)
