@@ -44,10 +44,11 @@ class CustomThemeViewController: UIViewController {
         //Sandbox mode used only for while developing your App (You can use any of the one theme e.g. .standard OR .custom)
         
         let mode: BBMode = isProductionMode ? .production : .sandbox
-        let accessKey = isProductionMode ? "Production key here" : "Sandbox key here"
-        let secretKey = "Secret key here"
+//        let accessKey = isProductionMode ? "Production key here" : "Sandbox key here"
+//        let secretKey = "Secret key here"
         
-        
+        let accessKey = isProductionMode ? "4afb485e-a181-4ce7-98f6-38cfe1afc748" : "b6dd8509-d50e-48cc-af9e-ce9dcd712132" //Flare Sandbox
+        let secretKey = "EN7nPbKOc57COfYaPy66j8bXhlvOkrcX87c7mC76"
         /*========================================================
          The default app will use user device's region, but you can also set a custom region based on your need.
          ========================================================*/

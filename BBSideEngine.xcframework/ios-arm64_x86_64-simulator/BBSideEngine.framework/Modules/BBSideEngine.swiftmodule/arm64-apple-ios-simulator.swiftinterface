@@ -241,7 +241,6 @@ public struct QuantizationParameters : Swift.Equatable, Swift.Hashable {
   @objc public var impactBodySOS: Swift.String
   @objc public var showLog: Swift.Bool
   @objc public var appName: Swift.String
-  @objc public var activity: Swift.String
   @objc public var enable_flare_aware_network: Swift.Bool
   @objc public var low_frequency_intervals_seconds: Swift.Int
   @objc public var high_frequency_intervals_seconds: Swift.Int
@@ -255,7 +254,7 @@ public struct QuantizationParameters : Swift.Equatable, Swift.Hashable {
   @objc public func configure(accessKey: Swift.String, secretKey: Swift.String, mode: BBSideEngine.BBMode, theme: BBSideEngine.BBTheme, region: Swift.String = "")
 }
 extension BBSideEngine.BBSideEngineManager {
-  @objc dynamic public func startSideEngine()
+  @objc dynamic public func startSideEngine(activity: Swift.String)
   @objc dynamic public func stopSideEngine()
   @objc dynamic public func startSOS()
   @objc dynamic public func startFlareAware()

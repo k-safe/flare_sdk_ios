@@ -89,7 +89,7 @@ class SimpleUIViewController: UIViewController {
 //        let secretKey = "LxbtMfP2My9VXiGWeuvwmaWpkaaWHZ8G415eRvUR"
         
         let accessKey = isProduction ? "4afb485e-a181-4ce7-98f6-38cfe1afc748" : "b6dd8509-d50e-48cc-af9e-ce9dcd712132" //Flare Sandbox
-        let secretKey = "0CIyHjdB7HFeW22di09r87Vmb6ibPN82vrsHQTF2"
+        let secretKey = "EN7nPbKOc57COfYaPy66j8bXhlvOkrcX87c7mC76"
         
         
         /*========================================================
