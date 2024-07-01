@@ -84,8 +84,8 @@ class SimpleUIViewController: UIViewController {
         
         let mode: BBMode = isProduction ? .production : .sandbox
         
-        let accessKey = isProduction ? "Production key here" : "Sandbox key here"
-        let secretKey = "Secret key here"
+        let accessKey = isProduction ? AppConfig.Keys.production_key : AppConfig.Keys.sandbox_key
+        let secretKey = AppConfig.Keys.app_secret_key
         
         /*========================================================
          The default app will use user device's region, but you can also set a custom region based on your need.
@@ -125,7 +125,7 @@ class SimpleUIViewController: UIViewController {
     func startSideEngine(activity: String) {
         sideEngineShared.showLog = false //false when release app to the store
         
-        sideEngineShared.activateIncidentTestMode = false //This is only used in sandbox mode and is TRUE by default. This is why you should test your workflow in sandbox mode. You can change it to FALSE if you want to experience real-life incident detection
+        sideEngineShared.activateIncidentTestMode = true //This is only used in sandbox mode and is TRUE by default. This is why you should test your workflow in sandbox mode. You can change it to FALSE if you want to experience real-life incident detection
         
         
         //Start SIDE engine
