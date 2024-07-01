@@ -3,5 +3,5 @@ platform :ios, '13.0'
 target 'FlareSDKSample' do
 use_frameworks!
 pod 'IQKeyboardManager'
-pod 'SideEngine-iOS', '4.3.2'
+pod 'SideEngine-iOS', '4.3.3'
 end

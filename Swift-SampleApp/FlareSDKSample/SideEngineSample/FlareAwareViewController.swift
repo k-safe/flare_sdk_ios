@@ -60,11 +60,8 @@ class FlareAwareViewController: UIViewController {
         
         //let accessKey = "Your production license key here"
         let mode: BBMode = isProductionMode ? .production : .sandbox
-//        let accessKey = isProductionMode ? "Production key here" : "Sandbox key here"
-//        let secretKey = "Secret key here"
-        let accessKey = isProductionMode ? "Production key here" : "Sandbox key here" //Production
-        
-        let secretKey = "Secret key"
+        let accessKey = isProductionMode ? "Production key here" : "Sandbox key here"
+        let secretKey = "Secret key here"
         
         shared.configure(accessKey: accessKey, secretKey: secretKey, mode: mode, theme: .standard)
         
