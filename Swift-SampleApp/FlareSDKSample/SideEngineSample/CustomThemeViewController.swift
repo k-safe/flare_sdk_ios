@@ -44,12 +44,8 @@ class CustomThemeViewController: UIViewController {
         //Sandbox mode used only for while developing your App (You can use any of the one theme e.g. .standard OR .custom)
         
         let mode: BBMode = isProductionMode ? .production : .sandbox
-//        let accessKey = isProductionMode ? "Production key here" : "Sandbox key here"
-//        let secretKey = "Secret key here"
-        
-        let accessKey = isProductionMode ? "Production key here" : "Sandbox key here" //Production
-        
-        let secretKey = "Secret key"
+        let accessKey = isProductionMode ? "Production key here" : "Sandbox key here"
+        let secretKey = "Secret key here"
         /*========================================================
          The default app will use user device's region, but you can also set a custom region based on your need.
          ========================================================*/
@@ -114,7 +110,7 @@ class CustomThemeViewController: UIViewController {
         sideEngineShared.riderId = self.uniqueId() // Unique rider ID (optional)
         sideEngineShared.countDownDuration = 30 // for live mode
         sideEngineShared.showLog = true //false when release app to the store
-        sideEngineShared.activity = activity
+        
         sideEngineShared.activateIncidentTestMode = true //This is only used in sandbox mode and is TRUE by default. This is why you should test your workflow in sandbox mode. You can change it to FALSE if you want to experience real-life incident detection
         
         //The "enable_flare_aware_network" feature is a safety measure designed for cyclists, which allows them to send notifications to nearby fleet users.
@@ -134,7 +130,7 @@ class CustomThemeViewController: UIViewController {
         sideEngineShared.high_frequency_mode_enabled = false //(Optional)
         
         //Start SIDE engine
-        sideEngineShared.startSideEngine()
+        sideEngineShared.startSideEngine(activity: activity)
     }
     //TODO: Register SIDE engine listener to receive call back from side engine
     func registerSideEngineListener() {
