@@ -13,7 +13,6 @@ class HazardsViewController: UIViewController {
     
     let shared = BBSideEngineManager.shared
     
-    var isProductionMode: Bool = true //This will used to configure SDK production or sandbox mode
     var selectedRegion: String = ""
     @IBOutlet var mapview : MKMapView!
     var isHazardFeatureEnabled: Bool = true
@@ -51,11 +50,10 @@ class HazardsViewController: UIViewController {
          https://partner.flaresafety.com/sdk
          ==================================================
          */
-        let mode: BBMode = isProductionMode ? .production : .sandbox
-        let accessKey = isProductionMode ? AppConfig.Keys.production_key : AppConfig.Keys.sandbox_key
+        let accessKey = AppConfig.Keys.production_key
         let secretKey = AppConfig.Keys.app_secret_key
         
-        shared.configure(accessKey: accessKey, secretKey: secretKey, mode: mode, theme: .standard, region: selectedRegion)
+        shared.configure(accessKey: accessKey, secretKey: secretKey, mode: .production, theme: .standard, region: selectedRegion)
         
         //------------Register SIDE engine listener here------------
         self.registerSideEngineListener()
