@@ -21,8 +21,6 @@ class CustomThemeViewController: UIViewController {
     @IBOutlet var pauseButton : UIButton!
     @IBOutlet weak var confidenceLabel: UILabel!
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.confidenceLabel.text = ""
@@ -44,8 +42,17 @@ class CustomThemeViewController: UIViewController {
         //Sandbox mode used only for while developing your App (You can use any of the one theme e.g. .standard OR .custom)
         
         let mode: BBMode = isProductionMode ? .production : .sandbox
-        let accessKey = isProductionMode ? "Production key here" : "Sandbox key here"
-        let secretKey = "Secret key here"
+        
+        /*
+         ==================================================
+         Find the Flare SDK access key and secret key from the partner portal using the URL given below.
+         https://partner.flaresafety.com/sdk
+         ==================================================
+         */
+        let accessKey = isProductionMode ? AppConfig.Keys.production_key : AppConfig.Keys.sandbox_key
+        let secretKey = AppConfig.Keys.app_secret_key
+        
+        
         /*========================================================
          The default app will use user device's region, but you can also set a custom region based on your need.
          ========================================================*/
@@ -258,7 +265,11 @@ class CustomThemeViewController: UIViewController {
 
 
 
-//Handle incident confirmation navigation
+/*
+ ========================================================================================
+ This is the launch incident confirmation UI. The user will have 30 seconds to confirm or decline the incident.
+ ========================================================================================
+*/
 extension CustomThemeViewController: IncidentConfirmationDelegete {
     @objc public func launchIncidentConfirmation() {
         let controller = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "IncidentConfirmationViewController") as! IncidentConfirmationViewController
@@ -293,11 +304,6 @@ extension CustomThemeViewController: IncidentConfirmationDelegete {
     func confirmedIncident() {
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         let controller = storyBoard.instantiateViewController(withIdentifier: "IncidentResultViewController") as! IncidentResultViewController
-        //This is used to send SMS or email to emergency contact
-//        controller.countryCode = self.countryCode.text
-//        controller.emergencyContact = self.phoneNumber.text
-//        controller.emergencyContactName = self.riderName.text
-//        controller.emergencyContactEmail = self.riderEmail.text
         self.navigationController?.pushViewController(controller, animated: true)
     }
 }

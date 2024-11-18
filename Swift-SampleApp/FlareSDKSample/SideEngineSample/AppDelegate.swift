@@ -33,10 +33,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         } else {
             // Fallback on earlier versions
         }
-        
-//        DispatchQueue.main.asyncAfter(deadline: .now() + 5, execute: DispatchWorkItem(block: {
-//            self.scheduleLocalNotification(message: "Test")
-//        }))
+
         return true
     }
     func swiftLoaderConfig() {
@@ -48,32 +45,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         SwiftLoader.setConfig(config)
         
     }
-    // Function to schedule a local notification
-    func scheduleLocalNotification(message: String) {
-        // Create notification content
-        let content = UNMutableNotificationContent()
-        content.title = "Reminder"
-        content.body = message
-        content.sound = UNNotificationSound.default
-        content.badge = 0
-
-        // Set the notification trigger (e.g., after 5 seconds)
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 1, repeats: false)
-
-        // Create the notification request
-        let request = UNNotificationRequest(identifier: "localNotification", content: content, trigger: trigger)
-
-        // Schedule the notification
-        UNUserNotificationCenter.current().add(request) { (error) in
-            if let error = error {
-                print("Error scheduling notification: \(error.localizedDescription)")
-            } else {
-                print("Local notification scheduled successfully.")
-            }
-        }
-    }
-    
-    
 }
 
 

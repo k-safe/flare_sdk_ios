@@ -49,9 +49,14 @@ class StandardThemeViewController: UIViewController {
         
         let mode: BBMode = isProductionMode ? .production : .sandbox
         
-        let accessKey = isProductionMode ? "Production key here" : "Sandbox key here"
-        let secretKey = "Secret key here"
-        
+        /*
+         ==================================================
+         Find the Flare SDK access key and secret key from the partner portal using the URL given below.
+         https://partner.flaresafety.com/sdk
+         ==================================================
+         */
+        let accessKey = isProductionMode ? AppConfig.Keys.production_key : AppConfig.Keys.sandbox_key
+        let secretKey = AppConfig.Keys.app_secret_key
         /*========================================================
          The default app will use user device's region, but you can also set a custom region based on your need.
          ========================================================*/
