@@ -348,20 +348,23 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) BBSideEngine
 @property (nonatomic) NSInteger high_frequency_intervals_seconds;
 @property (nonatomic) BOOL high_frequency_mode_enabled;
 @property (nonatomic) double distance_filter_meters;
+@property (nonatomic) BOOL isHazardFeatureEnabled;
+@property (nonatomic) double hazardsNotifyRadius;
+@property (nonatomic) BOOL hazardVoiceAlertEnabled;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 - (void)configureWithAccessKey:(NSString * _Nonnull)accessKey secretKey:(NSString * _Nonnull)secretKey mode:(enum BBMode)mode theme:(enum BBTheme)theme region:(NSString * _Nonnull)region;
 @end
 
 
+
+@interface BBSideEngineManager (SWIFT_EXTENSION(BBSideEngine))
+- (void)sideEventsListenerWithHandler:(void (^ _Nonnull)(BBResponse * _Nonnull))handler;
+@end
+
 @class UIViewController;
 
 @interface BBSideEngineManager (SWIFT_EXTENSION(BBSideEngine))
 - (void)launchIncidentClassificationWithController:(UIViewController * _Nonnull)controller onSubmit:(void (^ _Nonnull)(NSString * _Nonnull))onSubmit onClose:(void (^ _Nonnull)(void))onClose;
-@end
-
-
-@interface BBSideEngineManager (SWIFT_EXTENSION(BBSideEngine))
-- (void)sideEventsListenerWithHandler:(void (^ _Nonnull)(BBResponse * _Nonnull))handler;
 @end
 
 
@@ -376,6 +379,12 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) BBSideEngine
 
 
 
+
+
+@interface BBSideEngineManager (SWIFT_EXTENSION(BBSideEngine))
+- (NSDictionary<NSString *, id> * _Nonnull)fetchHazards SWIFT_WARN_UNUSED_RESULT;
+@end
+
 @class CLLocationManager;
 @class CLLocation;
 
@@ -383,6 +392,13 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) BBSideEngine
 - (void)locationManager:(CLLocationManager * _Nonnull)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status;
 - (void)locationManager:(CLLocationManager * _Nonnull)manager didFailWithError:(NSError * _Nonnull)error;
 - (void)locationManager:(CLLocationManager * _Nonnull)manager didUpdateLocations:(NSArray<CLLocation *> * _Nonnull)locations;
+@end
+
+
+@interface BBSideEngineManager (SWIFT_EXTENSION(BBSideEngine))
+- (void)playHazardNotificationWithHazard:(NSDictionary<NSString *, id> * _Nonnull)hazard;
+- (void)reportHazard;
+- (void)manageHazards;
 @end
 
 
@@ -450,12 +466,21 @@ typedef SWIFT_ENUM(NSInteger, BBSideOperation, open) {
   BBSideOperationStopSOS = 19,
   BBSideOperationStartFlareAware = 20,
   BBSideOperationStopFlareAware = 21,
+  BBSideOperationFetchHazards = 22,
+  BBSideOperationReportHazard = 23,
+  BBSideOperationAlertedHazard = 24,
+  BBSideOperationFeedbackHazard = 25,
+  BBSideOperationManageHazard = 26,
+  BBSideOperationDeleteHazard = 27,
+  BBSideOperationUpdateLocation = 28,
 };
 
 typedef SWIFT_ENUM(NSInteger, BBTheme, open) {
   BBThemeCustom = 0,
   BBThemeStandard = 1,
 };
+
+
 
 
 
@@ -818,20 +843,23 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) BBSideEngine
 @property (nonatomic) NSInteger high_frequency_intervals_seconds;
 @property (nonatomic) BOOL high_frequency_mode_enabled;
 @property (nonatomic) double distance_filter_meters;
+@property (nonatomic) BOOL isHazardFeatureEnabled;
+@property (nonatomic) double hazardsNotifyRadius;
+@property (nonatomic) BOOL hazardVoiceAlertEnabled;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 - (void)configureWithAccessKey:(NSString * _Nonnull)accessKey secretKey:(NSString * _Nonnull)secretKey mode:(enum BBMode)mode theme:(enum BBTheme)theme region:(NSString * _Nonnull)region;
 @end
 
 
+
+@interface BBSideEngineManager (SWIFT_EXTENSION(BBSideEngine))
+- (void)sideEventsListenerWithHandler:(void (^ _Nonnull)(BBResponse * _Nonnull))handler;
+@end
+
 @class UIViewController;
 
 @interface BBSideEngineManager (SWIFT_EXTENSION(BBSideEngine))
 - (void)launchIncidentClassificationWithController:(UIViewController * _Nonnull)controller onSubmit:(void (^ _Nonnull)(NSString * _Nonnull))onSubmit onClose:(void (^ _Nonnull)(void))onClose;
-@end
-
-
-@interface BBSideEngineManager (SWIFT_EXTENSION(BBSideEngine))
-- (void)sideEventsListenerWithHandler:(void (^ _Nonnull)(BBResponse * _Nonnull))handler;
 @end
 
 
@@ -846,6 +874,12 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) BBSideEngine
 
 
 
+
+
+@interface BBSideEngineManager (SWIFT_EXTENSION(BBSideEngine))
+- (NSDictionary<NSString *, id> * _Nonnull)fetchHazards SWIFT_WARN_UNUSED_RESULT;
+@end
+
 @class CLLocationManager;
 @class CLLocation;
 
@@ -853,6 +887,13 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) BBSideEngine
 - (void)locationManager:(CLLocationManager * _Nonnull)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status;
 - (void)locationManager:(CLLocationManager * _Nonnull)manager didFailWithError:(NSError * _Nonnull)error;
 - (void)locationManager:(CLLocationManager * _Nonnull)manager didUpdateLocations:(NSArray<CLLocation *> * _Nonnull)locations;
+@end
+
+
+@interface BBSideEngineManager (SWIFT_EXTENSION(BBSideEngine))
+- (void)playHazardNotificationWithHazard:(NSDictionary<NSString *, id> * _Nonnull)hazard;
+- (void)reportHazard;
+- (void)manageHazards;
 @end
 
 
@@ -920,12 +961,21 @@ typedef SWIFT_ENUM(NSInteger, BBSideOperation, open) {
   BBSideOperationStopSOS = 19,
   BBSideOperationStartFlareAware = 20,
   BBSideOperationStopFlareAware = 21,
+  BBSideOperationFetchHazards = 22,
+  BBSideOperationReportHazard = 23,
+  BBSideOperationAlertedHazard = 24,
+  BBSideOperationFeedbackHazard = 25,
+  BBSideOperationManageHazard = 26,
+  BBSideOperationDeleteHazard = 27,
+  BBSideOperationUpdateLocation = 28,
 };
 
 typedef SWIFT_ENUM(NSInteger, BBTheme, open) {
   BBThemeCustom = 0,
   BBThemeStandard = 1,
 };
+
+
 
 
 

@@ -86,7 +86,6 @@ class IncidentResultViewController: UIViewController, VideoAskDelegate {
             }
         }
         
-        
     }
     
     func setRegion(lat : Double, lng : Double, nearestPlace: String) {
@@ -130,7 +129,6 @@ class IncidentResultViewController: UIViewController, VideoAskDelegate {
             }
            
         )
-        
 
     }
     

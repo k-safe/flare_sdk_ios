@@ -14,6 +14,7 @@ class FlareAwareViewController: UIViewController {
     let sideEngineShared = BBSideEngineManager.shared
     @IBOutlet weak var startButton: UIButton!
     var isProductionMode: Bool = true //This will used to configure SDK production or sandbox mode
+    var selectedRegion: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,12 +59,17 @@ class FlareAwareViewController: UIViewController {
         //Production mode used when you release app to the app store (You can use any of the one theme e.g. .standard OR .custom)
         //Sandbox mode used only for while developing your App (You can use any of the one theme e.g. .standard OR .custom)
         
-        //let accessKey = "Your production license key here"
+        /*
+         ==================================================
+         Find the Flare SDK access key and secret key from the partner portal using the URL given below.
+         https://partner.flaresafety.com/sdk
+         ==================================================
+         */
         let mode: BBMode = isProductionMode ? .production : .sandbox
-        let accessKey = isProductionMode ? "Production key here" : "Sandbox key here"
-        let secretKey = "Secret key here"
+        let accessKey = isProductionMode ? AppConfig.Keys.production_key : AppConfig.Keys.sandbox_key
+        let secretKey = AppConfig.Keys.app_secret_key
         
-        shared.configure(accessKey: accessKey, secretKey: secretKey, mode: mode, theme: .standard)
+        shared.configure(accessKey: accessKey, secretKey: secretKey, mode: mode, theme: .standard, region: selectedRegion)
         
         //------------Register SIDE engine listener here------------
         self.registerSideEngineListener()

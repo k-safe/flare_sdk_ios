@@ -14,7 +14,7 @@ class EmergencySOSViewController: UIViewController {
     @IBOutlet weak var btnShare: UIButton!
     @IBOutlet weak var btnActivate: UIButton!
     @IBOutlet weak var riderName: UITextField!
-   
+    var selectedRegion: String = ""
     var shareLink = ""
     
     override func viewDidLoad() {
@@ -37,11 +37,16 @@ class EmergencySOSViewController: UIViewController {
         
         /****How to configure production mode****/
         //The live tracking feature is solely accessible in the production mode. Therefore, it is imperative that the side engine configuration method is set up in accordance with the production mode.
-        //Flare producation
-        let accessKey = "Production key here"
-        let secretKey = "Secret key"
         
-        sideEngineShared.configure(accessKey: accessKey, secretKey: secretKey, mode: .production, theme: .standard)
+        /*
+         ==================================================
+         Find the Flare SDK access key and secret key from the partner portal using the URL given below.
+         https://partner.flaresafety.com/sdk
+         ==================================================
+         */
+        let accessKey = AppConfig.Keys.production_key
+        let secretKey = AppConfig.Keys.app_secret_key
+        sideEngineShared.configure(accessKey: accessKey, secretKey: secretKey, mode: .production, theme: .standard, region: selectedRegion)
         
         //------------Register SIDE engine listener here------------
         self.registerSideEngineListener()

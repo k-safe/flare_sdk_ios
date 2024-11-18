@@ -20,8 +20,7 @@ class CustomThemeViewController: UIViewController {
     @IBOutlet var startButton : UIButton!
     @IBOutlet var pauseButton : UIButton!
     @IBOutlet weak var confidenceLabel: UILabel!
-    
-    
+    var selectedRegion: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,13 +43,22 @@ class CustomThemeViewController: UIViewController {
         //Sandbox mode used only for while developing your App (You can use any of the one theme e.g. .standard OR .custom)
         
         let mode: BBMode = isProductionMode ? .production : .sandbox
-        let accessKey = isProductionMode ? "Production key here" : "Sandbox key here"
-        let secretKey = "Secret key here"
+        
+        /*
+         ==================================================
+         Find the Flare SDK access key and secret key from the partner portal using the URL given below.
+         https://partner.flaresafety.com/sdk
+         ==================================================
+         */
+        let accessKey = isProductionMode ? AppConfig.Keys.production_key : AppConfig.Keys.sandbox_key
+        let secretKey = AppConfig.Keys.app_secret_key
+        
+        
         /*========================================================
          The default app will use user device's region, but you can also set a custom region based on your need.
          ========================================================*/
 //        shared.configure(accessKey: accessKey, secretKey: secretKey, mode: mode, theme: .custom)
-        shared.configure(accessKey: accessKey, secretKey: secretKey, mode: mode, theme: .custom, region: "GB")
+        shared.configure(accessKey: accessKey, secretKey: secretKey, mode: mode, theme: .custom, region: selectedRegion)
         
         //------------Register SIDE engine listener here------------
         self.registerSideEngineListener()
@@ -130,6 +138,7 @@ class CustomThemeViewController: UIViewController {
         sideEngineShared.high_frequency_mode_enabled = false //(Optional)
         
         //Start SIDE engine
+        //Pass the activity when you call the startSideEngine() method. This is important for assigning a machine learning model based on the activity type. The Flare SDK currently supports Bike and Scooter activities, so make sure to use one of these types
         sideEngineShared.startSideEngine(activity: activity)
     }
     //TODO: Register SIDE engine listener to receive call back from side engine
@@ -153,14 +162,10 @@ class CustomThemeViewController: UIViewController {
                     self.startButton.setTitle("STOP", for: .normal)
                     self.startButton.backgroundColor = .red
                     self.pauseButton.isHidden = false
-                } else {
-                    //Handle error message here
-                    print("Error message: \(String(describing: response.payload))")
                 }
             }
             else if response.type == .stop && response.success == true {
                 //Update your UI here (e.g. update STOP button color or text here when SIDE engine stopped)
-                print("STOP live mode with status: \(String(describing: response.success))")
                 self.startButton.tag = 1
                 self.startButton.setTitle("START", for: .normal)
                 self.startButton.backgroundColor = .systemGreen
@@ -177,7 +182,6 @@ class CustomThemeViewController: UIViewController {
                 //If it is necessary to dispatch an SMS or Email for personal emergency purposes, please do so.
                 
                 if let confidence = response.payload?["confidence"] {
-                    print("SIDE engine confidence is: \(confidence)")
                     DispatchQueue.main.async {
                         self.confidenceLabel.text = "SIDE confidence is: \(confidence)"
                     }
@@ -258,7 +262,11 @@ class CustomThemeViewController: UIViewController {
 
 
 
-//Handle incident confirmation navigation
+/*
+ ========================================================================================
+ This is the launch incident confirmation UI. The user will have 30 seconds to confirm or decline the incident.
+ ========================================================================================
+*/
 extension CustomThemeViewController: IncidentConfirmationDelegete {
     @objc public func launchIncidentConfirmation() {
         let controller = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "IncidentConfirmationViewController") as! IncidentConfirmationViewController
@@ -287,17 +295,11 @@ extension CustomThemeViewController: IncidentConfirmationDelegete {
                 sheet.detents = [.large()]
             }
         }
-        print("Present bottomsheet")
         self.present(navigation, animated: true, completion: nil)
     }
     func confirmedIncident() {
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         let controller = storyBoard.instantiateViewController(withIdentifier: "IncidentResultViewController") as! IncidentResultViewController
-        //This is used to send SMS or email to emergency contact
-//        controller.countryCode = self.countryCode.text
-//        controller.emergencyContact = self.phoneNumber.text
-//        controller.emergencyContactName = self.riderName.text
-//        controller.emergencyContactEmail = self.riderEmail.text
         self.navigationController?.pushViewController(controller, animated: true)
     }
 }

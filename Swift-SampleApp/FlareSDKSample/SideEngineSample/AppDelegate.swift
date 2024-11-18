@@ -10,6 +10,7 @@ import BBSideEngine
 import IQKeyboardManager
 //import UserNotifications
 import BBSideEngine
+import AVFoundation
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -18,10 +19,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
+        // Setup the audio session to allow background playback
+        do {
+            try AVAudioSession.sharedInstance().setCategory(.playback, mode: .spokenAudio, options: .duckOthers)
+            try AVAudioSession.sharedInstance().setActive(true)
+        } catch {
+            print("Failed to set up AVAudioSession: \(error)")
+        }
         
         // Request authorization for local notifications
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { (granted, error) in
-            
+//            Manage the success or failure response here.
         }
         UNUserNotificationCenter.current().delegate = self
         IQKeyboardManager.shared().isEnabled = true // manage keyboard behaviour
@@ -33,10 +41,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         } else {
             // Fallback on earlier versions
         }
-        
-//        DispatchQueue.main.asyncAfter(deadline: .now() + 5, execute: DispatchWorkItem(block: {
-//            self.scheduleLocalNotification(message: "Test")
-//        }))
+
         return true
     }
     func swiftLoaderConfig() {
@@ -48,32 +53,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         SwiftLoader.setConfig(config)
         
     }
-    // Function to schedule a local notification
-    func scheduleLocalNotification(message: String) {
-        // Create notification content
-        let content = UNMutableNotificationContent()
-        content.title = "Reminder"
-        content.body = message
-        content.sound = UNNotificationSound.default
-        content.badge = 0
-
-        // Set the notification trigger (e.g., after 5 seconds)
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 1, repeats: false)
-
-        // Create the notification request
-        let request = UNNotificationRequest(identifier: "localNotification", content: content, trigger: trigger)
-
-        // Schedule the notification
-        UNUserNotificationCenter.current().add(request) { (error) in
-            if let error = error {
-                print("Error scheduling notification: \(error.localizedDescription)")
-            } else {
-                print("Local notification scheduled successfully.")
-            }
-        }
-    }
-    
-    
 }
 
 
@@ -81,11 +60,11 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
         completionHandler([.banner, .sound])
     }
-    //If the notification comes from the Flare SDK, you need to call the 'performNotificationAction' method below and pass the notification response. This will display a popup asking the user if they are okay or not. Based on the user's response, the Flare SDK will send notifications to their partners via Webhook, Slack, Email, and SMS.
+    //If the notification comes from the Flare SDK, you need to call the 'performNotificationAction' method below and pass the notification response. This will display a popup asking user if they are okay or not. Based on the user's response, the Flare SDK will send notifications to their partners via Webhook, Slack, Email, and SMS.
     // Handle the tap on the notification when the app is in the foreground or background
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
 
-        if response.notification.request.identifier == BBNotifier.incident.rawValue {
+        if response.notification.request.identifier.contains(BBNotifier.flareSDK.rawValue)  {
             BBSideEngineManager.shared.performNotificationAction(notification: response.notification)
         }
         completionHandler()

@@ -1,3 +1,4 @@
+#workspace '/Users/phoenix/Documents/K-Safe/iOS-SDK/Develop/busbysdk_ios/SDKSampleApp.xcworkspace'
 platform :ios, '13.0'
 
 target 'FlareSDKSample' do
