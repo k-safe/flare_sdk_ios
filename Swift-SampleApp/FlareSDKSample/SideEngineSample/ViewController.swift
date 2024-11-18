@@ -194,7 +194,6 @@ class ViewController: UIViewController {
     @IBAction func hazardButtonTapped() {
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         let controller = storyBoard.instantiateViewController(withIdentifier: "HazardsViewController") as! HazardsViewController
-        controller.isProductionMode = self.isProductionMode
         controller.selectedRegion = regionSelection.selectedRegion
         controller.isHazardFeatureEnabled = enabledHazardSwitch.isOn
         self.navigationController?.pushViewController(controller, animated: true)
