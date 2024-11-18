@@ -104,6 +104,11 @@ extension BBSideEngine.Interpreter {
 }
 @available(*, deprecated, renamed: "Interpreter.Options")
 public typealias InterpreterOptions = BBSideEngine.Interpreter.Options
+extension BBSideEngine.BBSideEngineManager {
+  @objc dynamic public func playHazardNotification(hazard: [Swift.String : Any])
+  @objc dynamic public func reportHazard()
+  @objc dynamic public func manageHazards()
+}
 public enum Runtime {
   public static var version: Swift.String {
     get
@@ -159,6 +164,13 @@ public enum Runtime {
   case stopSOS
   case startFlareAware
   case stopFlareAware
+  case fetchHazards
+  case reportHazard
+  case alertedHazard
+  case feedbackHazard
+  case manageHazard
+  case deleteHazard
+  case updateLocation
   public init?(rawValue: Swift.Int)
   public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
@@ -166,9 +178,26 @@ public enum Runtime {
   }
 }
 public enum BBNotifier : Swift.String {
-  case incident
+  case flareSDK
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public enum BBNotificationParameter : Swift.String {
   case incidentId
   case environment
+  case type
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public enum BBNotificationType : Swift.String {
+  case incident
+  case hazard
   public init?(rawValue: Swift.String)
   public typealias RawValue = Swift.String
   public var rawValue: Swift.String {
@@ -249,6 +278,9 @@ public struct QuantizationParameters : Swift.Equatable, Swift.Hashable {
     @objc set
   }
   @objc public var distance_filter_meters: Swift.Double
+  @objc public var isHazardFeatureEnabled: Swift.Bool
+  @objc public var hazardsNotifyRadius: Swift.Double
+  @objc public var hazardVoiceAlertEnabled: Swift.Bool
   @objc override dynamic public init()
   @objc deinit
   @objc public func configure(accessKey: Swift.String, secretKey: Swift.String, mode: BBSideEngine.BBMode, theme: BBSideEngine.BBTheme, region: Swift.String = "")
@@ -291,6 +323,9 @@ extension BBSideEngine.BBSideEngineManager {
 }
 extension BBSideEngine.BBSideEngineManager {
   @objc dynamic public func performAudioRecordingTasks()
+}
+extension BBSideEngine.BBSideEngineManager {
+  @objc dynamic public func fetchHazards() -> [Swift.String : Any]
 }
 public class BBViews {
   public static let shared: BBSideEngine.BBViews
@@ -356,3 +391,9 @@ extension BBSideEngine.BBSideOperation : Swift.RawRepresentable {}
 extension BBSideEngine.BBNotifier : Swift.Equatable {}
 extension BBSideEngine.BBNotifier : Swift.Hashable {}
 extension BBSideEngine.BBNotifier : Swift.RawRepresentable {}
+extension BBSideEngine.BBNotificationParameter : Swift.Equatable {}
+extension BBSideEngine.BBNotificationParameter : Swift.Hashable {}
+extension BBSideEngine.BBNotificationParameter : Swift.RawRepresentable {}
+extension BBSideEngine.BBNotificationType : Swift.Equatable {}
+extension BBSideEngine.BBNotificationType : Swift.Hashable {}
+extension BBSideEngine.BBNotificationType : Swift.RawRepresentable {}
