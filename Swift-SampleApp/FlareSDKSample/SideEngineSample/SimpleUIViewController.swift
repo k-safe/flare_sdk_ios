@@ -254,7 +254,7 @@ extension SimpleUIViewController: IncidentConfirmationDelegete {
                 sheet.detents = [.large()]
             }
         }
-        print("Present bottomsheet")
+       
         self.present(navigation, animated: true, completion: nil)
     }
     func confirmedIncident() {

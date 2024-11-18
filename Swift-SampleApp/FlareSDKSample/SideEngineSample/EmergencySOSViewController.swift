@@ -14,7 +14,7 @@ class EmergencySOSViewController: UIViewController {
     @IBOutlet weak var btnShare: UIButton!
     @IBOutlet weak var btnActivate: UIButton!
     @IBOutlet weak var riderName: UITextField!
-   
+    var selectedRegion: String = ""
     var shareLink = ""
     
     override func viewDidLoad() {
@@ -46,7 +46,7 @@ class EmergencySOSViewController: UIViewController {
          */
         let accessKey = AppConfig.Keys.production_key
         let secretKey = AppConfig.Keys.app_secret_key
-        sideEngineShared.configure(accessKey: accessKey, secretKey: secretKey, mode: .production, theme: .standard)
+        sideEngineShared.configure(accessKey: accessKey, secretKey: secretKey, mode: .production, theme: .standard, region: selectedRegion)
         
         //------------Register SIDE engine listener here------------
         self.registerSideEngineListener()

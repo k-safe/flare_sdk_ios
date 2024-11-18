@@ -20,6 +20,7 @@ class CustomThemeViewController: UIViewController {
     @IBOutlet var startButton : UIButton!
     @IBOutlet var pauseButton : UIButton!
     @IBOutlet weak var confidenceLabel: UILabel!
+    var selectedRegion: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,7 +58,7 @@ class CustomThemeViewController: UIViewController {
          The default app will use user device's region, but you can also set a custom region based on your need.
          ========================================================*/
 //        shared.configure(accessKey: accessKey, secretKey: secretKey, mode: mode, theme: .custom)
-        shared.configure(accessKey: accessKey, secretKey: secretKey, mode: mode, theme: .custom, region: "GB")
+        shared.configure(accessKey: accessKey, secretKey: secretKey, mode: mode, theme: .custom, region: selectedRegion)
         
         //------------Register SIDE engine listener here------------
         self.registerSideEngineListener()
@@ -137,6 +138,7 @@ class CustomThemeViewController: UIViewController {
         sideEngineShared.high_frequency_mode_enabled = false //(Optional)
         
         //Start SIDE engine
+        //Pass the activity when you call the startSideEngine() method. This is important for assigning a machine learning model based on the activity type. The Flare SDK currently supports Bike and Scooter activities, so make sure to use one of these types
         sideEngineShared.startSideEngine(activity: activity)
     }
     //TODO: Register SIDE engine listener to receive call back from side engine
@@ -160,14 +162,10 @@ class CustomThemeViewController: UIViewController {
                     self.startButton.setTitle("STOP", for: .normal)
                     self.startButton.backgroundColor = .red
                     self.pauseButton.isHidden = false
-                } else {
-                    //Handle error message here
-                    print("Error message: \(String(describing: response.payload))")
                 }
             }
             else if response.type == .stop && response.success == true {
                 //Update your UI here (e.g. update STOP button color or text here when SIDE engine stopped)
-                print("STOP live mode with status: \(String(describing: response.success))")
                 self.startButton.tag = 1
                 self.startButton.setTitle("START", for: .normal)
                 self.startButton.backgroundColor = .systemGreen
@@ -184,7 +182,6 @@ class CustomThemeViewController: UIViewController {
                 //If it is necessary to dispatch an SMS or Email for personal emergency purposes, please do so.
                 
                 if let confidence = response.payload?["confidence"] {
-                    print("SIDE engine confidence is: \(confidence)")
                     DispatchQueue.main.async {
                         self.confidenceLabel.text = "SIDE confidence is: \(confidence)"
                     }
@@ -298,7 +295,6 @@ extension CustomThemeViewController: IncidentConfirmationDelegete {
                 sheet.detents = [.large()]
             }
         }
-        print("Present bottomsheet")
         self.present(navigation, animated: true, completion: nil)
     }
     func confirmedIncident() {

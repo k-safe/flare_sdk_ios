@@ -8,17 +8,24 @@
 import UIKit
 import BBSideEngine
 import Foundation
+import SwiftUI
 
 class ViewController: UIViewController {
     var isProductionMode: Bool = false //This will used to configure SDK production or sandbox mode
     @IBOutlet weak var productionButton: UIButton!
     @IBOutlet weak var sandboxButton: UIButton!
+    @IBOutlet weak var regionContainerView: UIView!
+    @IBOutlet weak var enabledHazardSwitch: UISwitch!
+    
+    // Create an instance of the RegionSelection observable object
+    private var regionSelection = RegionSelection()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.configureUI()
-        
     }
+    
     func configureUI() {
         self.sandboxButton.setImage(UIImage(named: "checked"), for: .selected)
         self.sandboxButton.setImage(UIImage(named: "un_checked"), for: .normal)
@@ -27,7 +34,38 @@ class ViewController: UIViewController {
         self.productionButton.setImage(UIImage(named: "un_checked"), for: .normal)
         
         self.initConfigure()
+        self.configureRegionUI()
     }
+    
+    //Create Region UI
+    func configureRegionUI() {
+        let regions: [String] = ["GB", "IN", "HK"]
+        
+        // Create an instance of your SwiftUI view
+        let regionDropDown = RegionDropDown(regionSelection: regionSelection, regions: regions)
+        // Create an instance of your SwiftUI view
+        // Embed the SwiftUI view in a UIHostingController
+        let hostingController = UIHostingController(rootView: regionDropDown)
+        
+        // Add the hosting controller as a child view controller
+        addChild(hostingController)
+        
+        // Add the SwiftUI view to the container view
+        regionContainerView.addSubview(hostingController.view)
+        
+        // Set up constraints to match the container view's size
+        hostingController.view.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            hostingController.view.leadingAnchor.constraint(equalTo: regionContainerView.leadingAnchor),
+            hostingController.view.trailingAnchor.constraint(equalTo: regionContainerView.trailingAnchor),
+            hostingController.view.topAnchor.constraint(equalTo: regionContainerView.topAnchor),
+            hostingController.view.bottomAnchor.constraint(equalTo: regionContainerView.bottomAnchor)
+        ])
+        
+        // Notify the hosting controller that it has moved to a parent view controller
+        hostingController.didMove(toParent: self)
+    }
+    
     func initConfigure() {
         self.isProductionMode = false
         self.sandboxButton.isSelected = true
@@ -106,6 +144,7 @@ class ViewController: UIViewController {
     
     @IBAction func standardButtonTapped() {
         
+        
         // Usage example
 //        BBSideEngineManager.shared.launchIncidentClassification(controller: self) { incidentType in
 //            print("Incident classification submitted with type: \(incidentType)")
@@ -126,6 +165,7 @@ class ViewController: UIViewController {
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         let controller = storyBoard.instantiateViewController(withIdentifier: "StandardThemeViewController") as! StandardThemeViewController
         controller.isProductionMode = self.isProductionMode
+        controller.selectedRegion = regionSelection.selectedRegion
         self.navigationController?.pushViewController(controller, animated: true)
         
     }
@@ -133,12 +173,14 @@ class ViewController: UIViewController {
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         let controller = storyBoard.instantiateViewController(withIdentifier: "CustomThemeViewController") as! CustomThemeViewController
         controller.isProductionMode = self.isProductionMode
+        controller.selectedRegion = regionSelection.selectedRegion
         self.navigationController?.pushViewController(controller, animated: true)
     }
     
     @IBAction func sosButtonTapped() {
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         let controller = storyBoard.instantiateViewController(withIdentifier: "EmergencySOSViewController") as! EmergencySOSViewController
+        controller.selectedRegion = regionSelection.selectedRegion
         self.navigationController?.pushViewController(controller, animated: true)
     }
     
@@ -146,6 +188,15 @@ class ViewController: UIViewController {
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         let controller = storyBoard.instantiateViewController(withIdentifier: "FlareAwareViewController") as! FlareAwareViewController
         controller.isProductionMode = self.isProductionMode
+        controller.selectedRegion = regionSelection.selectedRegion
+        self.navigationController?.pushViewController(controller, animated: true)
+    }
+    @IBAction func hazardButtonTapped() {
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let controller = storyBoard.instantiateViewController(withIdentifier: "HazardsViewController") as! HazardsViewController
+        controller.isProductionMode = self.isProductionMode
+        controller.selectedRegion = regionSelection.selectedRegion
+        controller.isHazardFeatureEnabled = enabledHazardSwitch.isOn
         self.navigationController?.pushViewController(controller, animated: true)
     }
     

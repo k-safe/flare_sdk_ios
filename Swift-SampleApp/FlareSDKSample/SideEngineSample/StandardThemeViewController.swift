@@ -19,6 +19,7 @@ class StandardThemeViewController: UIViewController {
     @IBOutlet var startButton : UIButton!
     @IBOutlet weak var confidenceLabel: UILabel!
     @IBOutlet var pauseButton : UIButton!
+    var selectedRegion: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,7 +61,7 @@ class StandardThemeViewController: UIViewController {
         /*========================================================
          The default app will use user device's region, but you can also set a custom region based on your need.
          ========================================================*/
-        shared.configure(accessKey: accessKey, secretKey: secretKey, mode: mode, theme: .standard)
+        shared.configure(accessKey: accessKey, secretKey: secretKey, mode: mode, theme: .standard, region: selectedRegion)
         //shared.configure(accessKey: accessKey, secretKey: secretKey, mode: mode, theme: .custom, region: "region here")
         
         //------------Register SIDE engine listener here------------
@@ -152,7 +153,6 @@ class StandardThemeViewController: UIViewController {
             //This call back basiclly where you call the configure method
             if response.type == .configure {
                 //You are now able to initiate the SIDE engine process at any time. In the event that there is no user input button available to commence the activity, you may commence the SIDE engine by executing the following command:
-                print("CONFIGURE with status: \(String(describing: response.success))")
                 if response.success == true {
                     //sideEngineShared.startSideEngine()
                 }
@@ -162,7 +162,6 @@ class StandardThemeViewController: UIViewController {
             }
             else if response.type == .start {
                 //Update your UI here (e.g. update START button color or text here when SIDE engine started)
-                print("START live mode with status: \(String(describing: response.success))")
                 
                 if response.success == true {
                     self.startButton.tag = 2
@@ -176,7 +175,6 @@ class StandardThemeViewController: UIViewController {
             }
             else if response.type == .stop && response.success == true {
                 //Update your UI here (e.g. update STOP button color or text here when SIDE engine stopped)
-                print("STOP live mode with status: \(String(describing: response.success))")
                 self.startButton.tag = 1
                 self.startButton.setTitle("START", for: .normal)
                 self.startButton.backgroundColor = .systemGreen
@@ -192,7 +190,6 @@ class StandardThemeViewController: UIViewController {
                 
                 //The user has identified an incident, and if necessary, it may be appropriate to log the incident in either the analytics system or an external database. Please refrain from invoking any side engine methods at this juncture.
                 if let confidence = response.payload?["confidence"] {
-                    print("SIDE engine confidence is: \(confidence)")
                     DispatchQueue.main.async {
                         self.confidenceLabel.text = "SIDE confidence is: \(confidence)"
                     }
