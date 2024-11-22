@@ -24,7 +24,6 @@
 		D07EE9D12C77222C00E561E3 /* RegionSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = D07EE9D02C77222C00E561E3 /* RegionSelection.swift */; };
 		D08217E62C32CC61001F68E5 /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08217E52C32CC61001F68E5 /* AppConfig.swift */; };
 		D0A283A42C80A845001640CA /* HazardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A283A22C80A845001640CA /* HazardsViewController.swift */; };
-		D0AA8CDB29376B190086B1CC /* VideoAskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AA8CDA29376B190086B1CC /* VideoAskViewController.swift */; };
 		D0B530302CA2F1A000BEEFE0 /* CustomAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B5302F2CA2F1A000BEEFE0 /* CustomAnnotationView.swift */; };
 		D0D6AD072C22E95D00483986 /* SimpleUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D6AD062C22E95D00483986 /* SimpleUIViewController.swift */; };
 		D0D6AD0A2C22FBBA00483986 /* SwiftLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D6AD092C22FBBA00483986 /* SwiftLoader.swift */; };
@@ -67,7 +66,6 @@
 		D07EE9D02C77222C00E561E3 /* RegionSelection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionSelection.swift; sourceTree = "<group>"; };
 		D08217E52C32CC61001F68E5 /* AppConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
 		D0A283A22C80A845001640CA /* HazardsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HazardsViewController.swift; sourceTree = "<group>"; };
-		D0AA8CDA29376B190086B1CC /* VideoAskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoAskViewController.swift; sourceTree = "<group>"; };
 		D0B5302F2CA2F1A000BEEFE0 /* CustomAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAnnotationView.swift; sourceTree = "<group>"; };
 		D0D6AD062C22E95D00483986 /* SimpleUIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleUIViewController.swift; sourceTree = "<group>"; };
 		D0D6AD092C22FBBA00483986 /* SwiftLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftLoader.swift; sourceTree = "<group>"; };
@@ -124,7 +122,6 @@
 				D000A8CD28FFDB480077C9B2 /* CustomThemeViewController.swift */,
 				D000A8CC28FFDB480077C9B2 /* StandardThemeViewController.swift */,
 				D04811EA2BFB37E10085BC8B /* IncidentConfirmationViewController.swift */,
-				D0AA8CDA29376B190086B1CC /* VideoAskViewController.swift */,
 				D0A283A22C80A845001640CA /* HazardsViewController.swift */,
 				D05B6966280FE89600356644 /* IncidentResultViewController.swift */,
 				D4315A4129DFDF21003CB087 /* EmergencySOSViewController.swift */,
@@ -287,7 +284,6 @@
 				D0521F892CA17EF6007B0CAC /* HazardAnnotation.swift in Sources */,
 				D000A8CE28FFDB480077C9B2 /* StandardThemeViewController.swift in Sources */,
 				D0A283A42C80A845001640CA /* HazardsViewController.swift in Sources */,
-				D0AA8CDB29376B190086B1CC /* VideoAskViewController.swift in Sources */,
 				D018BCD0269C4FDB00F21A20 /* AppDelegate.swift in Sources */,
 				D018BCD2269C4FDB00F21A20 /* SceneDelegate.swift in Sources */,
 				D0332AF529FFCD6200D24816 /* FlareAwareViewController.swift in Sources */,

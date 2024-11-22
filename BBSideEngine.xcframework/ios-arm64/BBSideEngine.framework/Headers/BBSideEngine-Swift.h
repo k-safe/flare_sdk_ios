@@ -396,18 +396,20 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) BBSideEngine
 
 
 @interface BBSideEngineManager (SWIFT_EXTENSION(BBSideEngine))
+- (void)resumeSideEngine;
+- (void)pauseSideEngine;
+@end
+
+
+enum BBSurveyType : NSInteger;
+
+@interface BBSideEngineManager (SWIFT_EXTENSION(BBSideEngine))
 - (void)playHazardNotificationWithHazard:(NSDictionary<NSString *, id> * _Nonnull)hazard;
 - (void)reportHazard;
 - (void)manageHazards;
-@end
-
-
-@interface BBSideEngineManager (SWIFT_EXTENSION(BBSideEngine))
-- (void)resumeSideEngine;
-- (void)pauseSideEngine;
 - (void)presentVideoSurveys;
+- (void)postIncidentSurveyWithController:(UIViewController * _Nonnull)controller type:(enum BBSurveyType)type onClose:(void (^ _Nonnull)(void))onClose;
 @end
-
 
 
 
@@ -453,26 +455,32 @@ typedef SWIFT_ENUM(NSInteger, BBSideOperation, open) {
   BBSideOperationIncidentDetected = 6,
   BBSideOperationIncidentCancel = 7,
   BBSideOperationIncidentAlertSent = 8,
-  BBSideOperationIncidentVerifiedByUser = 9,
-  BBSideOperationTimerStarted = 10,
-  BBSideOperationTimerFinished = 11,
-  BBSideOperationLocation = 12,
-  BBSideOperationOpenVideoSurvey = 13,
-  BBSideOperationCloseVideoSurvey = 14,
-  BBSideOperationIncidentAutoCancel = 15,
-  BBSideOperationResumeSideEngine = 16,
-  BBSideOperationPauseSideEngine = 17,
-  BBSideOperationStartSOS = 18,
-  BBSideOperationStopSOS = 19,
-  BBSideOperationStartFlareAware = 20,
-  BBSideOperationStopFlareAware = 21,
-  BBSideOperationFetchHazards = 22,
-  BBSideOperationReportHazard = 23,
-  BBSideOperationAlertedHazard = 24,
-  BBSideOperationFeedbackHazard = 25,
-  BBSideOperationManageHazard = 26,
-  BBSideOperationDeleteHazard = 27,
-  BBSideOperationUpdateLocation = 28,
+  BBSideOperationPostIncidentFeedback = 9,
+  BBSideOperationIncidentVerifiedByUser = 10,
+  BBSideOperationTimerStarted = 11,
+  BBSideOperationTimerFinished = 12,
+  BBSideOperationLocation = 13,
+  BBSideOperationOpenVideoSurvey = 14,
+  BBSideOperationCloseVideoSurvey = 15,
+  BBSideOperationIncidentAutoCancel = 16,
+  BBSideOperationResumeSideEngine = 17,
+  BBSideOperationPauseSideEngine = 18,
+  BBSideOperationStartSOS = 19,
+  BBSideOperationStopSOS = 20,
+  BBSideOperationStartFlareAware = 21,
+  BBSideOperationStopFlareAware = 22,
+  BBSideOperationFetchHazards = 23,
+  BBSideOperationReportHazard = 24,
+  BBSideOperationAlertedHazard = 25,
+  BBSideOperationFeedbackHazard = 26,
+  BBSideOperationManageHazard = 27,
+  BBSideOperationDeleteHazard = 28,
+  BBSideOperationUpdateLocation = 29,
+};
+
+typedef SWIFT_ENUM(NSInteger, BBSurveyType, open) {
+  BBSurveyTypeVideo = 0,
+  BBSurveyTypeForm = 1,
 };
 
 typedef SWIFT_ENUM(NSInteger, BBTheme, open) {

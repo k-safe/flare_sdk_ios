@@ -108,6 +108,8 @@ extension BBSideEngine.BBSideEngineManager {
   @objc dynamic public func playHazardNotification(hazard: [Swift.String : Any])
   @objc dynamic public func reportHazard()
   @objc dynamic public func manageHazards()
+  @objc dynamic public func presentVideoSurveys()
+  @objc dynamic public func postIncidentSurvey(controller: UIKit.UIViewController, type: BBSideEngine.BBSurveyType, onClose: @escaping () -> Swift.Void)
 }
 public enum Runtime {
   public static var version: Swift.String {
@@ -141,6 +143,15 @@ public enum Runtime {
     get
   }
 }
+@objc public enum BBSurveyType : Swift.Int {
+  case video
+  case form
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
 @objc public enum BBSideOperation : Swift.Int {
   case none
   case configure
@@ -151,6 +162,7 @@ public enum Runtime {
   case incidentDetected
   case incidentCancel
   case incidentAlertSent
+  case postIncidentFeedback
   case incidentVerifiedByUser
   case timerStarted
   case timerFinished
@@ -301,7 +313,6 @@ extension BBSideEngine.BBSideEngineManager : CoreLocation.CLLocationManagerDeleg
 extension BBSideEngine.BBSideEngineManager {
   @objc dynamic public func resumeSideEngine()
   @objc dynamic public func pauseSideEngine()
-  @objc dynamic public func presentVideoSurveys()
 }
 extension BBSideEngine.BBSideEngineManager {
   @objc dynamic public func sideEventsListener(handler: @escaping BBSideEngine.BBSideEngineManager.callbackHelper)
@@ -385,6 +396,9 @@ extension BBSideEngine.BBSideEngineMode : Swift.RawRepresentable {}
 extension BBSideEngine.BBTheme : Swift.Equatable {}
 extension BBSideEngine.BBTheme : Swift.Hashable {}
 extension BBSideEngine.BBTheme : Swift.RawRepresentable {}
+extension BBSideEngine.BBSurveyType : Swift.Equatable {}
+extension BBSideEngine.BBSurveyType : Swift.Hashable {}
+extension BBSideEngine.BBSurveyType : Swift.RawRepresentable {}
 extension BBSideEngine.BBSideOperation : Swift.Equatable {}
 extension BBSideEngine.BBSideOperation : Swift.Hashable {}
 extension BBSideEngine.BBSideOperation : Swift.RawRepresentable {}

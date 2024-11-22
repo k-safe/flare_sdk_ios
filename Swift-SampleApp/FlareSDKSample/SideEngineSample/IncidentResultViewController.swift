@@ -12,7 +12,7 @@ import BBSideEngine
 import FoundationNetworking
 #endif
 
-class IncidentResultViewController: UIViewController, VideoAskDelegate {
+class IncidentResultViewController: UIViewController {
     @IBOutlet var mapview : MKMapView!
     @IBOutlet var latitudeLabel : UILabel!
     @IBOutlet var longitudeLabel : UILabel!
@@ -39,6 +39,34 @@ class IncidentResultViewController: UIViewController, VideoAskDelegate {
         let tap = UITapGestureRecognizer(target: self, action: #selector(self.tappedMap(_:)))
         w3wLink.addGestureRecognizer(tap)
         
+    }
+    @IBAction func closeTapped() {
+        let shared = BBSideEngineManager.shared
+        shared.launchIncidentClassification(
+            controller: self, onSubmit: { incidentType in
+                // Handle the submit event with the incident type
+                self.performFinishAction()
+            },
+            onClose: {
+                // Handle the close event
+                self.performFinishAction()
+            }
+           
+        )
+
+    }
+    func performFinishAction() {
+        //Video survey is optional
+        if BBSideEngineManager.shared.surveyVideoURL.isEmpty == false {
+            BBSideEngineManager.shared.postIncidentSurvey(controller: self, type: .video) {
+                print("Post incident survey ended")
+                self.didFinishSurvey()
+            }
+        }else {
+            DispatchQueue.main.async {
+                self.didFinishSurvey()
+            }
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -114,66 +142,6 @@ class IncidentResultViewController: UIViewController, VideoAskDelegate {
         }
     }
     
-    @IBAction func closeTapped() {
-        
-        BBSideEngineManager.shared.launchIncidentClassification(
-            controller: self, onSubmit: { incidentType in
-                // Handle the submit event with the incident type
-                print("User submitted classification with type: \(incidentType)")
-                self.didFinishSurvey()
-            },
-            onClose: {
-                // Handle the close event
-                print("Incident classification closed")
-                self.didFinishSurvey()
-            }
-           
-        )
-
-    }
-    
-    //*******: Furnish user feedback regarding the incident, please help Flare become smarter. This helps us make everyone safer.*******://
-    func handleIncidentFeedback() {
-        let appName = "SDKSampleApp"
-        let alert = UIAlertController(title: "Help \(appName) become smarter", message: "\(appName) incident detection can be improved by learning from your incident.\nWas this an accurate alert?",         preferredStyle: .alert)
-        
-        alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { _ in
-            self.handleConfirmIncident(isConfirm: true)
-        }))
-        alert.addAction(UIAlertAction(title: "No", style: .cancel, handler: { _ in
-            self.handleConfirmIncident(isConfirm: false)
-        }))
-        
-        self.present(alert, animated: true, completion: nil)
-    }
-    
-    
-    func handleConfirmIncident(isConfirm: Bool) {
-        if isConfirm == true {
-            //Send partner notification
-            BBSideEngineManager.shared.confirmIncident()
-            
-            //Send emregency contact notifications
-            self.handleEmergencyContactNotifications()
-        }else {
-            BBSideEngineManager.shared.declineIncident()
-        }
-        
-        if BBSideEngineManager.shared.surveyVideoURL.isEmpty == false {
-            //Use desined UI to open video sruvey
-            let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-            let videoAskViewController = storyBoard.instantiateViewController(withIdentifier: "VideoAskViewController") as! VideoAskViewController
-            videoAskViewController.delegate = self
-            DispatchQueue.main.async {
-                self.present(videoAskViewController, animated: true)
-            }
-            
-        }else {
-            DispatchQueue.main.async {
-                self.didFinishSurvey()
-            }
-        }
-    }
     
     func handleEmergencyContactNotifications() {
         self.sendSMS()
@@ -213,7 +181,7 @@ class IncidentResultViewController: UIViewController, VideoAskDelegate {
 }
  
 
-
+//Render Maps
 extension IncidentResultViewController: MKMapViewDelegate {
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         guard annotation is MKPointAnnotation else { return nil }
