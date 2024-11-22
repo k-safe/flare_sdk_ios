@@ -619,54 +619,6 @@
             </objects>
             <point key="canvasLocation" x="1639" y="755"/>
         </scene>
-        <!--Video Ask View Controller-->
-        <scene sceneID="W4j-QO-wEw">
-            <objects>
-                <viewController storyboardIdentifier="VideoAskViewController" modalPresentationStyle="fullScreen" id="34I-KQ-uSW" customClass="VideoAskViewController" customModule="FlareSDKSample" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="QyY-Ba-rC4">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SYr-j1-Vq0">
-                                <rect key="frame" x="0.0" y="47" width="390" height="763"/>
-                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <wkWebViewConfiguration key="configuration">
-                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
-                                    <wkPreferences key="preferences"/>
-                                </wkWebViewConfiguration>
-                            </wkWebView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GJt-qh-hBV">
-                                <rect key="frame" x="330" y="57" width="60" height="60"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="60" id="Hbf-Oa-Nn3"/>
-                                    <constraint firstAttribute="height" constant="60" id="hp2-kq-JvI"/>
-                                </constraints>
-                                <state key="normal" image="closeButton.png"/>
-                                <connections>
-                                    <action selector="closeTapped" destination="34I-KQ-uSW" eventType="touchUpInside" id="3sE-i0-qGC"/>
-                                    <action selector="closeTapped" destination="MiR-ZL-aL7" eventType="touchUpInside" id="feZ-C6-4X1"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="pmW-z7-a3f"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="GJt-qh-hBV" firstAttribute="top" secondItem="pmW-z7-a3f" secondAttribute="top" constant="10" id="1Gv-29-B2I"/>
-                            <constraint firstItem="SYr-j1-Vq0" firstAttribute="leading" secondItem="pmW-z7-a3f" secondAttribute="leading" id="IN9-jc-vGz"/>
-                            <constraint firstItem="pmW-z7-a3f" firstAttribute="trailing" secondItem="SYr-j1-Vq0" secondAttribute="trailing" id="Oxr-de-Pb5"/>
-                            <constraint firstItem="SYr-j1-Vq0" firstAttribute="bottom" secondItem="pmW-z7-a3f" secondAttribute="bottom" id="aoV-s1-auc"/>
-                            <constraint firstItem="SYr-j1-Vq0" firstAttribute="top" secondItem="pmW-z7-a3f" secondAttribute="top" id="kli-0T-Y5R"/>
-                            <constraint firstItem="pmW-z7-a3f" firstAttribute="trailing" secondItem="GJt-qh-hBV" secondAttribute="trailing" id="uRM-Fd-eYv"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="webview" destination="SYr-j1-Vq0" id="Q5b-io-pqH"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Q12-OT-j0y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3700.0000000000005" y="85.59782608695653"/>
-        </scene>
         <!--EmergencySOS View Controller-->
         <scene sceneID="tuw-lT-Nqb">
             <objects>

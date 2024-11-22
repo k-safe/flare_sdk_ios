@@ -197,9 +197,22 @@ class CustomThemeViewController: UIViewController {
             }
             else if response.type == .incidentAutoCancel {
                 // Please disregard your customised countdown page in this instance and refrain from invoking any functions from external engines. The external engine will autonomously handle any necessary actions.
-//                if let controller = self.customUIController {
-//                    controller.cancelAutoIncident()
-//                }
+            }
+            else if response.type == .postIncidentFeedback {
+                // When a user gives feedback after receiving a post-incident notification, you will get an event here to identify the type of feedback provided.
+                
+                /*
+                if response.success == true {
+                    //User submitted report an incident
+                }else {
+                    //User is alright
+                }
+                */
+                
+                if let message = response.payload?["message"] {
+                    print("message: ", message)
+                }
+
             }
             else if response.type == .incidentAlertSent {
                 //This message is intended solely to provide notification regarding the transmission status of alerts. It is unnecessary to invoke any SIDE engine functions in this context.
@@ -230,9 +243,16 @@ class CustomThemeViewController: UIViewController {
                     
                 }
             }
+            else if response.type == .openVideoSurvey {
+                //You will get an event here when the user opens the video survey.
+            }
+            else if response.type == .closeVideoSurvey {
+                //You will get an event here when the user closes the video survey.
+            }
             else if response.type == .location {
                 //You will receive the user's location update status in this location. The payload contains a CLLocation object, which allows you to read any parameters if necessary.
             } 
+            
         }
     }
     
