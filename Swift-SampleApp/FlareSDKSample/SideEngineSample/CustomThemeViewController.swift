@@ -200,14 +200,16 @@ class CustomThemeViewController: UIViewController {
             }
             else if response.type == .postIncidentFeedback {
                 // When a user gives feedback after receiving a post-incident notification, you will get an event here to identify the type of feedback provided.
+                //You will receive the user's response here. If the user taps "Report an Incident," you will get success = true. If the user taps "He is alright," you will get success = false. You also have the option to open the video survey if that setting is enabled for your partner.
                 
-                /*
                 if response.success == true {
-                    //User submitted report an incident
+                    DispatchQueue.main.async {
+                        self.performPostIncidentSurvey()
+                    }
                 }else {
                     //User is alright
                 }
-                */
+                
                 
                 if let message = response.payload?["message"] {
                     print("message: ", message)
@@ -256,7 +258,15 @@ class CustomThemeViewController: UIViewController {
         }
     }
     
-   
+    func performPostIncidentSurvey() {
+        //Video survey is optional
+        if BBSideEngineManager.shared.surveyVideoURL.isEmpty == false {
+            BBSideEngineManager.shared.postIncidentSurvey(controller: self, type: .video) {
+                print("Post incident survey ended")
+            }
+        }
+    }
+    
     func sendSMS() {
         if countryCode.text?.isEmpty == false && self.phoneNumber.text?.isEmpty == false {
             let contact = [
